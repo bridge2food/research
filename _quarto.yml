@@ -3,21 +3,32 @@ project:
 
 website:
   navbar:
-#    right:
-      # - href: about.qmd
-      #   text: About
-      # - href: healthferm/index.qmd
-      #   text: HealthFerm
-    logo: b2flogo.png
-    logo-href: https://www.bridge2food.com
+    right: 
+      - href: projects.qmd
+        text: Research Projects
+        icon: lightbulb
+      - href: intelligence.qmd
+        text: Industry Intelligence
+        icon: graph-up-arrow
+      - href: about.qmd
+        text: About
+    logo: /assets/images/logos/b2flogo.png
+    #logo-href: https://www.bridge2food.com
+  page-footer: 
+    background: "light"
+    border: true
+    center: |
+      <br> Copyright 2024 Bridge2Food. All rights reserved. <br><br>
+  bread-crumbs: true
   search: false
 
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: solar
     css: styles.css
     toc: true
 
-editor: visual
 

@@ -6,9 +6,6 @@ scrolling: true
 navbar:
   collapse: true
   pinned: true
-  right:
-    - icon: linkedin
-      href: https://www.linkedin.com/company/healthferm/
 include-in-header:
   text: |
     <link rel="shortcut icon" href="logo.svg" />
@@ -47,6 +44,7 @@ age_plot
 #| title: Age Groups
 age_groups_plot
 ```
+
 ```{r}
 #| title: By Country
 age_country_plot
@@ -58,6 +56,7 @@ age_country_plot
 #| title: Weight
 weight_plot
 ```
+
 ```{r}
 #| title: Height
 height_plot
@@ -86,12 +85,13 @@ area_plot
 #| title: Household Size
 household_plot
 ```
+
 ```{r}
 #| title: Children
 children_plot
 ```
-## Row
 
+## Row
 
 ```{r}
 #| title: Are you responsible for grocery shopping in your household?
@@ -121,18 +121,22 @@ ferment_prod_plot
 diet_lifestyle_plot
 diet_prompt <- attr(diet_lifestyle$diet, "label")
 ```
+
 ```{r}
 #| title: By Country
 diet_country_plot
 ```
+
 ```{r}
 #| title: By Age
 diet_age_plot
 ```
+
 ```{r}
 #| title: By Education Level
 diet_edu_plot
 ```
+
 ```{r}
 #| title: By Socioeconomic Status
 diet_ses_plot
@@ -141,16 +145,15 @@ diet_ses_plot
 ::: {.card title="Prompt"}
 `r diet_prompt`
 
-* Omnivore (I frequently eat meat such as beef, pork, chicken, turkey, fish and/or shell-fish)
+-   Omnivore (I frequently eat meat such as beef, pork, chicken, turkey, fish and/or shell-fish)
 
-* Flexitarian (I sometimes eat meat, but I am trying to reduce my meat consumption and often choose plant based foods instead)
+-   Flexitarian (I sometimes eat meat, but I am trying to reduce my meat consumption and often choose plant based foods instead)
 
-* Pescetarian (I eat fish and/or shell-fish, but no other types of meat)
+-   Pescetarian (I eat fish and/or shell-fish, but no other types of meat)
 
-* Vegetarian (I don’t eat meat and fish of any kind, but I do eat eggs and/or dairy products)
+-   Vegetarian (I don't eat meat and fish of any kind, but I do eat eggs and/or dairy products)
 
-* Vegan (I don’t eat meat, fish, eggs, dairy products, or any other animal-based ingredients)
-
+-   Vegan (I don't eat meat, fish, eggs, dairy products, or any other animal-based ingredients)
 :::
 
 ## Row
@@ -162,26 +165,25 @@ diet_ses_plot
 # dietimp_plot
 dietimp_plot
 ```
+
 ```{r}
 #| title: By Diet
 dietimp_groups_plot
 ```
 
 ::: {.card title="Prompt"}
-
 Rank, in order of importance, the reasons for which you adhere to this diet (only the top 5 will be taken into consideration)
 
-* Taste preference
-* Environmental sustainability 
-* Animal welfare
-* Personal health
-* Social responsibility
-* Makes me feel good
-* Spirituality
-* Convenience
-* Social/Cultural norms
-* Other
-
+-   Taste preference
+-   Environmental sustainability
+-   Animal welfare
+-   Personal health
+-   Social responsibility
+-   Makes me feel good
+-   Spirituality
+-   Convenience
+-   Social/Cultural norms
+-   Other
 :::
 
 ## Row
@@ -190,17 +192,18 @@ Rank, in order of importance, the reasons for which you adhere to this diet (onl
 #| title: For how long have you been following your current dietary lifestyle?
 diet_time_plot
 ```
+
 ## Row
 
 ```{r}
 #| title: What diet did you switch from? 
 prev_diet_plot
 ```
+
 ```{r}
 #| title: What was the main reason for the switch? (from omnivore)
 reasonforswitch_from_omn_plot
 ```
-
 
 ## Row
 
@@ -210,32 +213,36 @@ reasonforswitch_from_omn_plot
 #| title: 12-Month Change - Meat Consumption
 deltameat_plot
 ```
+
 ```{r}
 #| title: By Diet
 dm_diet_plot
 ```
+
 ```{r}
 #| title: By Country
 dm_countries_plot
 ```
+
 ```{r}
 #| title: By Age
 dm_age_groups_plot
 ```
+
 ```{r}
 #| title: By Education Level
 dm_edu_levels_plot
 ```
+
 ```{r}
 #| title: By Socioeconomic Status
 dm_ses_plot
 ```
+
 ::: {.card title="Prompt"}
+Compared to a year ago, how much meat (e.g., beef, pork, chicken...) are you eating now?
 
-Compared to a year ago, how much meat (e.g., beef, pork, chicken…) are you eating now?
-
-* Only asked to respondents that identified as omnivore or flexitarian
-
+-   Only asked to respondents that identified as omnivore or flexitarian
 :::
 
 ## Row
@@ -246,35 +253,38 @@ Compared to a year ago, how much meat (e.g., beef, pork, chicken…) are you eat
 #| title: Intention to Change - Meat
 dm_int_plot
 ```
+
 ```{r}
 #| title: By Diet
 dm_int_diet_plot
 ```
+
 ```{r}
 #| title: By Country
 dm_int_countries_plot
 ```
+
 ```{r}
 #| title: By Age
 dm_int_age_groups_plot
 ```
+
 ```{r}
 #| title: By Education Level
 dm_int_edu_levels_plot
 ```
+
 ```{r}
 #| title: By Socioeconomic Status
 dm_int_ses_plot
 ```
 
 ::: {.card title="Prompt"}
-
 Do you intend increasing or reducing your consumption of the following food categories in the next 6 months?
 
 Meat products (e.g., beef, pork, chicken, etc.)
 
-* Only asked to respondents that identified as omnivore or flexitarian
-
+-   Only asked to respondents that identified as omnivore or flexitarian
 :::
 
 ## Row
@@ -285,38 +295,41 @@ Meat products (e.g., beef, pork, chicken, etc.)
 #| title: Intention to Change - Dairy
 dd_int_plot
 ```
+
 ```{r}
 #| title: By Diet
 dd_int_diet_plot
 ```
+
 ```{r}
 #| title: By Country
 dd_int_countries_plot
 ```
+
 ```{r}
 #| title: By Age
 dd_int_age_groups_plot
 ```
+
 ```{r}
 #| title: By Education Level
 dd_int_edu_levels_plot
 ```
+
 ```{r}
 #| title: By Socioeconomic Status
 dd_int_ses_plot
 ```
 
 ::: {.card title="Prompt"}
-
 Do you intend increasing or reducing your consumption of the following food categories in the next 6 months?
 
 Dairy products (e.g., milk, yogurt, cheese, etc.)
 
-* Only asked to respondents that identified as omnivore or flexitarian
-
+-   Only asked to respondents that identified as omnivore or flexitarian
 :::
 
-## Row 
+## Row
 
 ### Column {.tabset}
 
@@ -327,19 +340,16 @@ fc_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Before we continue to the next questions, we would like to give you a few food definitions that are important to know for this survey:
 
-* **Legumes** are sources of Plant-Based **protein**, and include lentils, beans, soy, and chickpeas (dried, canned, frozen).
+-   **Legumes** are sources of Plant-Based **protein**, and include lentils, beans, soy, and chickpeas (dried, canned, frozen).
 
-* **Legume-Based foods** are made **solely** from the seeds of **legumes***, and include tofu, tempeh, falafel, hummus, and soy-based products.
+-   **Legume-Based foods** are made **solely** from the seeds of **legumes**\*, and include tofu, tempeh, falafel, hummus, and soy-based products.
 
-* **Plant-Based alternatives** are products made solely from Plant-Based ingredients and are developed to **resemble conventional animal-based foods** such as meat or dairy. (Examples include soy burgers and soy milk).
+-   **Plant-Based alternatives** are products made solely from Plant-Based ingredients and are developed to **resemble conventional animal-based foods** such as meat or dairy. (Examples include soy burgers and soy milk).
 
-Which statement best describes how frequently you have consumed the following foods in the last 12 months? 
-
+Which statement best describes how frequently you have consumed the following foods in the last 12 months?
 :::
-
 
 ## Row
 
@@ -351,20 +361,16 @@ fc1_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Before we continue to the next question, please read carefully the following definitions:
 
-For the purpose of this questionnaire, **Fermented Foods** are defined as “foods made through desired microbial growth and enzymatic conversions of food components”. Fermented Foods are produced from diverse food substrates, such as vegetables, grains, soybean, milk, fish and meat. Fermented Foods often contain **live microorganisms**. Among those foods are yogurt, cheese and kombucha. However, in several Fermented Foods the microorganisms are not alive anymore, for example in bread, pasteurised fermented vegetables, soy sauce, and wine.
+For the purpose of this questionnaire, **Fermented Foods** are defined as "foods made through desired microbial growth and enzymatic conversions of food components". Fermented Foods are produced from diverse food substrates, such as vegetables, grains, soybean, milk, fish and meat. Fermented Foods often contain **live microorganisms**. Among those foods are yogurt, cheese and kombucha. However, in several Fermented Foods the microorganisms are not alive anymore, for example in bread, pasteurised fermented vegetables, soy sauce, and wine.
 
-The **products made from plants** (fruits, vegetables, nuts, seeds, whole grains, legumes, beans, etc.) will be referred as "**Plant-Based Food**", while the **products made from fermentation on Plant-Based plant-based raw materials** will be referred as "**Plant-Based Fermented Food**". 
+The **products made from plants** (fruits, vegetables, nuts, seeds, whole grains, legumes, beans, etc.) will be referred as "**Plant-Based Food**", while the **products made from fermentation on Plant-Based plant-based raw materials** will be referred as "**Plant-Based Fermented Food**".
 
-Please indicate (with a cross or tick) how often do you consume the following fermented products present in the table, on a scale from “I do not recognize the product” to “I consume it 2 or more times a day”.  
-
+Please indicate (with a cross or tick) how often do you consume the following fermented products present in the table, on a scale from "I do not recognize the product" to "I consume it 2 or more times a day".
 :::
 
 # Attitudes
-
-
 
 ## Row
 
@@ -374,30 +380,33 @@ Please indicate (with a cross or tick) how often do you consume the following fe
 #| title: Willingness to Try
 wtt_plot
 ```
+
 ```{r}
 #| title: By Diet
 wtt_diet_plot
 ```
+
 ```{r}
 #| title: By Country
 wtt_countries_plot
 ```
+
 ```{r}
 #| title: By Age
 wtt_age_plot
 ```
+
 ```{r}
 #| title: By Education Level
 wtt_edu_plot
 ```
+
 ```{r}
 #| title: By Socioeconomics Status
 wtt_ses_plot
 ```
 
-
 ::: {.card title="Prompt"}
-
 Please evaluate the following statements about your attitudes towards Plant-Based Fermented Foods on a scale from "Strongly disagree" to "Strongly agree". Prior to evaluation, please read through the following definitions.
 
 I would be willing to try a product that is prepared through:
@@ -406,8 +415,7 @@ I would be willing to try a product that is prepared through:
 
 **Biomass Fermentation** is utilized within food industry to grow **protein-rich microorganisms**. These microorganisms are used as ingredients for plant-based alternative proteins. Alternative proteins are aimed to replace milk, meat, or fish as protein source. For example, filamentous fungi grown via fermentation can be used as the primary ingredient of alternative protein.
 
-**Precision Fermentation** uses microorganisms to produce specific functional ingredients. The microorganisms are programmed to be little production factories. This is how insulin for diabetic patients is produced, as well as rennet for cheese production. Precision fermentation enables alternative protein producers to efficiently make specific proteins, enzymes, flavor molecules, vitamins, pigments, and fats. 
-
+**Precision Fermentation** uses microorganisms to produce specific functional ingredients. The microorganisms are programmed to be little production factories. This is how insulin for diabetic patients is produced, as well as rennet for cheese production. Precision fermentation enables alternative protein producers to efficiently make specific proteins, enzymes, flavor molecules, vitamins, pigments, and fats.
 :::
 
 ## Row
@@ -420,9 +428,7 @@ att1_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Please evaluate how familiar you are with the following raw materials:
-
 :::
 
 ## Row
@@ -435,9 +441,7 @@ att2_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
-Please evaluate the following statements on a scale from "Strongly disagree" to "Strongly agree". During the evaluation, please take into account that food culture represents habits, rituals, values, lifestyle and traditions focused in food. Family history, heritage, ethnicities, geographical, climate, social and political contexts greatly influence the person’s food culture.
-
+Please evaluate the following statements on a scale from "Strongly disagree" to "Strongly agree". During the evaluation, please take into account that food culture represents habits, rituals, values, lifestyle and traditions focused in food. Family history, heritage, ethnicities, geographical, climate, social and political contexts greatly influence the person's food culture.
 :::
 
 ## Row
@@ -448,26 +452,25 @@ Please evaluate the following statements on a scale from "Strongly disagree" to 
 #| title: Drink
 att4_plot_dd
 ```
+
 ```{r}
 #| title: Yogurt Alternative
 att5_plot_dd
 ```
+
 ```{r}
 #| title: Meat Alternative
 att6_plot_dd
 ```
+
 ```{r}
 #| title: Protein-Enriched Bread
 att7_plot_dd
 ```
 
 ::: {.card title="Willingness to try"}
-
-I would be willing to try a Plant-Based Fermented ______ made from
-
+I would be willing to try a Plant-Based Fermented \_\_\_\_\_\_ made from
 :::
-
-
 
 ## Row
 
@@ -479,9 +482,7 @@ price_cond_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
-In which price condition (comparing to animal-sourced foods) would you buy the following fermented plant-based alternatives, that are optimized for taste, health and sustainability (multiple choice is allowed)? 
-
+In which price condition (comparing to animal-sourced foods) would you buy the following fermented plant-based alternatives, that are optimized for taste, health and sustainability (multiple choice is allowed)?
 :::
 
 ## Row
@@ -494,9 +495,7 @@ tru_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Please evaluate the following statements about your trust towards Plant-Based Fermented Foods on a scale from "Strongly disagree" to "Strongly agree
-
 :::
 
 ## Row
@@ -509,9 +508,7 @@ barriers_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Please evaluate the following statements about your barriers towards **Plant-Based Foods** consumption on a scale from "Strongly disagree" to "Strongly agree"
-
 :::
 
 ## Row
@@ -522,13 +519,13 @@ Please evaluate the following statements about your barriers towards **Plant-Bas
 #| title: Intentions
 q36_plot_dd
 ```
+
 ```{r}
 #| title: Likelihood to Try
 q38_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 **Intentions**
 
 Please evaluate the following statements about **Plant-Based Fermented Foods** on a scale from "Strongly disagree" to "Strongly agree"
@@ -536,7 +533,6 @@ Please evaluate the following statements about **Plant-Based Fermented Foods** o
 **Likeihood to try**
 
 Imagine the following products are available on the market. How likely are you to try them?
-
 :::
 
 ## Row
@@ -549,9 +545,7 @@ q41_plot_dd
 ```
 
 ::: {.card title="Prompt"}
-
 Please evaluate the following statements about the role that Plant-Based Fermented Foods may have on social, environmental and economic sustainability on a scale from "Strongly disagree" to "Strongly agree".
-
 :::
 
 ## Row
@@ -564,24 +558,20 @@ fcm_plot_dd
 ```
 
 ::: {.card title="Prompt"}
+It is important to me that the food I eat on a typical day is...
 
-It is important to me that the food I eat on a typical day is…
-
-* "healthy";
-* "is a way of monitoring my mood (e.g.. a good feeling or coping with stress’)";
-* "is convenient (in buying and preparing)";
-* "provides me with pleasurable sensations (e.g.. texture. appearance. smell and taste)";
-* "Is organic and natural";
-* "is affordable";
-* "helps me control my weight";
-* "is familiar";
-* "is environmentally friendly";
-* "is animal friendly";
-* "is fairly traded and locally produced". 
-
+-   "healthy";
+-   "is a way of monitoring my mood (e.g.. a good feeling or coping with stress')";
+-   "is convenient (in buying and preparing)";
+-   "provides me with pleasurable sensations (e.g.. texture. appearance. smell and taste)";
+-   "Is organic and natural";
+-   "is affordable";
+-   "helps me control my weight";
+-   "is familiar";
+-   "is environmentally friendly";
+-   "is animal friendly";
+-   "is fairly traded and locally produced".
 :::
-
-
 
 ## Row
 
@@ -596,10 +586,9 @@ att_pbf_plot_dd
 #| title: Plant-Based Fermented Foods
 att_pbff_plot_dd
 ```
+
 ::: {.card title="Attitudes and Familiarity"}
-
 Please evaluate the following statements about your attitudes towards **Plant-Based Foods** on a scale from "Strongly disagree" to "Strongly agree", taking into account the previously given definition.
-
 :::
 
 ## Row
@@ -611,23 +600,21 @@ Please evaluate the following statements about your attitudes towards **Plant-Ba
 values_plot_dd
 ```
 
-:::{.card title="Prompt"}
-
+::: {.card title="Prompt"}
 Please, rate the importance of the following values as a life-guiding principle for you.
 
 Use the 8-point scale in which 0 indicates that the value is opposed to your principles, 1 indicates that the values is not important for you, 4 indicates that the values is important, and 8 indicates that the value is of supreme importance for you.
 
-* POWER (social power, authority, wealth)
-* ACHIEVEMENT (success, capability, ambition, influence on people and events)
-* HEDONISM (gratification of desires, enjoyment in life, self-indulgence)
-* STIMULATION (daring, a varied and challenging life, an exciting life)
-* SELF-DIRECTION (creativity, freedom, curiosity, independence, choosing one's own goals)
-* UNIVERSALISM (broad-mindedness, beauty of nature and arts, social justice, a world at peace, equality, wisdom, unity with nature, environmental protection)
-* BENEVOLENCE (helpfulness, honesty, forgiveness, loyalty, responsibility)
-* TRADITION (respect for tradition, humbleness, accepting one's portion in life, devotion, modesty)
-* CONFORMITY (obedience, honoring parents and elders, self-discipline, politeness)
-* SECURITY (national security, family security, social order, cleanliness, reciprocation of favors)
-
+-   POWER (social power, authority, wealth)
+-   ACHIEVEMENT (success, capability, ambition, influence on people and events)
+-   HEDONISM (gratification of desires, enjoyment in life, self-indulgence)
+-   STIMULATION (daring, a varied and challenging life, an exciting life)
+-   SELF-DIRECTION (creativity, freedom, curiosity, independence, choosing one's own goals)
+-   UNIVERSALISM (broad-mindedness, beauty of nature and arts, social justice, a world at peace, equality, wisdom, unity with nature, environmental protection)
+-   BENEVOLENCE (helpfulness, honesty, forgiveness, loyalty, responsibility)
+-   TRADITION (respect for tradition, humbleness, accepting one's portion in life, devotion, modesty)
+-   CONFORMITY (obedience, honoring parents and elders, self-discipline, politeness)
+-   SECURITY (national security, family security, social order, cleanliness, reciprocation of favors)
 :::
 
 # Sensory
@@ -640,25 +627,26 @@ Use the 8-point scale in which 0 indicates that the value is opposed to your pri
 #| title: Appearance
 q33a_plot
 ```
+
 ```{r}
 #| title: Odour
 q33b_plot
 ```
+
 ```{r}
 #| title: Taste/Flavour
 q33c_plot
 ```
+
 ```{r}
 #| title: Texture/Mouthfeel
 q33d_plot
 ```
 
 ::: {.card title="Drinkable Yogurt"}
-
 Imagine a Plant-Based Fermented drinkable yogurt alternative with natural taste, not flavoured that is to your perfect liking.
 
 For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mouthfeel) please indicate (with a cross or tick) if the sensory attribute would be present in that product.
-
 :::
 
 ## Row
@@ -669,25 +657,26 @@ For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mou
 #| title: Appearance
 q34a_plot
 ```
+
 ```{r}
 #| title: Odour
 q34b_plot
 ```
+
 ```{r}
 #| title: Taste/Flavour
 q34c_plot
 ```
+
 ```{r}
 #| title: Texture/Mouthfeel
 q34d_plot
 ```
 
 ::: {.card title="Yogurt"}
-
 Imagine a Plant-Based Fermented yogurt alternative with natural taste, not flavoured that is to your perfect liking.
 
 For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mouthfeel) please indicate (with a cross or tick) if the sensory attribute in question would be present in that product.
-
 :::
 
 ## Row
@@ -698,25 +687,26 @@ For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mou
 #| title: Appearance
 q35a_plot
 ```
+
 ```{r}
 #| title: Odour
 q35b_plot
 ```
+
 ```{r}
 #| title: Taste/Flavour
 q35c_plot
 ```
+
 ```{r}
 #| title: Texture/Mouthfeel
 q35d_plot
 ```
 
 ::: {.card title="Chicken"}
-
 Imagine a Plant-Based Fermented chicken alternative that is to your perfect liking.
 
 For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mouthfeel) please indicate (with a cross or tick) if the sensory attribute would be present in that product.
-
 :::
 
 ## Row
@@ -727,35 +717,36 @@ For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mou
 #| title: Appearance
 q36a_plot
 ```
+
 ```{r}
 #| title: Odour
 q36b_plot
 ```
+
 ```{r}
 #| title: Taste/Flavour
 q36c_plot
 ```
+
 ```{r}
 #| title: Texture/Mouthfeel
 q36d_plot
 ```
 
 ::: {.card title="Protein-Enriched Bread"}
-
 Imagine a Plant-Based protein enriched bread that is to your perfect liking.
 
 For each of the sensory modalities (Appearance, Odour, Taste/Favour, Texture/Mouthfeel) please indicate (with a cross or tick) if the sensory attribute would be present in that product.
-
 :::
 
 # About
 
 ## Row
 
-[HealthFerm](https://www.healthferm.eu/) is the EU-funded research project investigating innovative pulse and cereal-based food fermentations together with the health effects and consumer perception of novel fermented foods. Work Package 4 “Consumer Studies” has the following objectives:
+[HealthFerm](https://www.healthferm.eu/) is the EU-funded research project investigating innovative pulse and cereal-based food fermentations together with the health effects and consumer perception of novel fermented foods. Work Package 4 "Consumer Studies" has the following objectives:
 
-*	To identify levers to promote the consumption of foods & meals based on plant-based fermentations.
-*	To assess and monitor the changes in consumer perceptions towards plant-based fermented foods in 9 EU countries.
+-   To identify levers to promote the consumption of foods & meals based on plant-based fermentations.
+-   To assess and monitor the changes in consumer perceptions towards plant-based fermented foods in 9 EU countries.
 
 To achieve these objectives, two cross-sectional surveys are planned, aiming to explore consumer perceptions of plant-based fermented foods (PBFF). For this purpose, HealthFerm set up a questionnaire that addressed attitudes, trust, behaviour, and market opportunities for fermented plant-based foods. The questionnaire included socio-demographic information that will allow for segmenting and statistical modelling.
 
@@ -764,4 +755,3 @@ This report is based on the first wave that took place between December 2023 and
 The survey was completed by respondents who were recruited by Enkettfabriken, with a total of 7,812 participants over the age of 18 and at least 750 respondents per country, equally divided amongst females/males (50% each), and within five age groups: 18-30, 30-40, 40-50, 50-60 and 60+ (approx. 20% in each).
 
 Participants provided information about their eating habits, although only self-identified flexitarians and omnivores were asked about their consumption of meat, and their intentions towards reducing or increasing their currents consumption levels.
-

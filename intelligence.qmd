@@ -1,0 +1,29 @@
+---
+title: Industry Intelligence
+format: 
+  html:
+    page-layout: article
+title-block-banner: true
+---
+
+::: fs-1
+Benchmark data and sector analysis
+:::
+
+::: fs-4
+We provide open-access data and reporting products to help align policies and strategies with the outcomes they intend.
+:::
+
+# Industry Surveys
+
+Bridge2Food's Industry Surveys, co-funded by the European Union, provide benchmark data for the sustainable food and protein sectors. Each quarter, we publish a series of key indicators, offering policymakers, investors, and other stakeholders valuable insight into the industry's status and outlook.
+
+
+Learn more about our [Industry Surveys](surveys.qmd). 
+
+# Reporting Products
+
+We produce open-access, exclusive, and bespoke reports leveraging our Industry Survey data and other Bridge2Food network resources. 
+
+To learn more about our reporting products, send an email to communication@bridge2food.com.
+

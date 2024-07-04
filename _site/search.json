@@ -1,37 +1,121 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Research Projects",
     "section": "",
-    "text": "This is some test content"
+    "text": "Translating research into reality"
+  },
+  {
+    "objectID": "projects.html#giant-leaps",
+    "href": "projects.html#giant-leaps",
+    "title": "Research Projects",
+    "section": "Giant Leaps",
+    "text": "Giant Leaps\nGIANT LEAPS is the Horizon Europe-funded research project delivering strategic innovations, methodologies, and open-access datasets to accelerate the shift toward more sustainable and healthy food systems.\n\n\n\nBringing together 35 partners from 13 EU member states and 4 associated and affiliated countries (Canada, Serbia, Switzerland, United Kingdom), the GIANT LEAPS consortium works in line with the Farm to Fork Strategy and European Green Deal target of reaching climate neutrality by 2050.\nLearn more on the Giant Leaps website."
+  },
+  {
+    "objectID": "projects.html#healthferm",
+    "href": "projects.html#healthferm",
+    "title": "Research Projects",
+    "section": "HealthFerm",
+    "text": "HealthFerm\nHealthFerm is the EU-funded research project investigating innovative pulse and cereal-based food fermentations together with the health effects and consumer perception of novel fermented foods.\n\n\n\nWith 23 partners from across Europe, HealthFerm is committed to transitioning towards a more sustainable global food system by setting new standards for individual, societal, and planetary health through increased and more resource-efficient use of plant-based raw materials in foods.\nLearn more on the HealthFerm website."
+  },
+  {
+    "objectID": "projects.html#plenitude",
+    "href": "projects.html#plenitude",
+    "title": "Research Projects",
+    "section": "Plenitude",
+    "text": "Plenitude\nPLENITUDE is the EU-funded flagship project pioneering the mycoprotein value chain of the future.\n\n\n\nBy bringing together 10 partners from across Europe, PLENITUDE leverages an innovative, circular bioprocess integrating the production of bio ethanol and mycoprotein to build new value chains for bio-based products that can provide a range of environmental, economic, and public health benefits.\nLearn more on the PLENITUDE website."
+  },
+  {
+    "objectID": "projects.html#profuture",
+    "href": "projects.html#profuture",
+    "title": "Research Projects",
+    "section": "ProFuture",
+    "text": "ProFuture\nProFuture was a four-year research project funded under the European Union’s Horizon 2020 program, spanning from 2019 to 2023.\n\n\n\nThe project’s aim was to scale microalgae production and prepare the market for uptake of microalgae proteins as ingredients for innovative and sustainable food and feed products. Bringing together 31 partners across academia and industry, ProFuture was coordinated by the Institute of Agrifood Research and Technology (IRTA) in Spain. The final conference of ProFuture took place on 13th and 14th of September 2023 in Brussels.\nLearn more on the ProFuture website."
+  },
+  {
+    "objectID": "intelligence.html",
+    "href": "intelligence.html",
+    "title": "Industry Intelligence",
+    "section": "",
+    "text": "Benchmark data and sector analysis\n\n\nWe provide open-access data and reporting products to help align policies and strategies with the outcomes they intend.\n\n\nIndustry Surveys\nBridge2Food’s Industry Surveys, co-funded by the European Union, provide benchmark data for the sustainable food and protein sectors. Each quarter, we publish a series of key indicators, offering policymakers, investors, and other stakeholders valuable insight into the industry’s status and outlook.\nLearn more about our Industry Surveys.\n\n\nReporting Products\nWe produce open-access, exclusive, and bespoke reports leveraging our Industry Survey data and other Bridge2Food network resources.\nTo learn more about our reporting products, send an email to communication@bridge2food.com."
+  },
+  {
+    "objectID": "surveys.html",
+    "href": "surveys.html",
+    "title": "Industry Surveys",
+    "section": "",
+    "text": "Bridge2Food’s Industry Surveys have received funding from the European Union’s HORIZON EUROPE research and innovation programme under grant agreement No 101059632.\nSurvey questions and methodology are closely aligned with those of the Business and Consumer Surveys conducted by the European Commission’s Directorate General for Economic and Financial Affairs.\nBridge2Food’s Industry Intelligence Surveys provide a framework for making unbiased, evidence-based decisions in the sustainable food and protein sectors, helping ensure they are optimized for the impact they intend."
+  },
+  {
+    "objectID": "surveys.html#the-data-problem",
+    "href": "surveys.html#the-data-problem",
+    "title": "Industry Surveys",
+    "section": "The data problem",
+    "text": "The data problem\nFew data sources are available for accurately quantifying and tracking developments in the sustainable food and protein industries:\n\nGovernment data collection schemes and reporting platforms are geographically limited, and have yet to include key products, such as plant-based milks, despite their ubiquity in retail and foodservice\nFigures provided by advocacy groups or private companies may lack neutrality, technical rigor, or carry perceived bias, limiting their utility in contexts that demand inclusiveness or objectivity\n\nDue to these constraints, policymakers and business leaders are often forced to make strategic decisions based solely upon anecdotal or potentially biased information sources."
+  },
+  {
+    "objectID": "surveys.html#an-evidence-based-decision-framework",
+    "href": "surveys.html#an-evidence-based-decision-framework",
+    "title": "Industry Surveys",
+    "section": "An evidence-based decision framework",
+    "text": "An evidence-based decision framework\nBridge2Food’s Industry Intelligence Surveys provide a framework for making unbiased, evidence-based decisions in the sustainable food and protein sectors, helping ensure they are optimized for the impact they intend."
+  },
+  {
+    "objectID": "surveys.html#who-can-participate-in-the-surveys",
+    "href": "surveys.html#who-can-participate-in-the-surveys",
+    "title": "Industry Surveys",
+    "section": "Who can participate in the surveys",
+    "text": "Who can participate in the surveys\nParticipation in Bridge2Food’s industry intelligence surveys is by invitation only. We carefully vet data providers to ensure our aggregate indicators are accurate and representative of the sector. To express interest in participating, please contact vincent.brain@bridge2food.com."
+  },
+  {
+    "objectID": "surveys.html#benefits-for-data-providers",
+    "href": "surveys.html#benefits-for-data-providers",
+    "title": "Industry Surveys",
+    "section": "Benefits for data providers",
+    "text": "Benefits for data providers\nData providers demonstrate leadership and help advance their sectors by supporting evidence-based policies and strategic business decisions. Participating in Bridge2Food’s Industry Surveys also offers additional incentives:\n\nExclusive or early access to data releases and special reports\n\nFree or discounted attendance in Bridge2Food events\nOptional feature of company logo on data products\n\nTo express interest in participating as a data provider, please contact vincent.brain@bridge2food.com."
+  },
+  {
+    "objectID": "surveys.html#data-security-and-quality-control",
+    "href": "surveys.html#data-security-and-quality-control",
+    "title": "Industry Surveys",
+    "section": "Data security and quality control",
+    "text": "Data security and quality control\nRigorous data collection and handling protocols are the foundation of our data quality. To produce reliably accurate and representative indicators, we implement the following measures:\n\nAggregation: Collected data are used exclusively to produce aggregate industry figures from which individual respondent data cannot be identified or inferred\nSecurity: Survey responses are collected via secure survey tools that maintain encryption during submission and storage\nAnonymity and confidentiality: Raw survey data are anonymized, kept strictly confidential, and may only be accessed and handled by authorized team members for the purposes of analysis and quality control.\n\nWe are committed to maintaining the highest standards of data integrity and confidentiality to protect our data providers and ensure the reliability of our industry insights."
+  },
+  {
+    "objectID": "surveys.html#production-orders",
+    "href": "surveys.html#production-orders",
+    "title": "Industry Surveys",
+    "section": "Production & Orders",
+    "text": "Production & Orders\nCore metrics that define the operational health of businesses, reflecting demand dynamics and production efficiency. By examining these figures in the aggregate, stakeholders gain insights into the sector’s capacity utilization, supply chain performance, and market trends and cycles."
+  },
+  {
+    "objectID": "surveys.html#inputs-prices",
+    "href": "surveys.html#inputs-prices",
+    "title": "Industry Surveys",
+    "section": "Inputs & Prices",
+    "text": "Inputs & Prices\nKey data on the sector’s profitability and competitive landscape, reflecting impacts of economic conditions, regulatory changes, and industry resilience. This provides stakeholders with insights into the industry’s overall financial performance, enabling informed business and policy decisions regarding regulatory issues, resource allocations, and investment strategies."
+  },
+  {
+    "objectID": "surveys.html#labour",
+    "href": "surveys.html#labour",
+    "title": "Industry Surveys",
+    "section": "Labour",
+    "text": "Labour\nWorkforce dynamics indicators reflecting changes in industry employment and the impacts of labor market conditions. For policymakers, this information is essential for crafting labour regulations and training programs that support growth, while investors also benefit from understanding labour trends, which directly influence operational efficiency and profitability."
+  },
+  {
+    "objectID": "surveys.html#investment-innovation",
+    "href": "surveys.html#investment-innovation",
+    "title": "Industry Surveys",
+    "section": "Investment & Innovation",
+    "text": "Investment & Innovation\nEssential figures gauging capital expenditures and investments, reflecting the industry’s confidence in future growth and innovation potential. By monitoring spending trends, stakeholders can assess the sector’s medium and long-term outlook, while policymakers can use this information to design incentive structures that support industry needs."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "",
+    "title": "About",
     "section": "",
-    "text": "Bridge2Food Research is the research arm of Bridge2Food.\nWe address global food and agriculture challenges by bridging knowledge gaps between industry, academia, and policy to:\n\nFacilitate evidence-based decisions and policy-making processes\nAccelerate the development and implementation of high-impact technologies\nRaise standards for how science is communicated and harnessed\n\nThrough the provision of information, data, and analysis, Bridge2Food Research helps establish rigorous baselines for understanding complex, multifaceted topics. By doing so, we foster public and private sector alignment with scientific knowledge, while bringing to light untapped opportunities for collaboration and solving problems at scale."
-  },
-  {
-    "objectID": "healthferm/index.html",
-    "href": "healthferm/index.html",
-    "title": "",
-    "section": "",
-    "text": "This is some test text"
-  },
-  {
-    "objectID": "index.html#eu-projects",
-    "href": "index.html#eu-projects",
-    "title": "",
-    "section": "",
-    "text": "This is some test content"
-  },
-  {
-    "objectID": "index.html#industry-research",
-    "href": "index.html#industry-research",
-    "title": "",
-    "section": "Industry Research",
-    "text": "Industry Research"
+    "text": "Bridge2Food Research is the research and industry intelligence arm of Bridge2Food\n\n\nWe address global food and agriculture challenges by bridging knowledge gaps between industry, academia, and policy to:\n\nFacilitate evidence-based decisions and policy-making processes\nAccelerate the development and implementation of high-impact technologies\nRaise standards for how science is communicated and harnessed\n\nThrough the provision of information, data, and analysis, Bridge2Food Research helps establish rigorous baselines for understanding complex, multifaceted topics. By doing so, we foster public and private sector alignment with scientific knowledge, while bringing to light untapped opportunities for collaboration and problem solving at scale."
   }
 ]

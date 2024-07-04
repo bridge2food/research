@@ -1,0 +1,67 @@
+---
+title: Research Projects
+format: 
+  html:
+    page-layout: article
+title-block-banner: true
+---
+
+::: fs-1
+Translating research into reality
+:::
+
+::: fs-4
+We author comprehensive reports and produce insightful data visualisations. We manage media communications and organise meetings, workshops, and events leveraging the Bridge2Food network. Through strategic and targeted dissemination activities, we enable the uptake of sustainable food innovations by delivering knowledge where it has the greatest impact.
+:::
+
+# Current Projects
+
+## Giant Leaps
+
+GIANT LEAPS is the Horizon Europe-funded research project delivering strategic innovations, methodologies, and open-access datasets to accelerate the shift toward more sustainable and healthy food systems.
+
+::: column-margin
+![](/assets/images/logos/giantleaps.png)
+:::
+
+Bringing together 35 partners from 13 EU member states and 4 associated and affiliated countries (Canada, Serbia, Switzerland, United Kingdom), the GIANT LEAPS consortium works in line with the Farm to Fork Strategy and European Green Deal target of reaching climate neutrality by 2050.
+
+Learn more on the [Giant Leaps website](https://giant-leaps.eu/).
+
+## HealthFerm
+
+HealthFerm is the EU-funded research project investigating innovative pulse and cereal-based food fermentations together with the health effects and consumer perception of novel fermented foods.
+
+::: column-margin
+![](/assets/images/logos/healthferm.png)
+:::
+
+With 23 partners from across Europe, HealthFerm is committed to transitioning towards a more sustainable global food system by setting new standards for individual, societal, and planetary health through increased and more resource-efficient use of plant-based raw materials in foods.
+
+Learn more on the [HealthFerm website](https://www.healthferm.eu/).
+
+## Plenitude
+
+PLENITUDE is the EU-funded flagship project pioneering the mycoprotein value chain of the future.
+
+::: column-margin
+![](/assets/images/logos/plenitude.png)
+:::
+
+By bringing together 10 partners from across Europe, PLENITUDE leverages an innovative, circular bioprocess integrating the production of bio ethanol and mycoprotein to build new value chains for bio-based products that can provide a range of environmental, economic, and public health benefits.
+
+Learn more on the [PLENITUDE website](https://plenitude-eu.com/).
+
+# Completed Projects
+
+## ProFuture
+
+ProFuture was a four-year research project funded under the European Union's Horizon 2020 program, spanning from 2019 to 2023.
+
+::: column-margin
+![](/assets/images/logos/profuture.png)
+:::
+
+The project's aim was to scale microalgae production and prepare the market for uptake of microalgae proteins as ingredients for innovative and sustainable food and feed products. Bringing together 31 partners across academia and industry, ProFuture was coordinated by the Institute of Agrifood Research and Technology (IRTA) in Spain. The final conference of ProFuture took place on 13th and 14th of September 2023 in Brussels.
+
+Learn more on the [ProFuture website](https://pro-future.eu/).

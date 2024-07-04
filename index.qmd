@@ -1,6 +1,38 @@
 ---
 format: 
   html:
-    page-layout: full
+    page-layout: custom
+toc: false
 ---
 
+```{=html}
+<div class="bg-hero mb-5">
+  <div class="grid m-4 pt-0">
+    <div class="px-4 py-4 g-col-12 g-col-md-6">
+      <h1 class="fs-1"><span class="fw-normal">Bridge2Food</span> Research</h1>
+      <p class="fs-2">is the industry intelligence and science communication arm of Bridge2Food</p>
+    </div>
+  </div>
+  <div class="mx-5">
+    <div class="grid pt-0">
+      <div class="px-4 py-4 g-col-12 g-col-md-6 bg-light card-shadow" style="--bs-bg-opacity: .98;">
+        <h2 class="fs-3 mt-1">Research Projects</h2>
+        <p class="fs-5">We are the communication partner for EU-funded projects leading innovation in food technology research and development. <a href="projects.qmd">Learn more</a></p>
+        <div class="text-center grid project-logos">
+          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/giantleaps.png" class="img-fluid"></a>
+          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/healthferm.png" class="img-fluid"></a>
+          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/plenitude.png" class="img-fluid"></a>
+          <a href="#" class="g-col-6 d-flex justify-content-center align-items-center p-2 position-relative">
+            <img src="/assets/images/logos/profuture.png" class="img-fluid">
+            <span class="text-overlay">Completed</span>
+          </a>
+        </div>
+      </div>
+      <div class="px-4 py-4 g-col-12 g-col-md-6 bg-light card-shadow" style="--bs-bg-opacity: .98;">
+        <h2 class="fs-3 mt-1">Industry Intelligence</h2>
+        <p class="fs-5">Our industry surveys and quarterly reports provide benchmark data for the sustainable food and protein sectors. <a href="intelligence.qmd">Learn more</a></p>
+      </div>
+    </div>
+  </div>
+
+```
