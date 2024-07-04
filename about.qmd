@@ -1,26 +1,16 @@
 ---
-title: About
+title: About Bridge2Food Research
 format: 
   html:
     page-layout: article
 title-block-banner: true
 ---
 
-::: {.column-margin}
-
-```{r}
-#| echo: false
-#| warning: false
-source("art.R")
-home_art
-```
+::: {.display-1 .fs-1 .fw-normal}
+The industry intelligence and science communication arm of Bridge2Food
 :::
 
-::: {.display-1 .fs-2 .fw-normal}
-Bridge2Food Research is the research and industry intelligence arm of Bridge2Food
-:::
-
-::: {.display-2 .fs-4 .fw-light}
+::: {.fs-4 .fw-light}
 We address global food and agriculture challenges by bridging knowledge gaps between industry, academia, and policy to:
 
 -   Facilitate evidence-based decisions and policy-making processes
@@ -29,3 +19,5 @@ We address global food and agriculture challenges by bridging knowledge gaps bet
 
 Through the provision of information, data, and analysis, Bridge2Food Research helps establish rigorous baselines for understanding complex, multifaceted topics. By doing so, we foster public and private sector alignment with scientific knowledge, while bringing to light untapped opportunities for collaboration and problem solving at scale.
 :::
+
+
