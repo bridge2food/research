@@ -22,6 +22,8 @@ website:
   bread-crumbs: true
   search: false
   favicon: /assets/images/logos/favicon.ico
+  twitter-card: true
+  open-graph: true
 
 
 format:

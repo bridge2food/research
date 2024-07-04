@@ -30,28 +30,3 @@ home_art <- art_data_wide %>%
 
 ggsave("home_art.svg", plot = home_art, device = "svg", bg = "transparent")
 
-art_data2 < art_data %>%
-  filter
-
-home_art2 <- art_data_wide %>%
-  ggplot(
-    aes(`Vegetal Products`)
-  ) +
-  geom_freqpoly(show.legend = F, alpha = 0.5) +
-  #scale_x_reverse() +
-  #scale_y_reverse() +
-  theme_minimal() +
-  theme(
-    axis.title.x = element_blank(),
-    axis.title.y = element_blank(),
-    panel.border = element_blank(),
-    #panel.grid = element_blank(),
-    axis.ticks = element_blank(),
-    axis.ticks.length = unit(0, "cm"),
-    axis.text.x = element_blank(),
-    axis.text.y = element_blank()
-  )
-
-home_art2
-
-  
