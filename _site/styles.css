@@ -63,3 +63,12 @@
     .card-shadow:hover {
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
+
+    .intelligence-img img {
+      opacity: 0.5;
+      transition: transform 0.3s ease-in-out;
+    }
+    .intelligence-img img:hover {
+      transform: scale(1.01);
+      opacity: 0.6
+    }

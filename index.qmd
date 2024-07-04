@@ -19,10 +19,10 @@ toc: false
         <h2 class="fs-3 mt-1">Research Projects</h2>
         <p class="fs-5">We are the communication partner for EU-funded projects leading innovation in food technology research and development. <a href="projects.qmd">Learn more</a></p>
         <div class="text-center grid project-logos">
-          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/giantleaps.png" class="img-fluid"></a>
-          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/healthferm.png" class="img-fluid"></a>
-          <a href="#" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/plenitude.png" class="img-fluid"></a>
-          <a href="#" class="g-col-6 d-flex justify-content-center align-items-center p-2 position-relative">
+          <a href="projects.qmd#giant-leaps" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/giantleaps.png" class="img-fluid"></a>
+          <a href="projects.qmd#healthferm" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/healthferm.png" class="img-fluid"></a>
+          <a href="projects.qmd#plenitude" class="g-col-6 m-auto p-2"><img src="/assets/images/logos/plenitude.png" class="img-fluid"></a>
+          <a href="projects.qmd#profuture" class="g-col-6 d-flex justify-content-center align-items-center p-2 position-relative">
             <img src="/assets/images/logos/profuture.png" class="img-fluid">
             <span class="text-overlay">Completed</span>
           </a>
@@ -31,6 +31,9 @@ toc: false
       <div class="px-4 py-4 g-col-12 g-col-md-6 bg-light card-shadow" style="--bs-bg-opacity: .98;">
         <h2 class="fs-3 mt-1">Industry Intelligence</h2>
         <p class="fs-5">Our industry surveys and quarterly reports provide benchmark data for the sustainable food and protein sectors. <a href="intelligence.qmd">Learn more</a></p>
+        <a href="intelligence.qmd" class="intelligence-img">
+          <img src="/assets/images/production.jpg" class="img-fluid">
+        </a>
       </div>
     </div>
   </div>
