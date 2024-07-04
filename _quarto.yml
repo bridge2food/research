@@ -21,6 +21,7 @@ website:
       <br> Copyright 2024 [Bridge2Food](https://bridge2food.com/). All rights reserved. <br><br>
   bread-crumbs: true
   search: false
+  favicon: /assets/images/logos/favicon.ico
 
 
 format:
