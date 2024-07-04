@@ -18,7 +18,7 @@ website:
     background: "light"
     border: true
     center: |
-      <br> Copyright 2024 <a href="https://bridge2food.com/">Bridge2Food</a>. All rights reserved. <br><br>
+      <br> Copyright 2024 [Bridge2Food](https://bridge2food.com/). All rights reserved. <br><br>
   bread-crumbs: true
   search: false
 
