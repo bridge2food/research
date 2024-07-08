@@ -7,11 +7,13 @@ title-block-banner: true
 ---
 
 ::: fs-1
-Translating research into reality
+Translating research into reality 
 :::
 
 ::: fs-4
-We author comprehensive reports and produce insightful data visualisations. We manage media communications and organise meetings, workshops, and events leveraging the Bridge2Food network. Through strategic and targeted dissemination activities, we enable the uptake of sustainable food innovations by delivering knowledge where it has the greatest impact.
+We enable the uptake of sustainable food innovations by delivering knowledge where it has the greatest impact.
+
+We author comprehensive reports and produce insightful data visualisations. Leveraging the Bridge2Food network, we manage media communications and organise meetings, workshops, and events.
 :::
 
 # Current Projects
