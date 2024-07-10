@@ -13,18 +13,18 @@
   min-height: 500px;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  /*background-size: cover;*/
   background-size: 60% 90%;
   background-position: top right;
-  /*animation: grow 85s infinite alternate;*/
+  /*animation: grow 15s infinite alternate;*/
   margin-left: auto;
 }
 @keyframes grow {
   0% {
-    background-size: 0% 0%;
+    background-size: 60% 90%;
   }
   100% {
-    background-size: 200% 200%;
+    background-size: 65% 95%;
   }
 }
 

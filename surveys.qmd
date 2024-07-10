@@ -54,7 +54,7 @@ Data providers demonstrate leadership and help advance their sectors by supporti
 
 To express interest in participating as a data provider, please contact vincent.brain\@bridge2food.com.
 
-# Data security and quality control
+# Security and quality control
 
 Rigorous data collection and handling protocols are the foundation of data quality. To produce reliably accurate and representative indicators, the following measures are implemented:
 
