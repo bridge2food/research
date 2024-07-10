@@ -60,7 +60,7 @@ Rigorous data collection and handling protocols are the foundation of data quali
 
 -   **Aggregation**: Survey responses are used exclusively to produce aggregate industry figures from which individual respondent data cannot be identified or inferred
 -   **Security**: Survey responses are collected via secure survey tools that maintain encryption during submission and storage
--   **Anonymity and confidentiality**: Raw survey data are anonymized, kept strictly confidential, and may only be accessed and handled by authorized team members for the purposes of analysis and quality control.
+-   **Confidentiality**: Raw survey data are kept strictly confidential and only made accessible to authorized team members for the purposes of analysis and quality control.
 
 Bridge2Food's Industry Surveys are committed to maintaining the highest standards of data integrity and confidentiality to protect data providers and ensure the reliability of industry indicators.
 
