@@ -22,7 +22,7 @@ Bridge2Food's Industry Surveys have received funding from the European Union's [
 
 # Methodology
 
-Survey methodology aligns closely with the [Business and Consumer Surveys](https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys_en) conducted by the European Commission's Directorate General for Economic and Financial Affairs. While questionnaires are adapted for each technology and market segment, the macro-level focus areas remain comparable across surveys:
+Survey methodology follows that of the [Business and Consumer Surveys](https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys_en) conducted by the European Commission's Directorate General for Economic and Financial Affairs, allowing for sector-level breakdowns of official industry statistics. While questionnaires are adapted for each technology and market segment, the macro-level focus areas remain comparable across surveys:
 
 ## Production & Orders
 
