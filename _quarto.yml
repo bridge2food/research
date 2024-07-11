@@ -14,12 +14,20 @@ website:
         text: About
     logo: /assets/images/logos/b2flogo.png
     #logo-href: https://www.bridge2food.com
+  #sidebar: 
+  #  - contents:
+  #    - section: "Industry Intelligence"
+  #      contents:
+  #        - text: "Overview"
+  #          href: intelligence.qmd
+  #        - text: "Surveys"
+  #          href: surveys/index.qmd
+      
   page-footer: 
     background: "light"
     border: true
     center: |
       <br> Copyright 2024 [Bridge2Food](https://bridge2food.com/). All rights reserved. <br><br>
-  bread-crumbs: true
   search: false
   favicon: /assets/images/logos/favicon.ico
   twitter-card: true

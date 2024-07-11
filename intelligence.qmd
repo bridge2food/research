@@ -4,6 +4,7 @@ format:
   html:
     page-layout: article
 title-block-banner: true
+sidebar: false
 ---
 
 ::: fs-1
