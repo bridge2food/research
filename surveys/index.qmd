@@ -4,7 +4,6 @@ format:
   html:
     page-layout: article
 title-block-banner: true
-sidebar: false
 ---
 
 ```{=html}
