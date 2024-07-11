@@ -13,3 +13,12 @@ title-block-banner: true
 </div>
 ```
 <br>
+
+The Industry Analyst (IA) Survey harnesses the expertise of analysts from the nonprofit, academic, and public sectors. By querying professionals who possess deep understanding of market dynamics, technological change, and the intended and unintended impacts of policies, this survey provides insight into what is happening behind the trends observed in other industry surveys.
+
+View the questionnaire.
+
+# Survey Participants
+
+
+
