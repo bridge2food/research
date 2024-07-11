@@ -16,9 +16,15 @@ title-block-banner: true
 
 The Plant Protein Supplier (PPS) Survey captures benchmark data from the plant protein ingredient and equipment sectors. Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant protein sector, this survey is an indispensable tool offering empirical insights to guide strategic planning.
 
-View the questionnaire.
+# Questionnaire
 
-# Respondent Companies
+View an [example questionnaire](#).
+
+**Note**: This example is for general reference only. Questionnaires may vary from this example, as well as from quarter to quarter.
+
+Read more about [survey methodology](/surveys#methodology) and [security and quality control](/surveys#security-and-quality-control).
+
+# Supporting Companies
 
 
 
