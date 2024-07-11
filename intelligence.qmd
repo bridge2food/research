@@ -19,7 +19,7 @@ We provide open-access data and reporting products to help align policies and st
 Bridge2Food's Industry Surveys, co-funded by the European Union, provide benchmark data for the sustainable food and protein sectors. Each quarter, we publish a series of key indicators, offering policymakers, investors, and other stakeholders valuable insight into the industry's status and outlook.
 
 
-Learn more about our [Industry Surveys](surveys.qmd). 
+Learn more about our [Industry Surveys](surveys/index.qmd). 
 
 # Reporting Products
 
