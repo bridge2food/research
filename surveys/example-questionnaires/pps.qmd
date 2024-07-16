@@ -1,0 +1,84 @@
+---
+title: PPS Example Questionnaire
+format: 
+  html:
+    page-layout: article
+title-block-banner: true
+---
+
+The below examples are representative of the types of questions included in the [Plant Protein Suppler (PPS) Survey](/surveys/pps.qmd). This is not a complete list. Actual questions addressed to respondents may differ from the below examples as well as vary throughout the survey cycle.
+
+# Production & Orders
+
+**My company's production over the past quarter**:
+
+* Increased
+* Remained unchanged
+* Decreased
+
+**My company's current overall order books are**:
+
+* More than sufficient (above normal)
+* Sufficient (normal for the season)
+* Not sufficient (below normal)
+
+**I expect my company’s production over the current quarter to**:
+
+* Increase
+* Remain unchanged
+* Decrease
+
+**The future development of my company’s business is**:
+
+* Easy to predict
+* Moderately easy to predict
+* Moderately difficult to predict
+* Difficult to predict
+
+# Inputs & Prices
+
+**My company’s input costs (excluding labour) over the past quarter**:
+
+* Increased
+* Remained unchanged
+* Decreased
+
+**My company’s selling prices over the past quarter**:
+
+* Increased
+* Remained unchanged
+* Decreased
+
+# Labour
+
+**My company’s staff numbers over the past quarter**:
+
+* Increased
+* Remained unchanged
+* Decreased
+
+**Over the past quarter, labour costs in my company**:
+
+* Increased
+* Remained unchanged
+* Decreased
+
+# Investment & Innovation
+
+**My company’s total investments over the past quarter:**
+
+* Increased
+* Remained unchanged
+* Decreased
+
+**Describe your company's investments over the past quarter in each category**:
+
+(Increased - Remained unchanged - Decreased)
+
+* Machinery and equipment
+* Land, building, and infrastructure
+* Nonphysical capital (intellectual property, R&D, software, data, training, etc.)
+
+
+
+

@@ -1,0 +1,30 @@
+---
+title: Industry Data Portal
+format: 
+  html:
+    page-layout: article
+title-block-banner: true
+---
+
+# Coming soon...
+
+This page is under development. Please check back regularly for updates and refer to the calendar below for Industry Survey data releases.
+
+# Calendar
+
+Questionnaires are sent to respondents on the first working day of the survey quarter. Submissions are collected during the first calendar month of the survey quarter and public data releases are scheduled for the first working day of the next quarter.
+
+
+| Survey          | Frequency       | Next Release    |
+|--------         |--------         | --------        |
+| [PPS](/surveys/pps.qmd)  | Quarterly       | January 2, 2025 |
+| [PMP](pmp.qmd)  | Biannual        | January 2, 2025 |
+| [PDP](pdp.qmd)  | Annual          | January 2, 2025 |
+
+: {.striped .hover}
+
+<br>
+
+**Note**: Quarterly surveys include questions about the previous quarter as well as expectations for the current and future quarters. This means that releases of indicators of industry experience are lagged by two quarters, while indicators of industry expectations are lagged by one quarter.
+
+  
