@@ -77,14 +77,15 @@ Due to these constraints, policymakers and other stakeholders are often forced t
 
 # Surveys
 
-Data releases can be found on the [Industry Survey Data Portal](/data).
-
-Details about each survey can be found at the below links:
-
-| Survey                                          |
-|--------                                         |
-| [Plant Protein Supplier (PPS) Survey](pps.qmd)  |
-| [Plant Meat Producer (PMP) Survey](pmp.qmd)     |
-| [Plant Dairy Producer (PDP) Survey](pdp.qmd)    |
+|                                                 |
+|--------                                                         |
+| [Plant Protein Supplier (PPS) Survey](pps.qmd)                  |
+| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     |
+| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    |
+| [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    |
+| [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           |
+| [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) |
+| [Protein Technology Investor (PTI) Survey](pti.qmd)                   |
+| [Industry Analyst (IA) Survey](ia.qmd)                          |
 
 : {.hover}

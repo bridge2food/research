@@ -18,31 +18,15 @@ title-block-banner: true
 # Overview 
 :::
 
-The Plant Protein Supplier (PPS) Survey captures benchmark data from the plant protein ingredient and equipment sectors. Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant protein sector, this survey is an indispensable tool offering empirical guidance on strategic business planning.
+The Plant Protein Supplier (PPS) Survey captures benchmark data from the plant protein ingredient and equipment sectors.
 
-The PPS Survey is made possible through funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
+Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant protein sector, this survey is an indispensable tool offering empirical guidance for strategic business planning.
 
-# Data
-
-Aggregate data from the PPS Survey are published on the [Industry Data Portal](/data/index.qmd).
+This survey is made possible through funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
 
 # Participating Companies
 
-Coming soon...
-
-This survey is conducted by invitation only. To express interest in becoming a PPS survey respondent, please send an email to vincent.brain@bridge2food.com.
+This survey is conducted by invitation only. To express interest in participating, send an email to vincent.brain@bridge2food.com.
 
 Learn about [exclusive benefits](/surveys/#data-providers) for survey respondents.
-
-# Questionnaire
-
-View an [example questionnaire](example-questionnaires/pps.qmd).
-
-**Note**: This example is for general reference only. Questionnaires may vary from this example, as well as over the survey cycle.
-
-Read more about [survey methodology](/surveys#methodology) and [security and quality control](/surveys#security-and-quality-control).
-
-
-
-
 

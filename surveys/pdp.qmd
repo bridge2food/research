@@ -1,0 +1,32 @@
+---
+title: Plant Dairy Producer (PDP) Survey
+format: 
+  html:
+    page-layout: article
+title-block-banner: true
+---
+
+```{=html}
+<div class="grid project-logos">
+  <span class="g-col-6 my-auto"><img src="/assets/images/logos/EN_Co-fundedbytheEU_RGB_POS.png" class="img-fluid"></span>
+  <span class="g-col-6 my-auto px-5"><img src="/assets/images/logos/giantleaps.png" class="img-fluid"></span>
+</div>
+```
+<br>
+
+::: {.hidden}
+# Overview 
+:::
+
+The Plant Dairy Producer (PDP) Survey captures benchmark data from the plant-based dairy sector. It includes both B2C and B2B producers with distribution in supermarkets and foodservice.
+
+Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant-based dairy sector, this survey is an indispensable tool offering empirical guidance for strategic business planning.
+
+This survey is made possible through funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
+
+# Participating Companies
+
+This survey is conducted by invitation only. To express interest in participating, send an email to vincent.brain@bridge2food.com.
+
+Learn about [exclusive benefits](/surveys/#data-providers) for survey respondents.
+

@@ -14,11 +14,18 @@ title-block-banner: true
 ```
 <br>
 
-The Industry Analyst (IA) Survey harnesses the expertise of analysts from the nonprofit, academic, and public sectors. By querying professionals who possess deep understanding of market dynamics, technological change, and the intended and unintended impacts of policies, this survey provides insight into what is happening behind the trends observed in other industry surveys.
+::: {.hidden}
+# Overview 
+:::
 
-View the questionnaire.
+The Industry Analyst (IA) Survey harnesses the expertise of representatives from the academic, public, and nonprofit sectors. It includes professionals with deep understanding of market dynamics, technological potential and constraints, and the nuances of policy and regulatory issues.
 
-# Survey Participants
+Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders.
 
+This survey is made possible through funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
 
+# Participating Analysts
 
+This survey is conducted by invitation only. To express interest in participating, send an email to vincent.brain@bridge2food.com.
+
+Learn about [exclusive benefits](/surveys/#data-providers) for survey respondents.
