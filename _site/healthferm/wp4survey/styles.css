@@ -1,0 +1,13 @@
+/* css styles */
+
+.quarto-dashboard .card-header {
+  background: #f7f7f7 !important;
+}
+
+.quarto-dashboard #quarto-content.quarto-dashboard-content {
+  padding: 0 !important;
+}
+
+#quarto-dashboard-header .nav-link-text {
+  font-size: 1rem !important;
+}
