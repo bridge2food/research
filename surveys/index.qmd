@@ -77,15 +77,15 @@ Due to these constraints, policymakers and other stakeholders are often forced t
 
 # Surveys
 
-|                                                 |
-|--------                                                         |
-| [Plant Protein Supplier (PPS) Survey](pps.qmd)                  |
-| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     |
-| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    |
-| [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    |
-| [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           |
-| [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) |
-| [Protein Technology Investor (PTI) Survey](pti.qmd)                   |
-| [Industry Analyst (IA) Survey](ia.qmd)                          |
+| Industry Segment                                                | Frequency | Next Release    |
+|--------                                                         | ------- | ------ |
+| [Plant Protein Supplier (PPS) Survey](pps.qmd)                  | Quarterly | January 2, 2025 |
+| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly | January 2, 2025 |
+| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly | January 2, 2025 |
+| [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    | Quarterly | January 2, 2025 |
+| [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           | Quarterly | January 2, 2025 |
+| [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) | Quarterly | January 2, 2025 |
+| [Protein Technology Investor (PTI) Survey](pti.qmd)             | Quarterly | January 2, 2025 |
+| [Industry Analyst (IA) Survey](ia.qmd)                          | Quarterly | January 2, 2025 |
 
 : {.hover}
