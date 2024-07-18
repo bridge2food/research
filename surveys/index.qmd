@@ -40,6 +40,8 @@ Workforce dynamics indicators reflecting changes in industry employment and the 
 
 Essential figures gauging capital expenditures and investments, reflecting the industry's confidence in future growth and innovation potential. By monitoring spending trends, stakeholders can assess the sector's medium and long-term outlook, while policymakers can use this information to design incentive structures that support industry needs.
 
+::: {.column-screen .bg-light .pb-4 .mt-4}
+::: {.column-body}
 # Data providers
 
 Participation in Bridge2Food's Industry Surveys is by invitation only. Respondents are carefully selected and vetted to ensure aggregate indicators are accurate and representative of the sector.
@@ -55,6 +57,9 @@ Participating in Bridge2Food's Industry Surveys offers exclusive benefits:
 In addition to these advantages, respondent companies demonstrate leadership by supporting an evidence-based policy framework for their sector. 
 
 To express interest in participating in an Industry Survey, please contact vincent.brain\@bridge2food.com.
+:::
+:::
+
 
 # Security and quality control
 
@@ -66,14 +71,19 @@ Rigorous data collection and handling protocols are the foundation of data quali
 
 We are committed to maintaining the highest standards of data integrity and confidentiality to protect data providers and ensure the reliability of our industry indicators.
 
+::: {.column-screen .bg-light .pb-4 .mt-4}
 # The data problem
 
+::: {.column-body}
 Few data sources are available for accurately quantifying and tracking developments in the sustainable food and protein industries:
 
 - Government data collection schemes and reporting platforms are often geographically limited, and have yet to include figures for important product categories, such as plant-based milks, despite their ubiquity in retail and foodservice in many countries
 - Figures and analyses provided by advocacy groups or private sector research may lack neutrality, technical rigor, or carry perceived bias, limiting their utility in contexts that demand broad inclusiveness and objectivity
 
 Due to these constraints, policymakers and other stakeholders are often forced to make decisions based upon anecdotal or potentially biased information sources. Bridge2Food's Industry Surveys provide a framework for evidence-based policy and strategic decisions in the sustainable food and protein sectors.
+:::
+
+:::
 
 # Surveys
 
