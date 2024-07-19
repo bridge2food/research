@@ -42,11 +42,11 @@ Essential figures gauging capital expenditures and investments, reflecting the i
 
 ::: {.column-screen .bg-light .pb-4 .mt-4}
 ::: {.column-body}
-# Participating companies
+# Participating Companies
 
 Participation in Bridge2Food's Industry Surveys is by invitation only. Respondents are carefully selected and vetted to ensure aggregate indicators are accurate and representative of the sector.
 
-## Benefits for respondents
+## Benefits for Respondents
 
 Participating in Bridge2Food's Industry Surveys offers exclusive benefits:
 
@@ -59,7 +59,7 @@ To express interest in participating in an Industry Survey, contact vincent.brai
 :::
 
 
-# Security and quality control
+# Security and Quality Control
 
 Rigorous data collection and handling protocols are the foundation of data quality. To produce reliably accurate and representative indicators, the following measures are implemented:
 
@@ -70,7 +70,7 @@ Rigorous data collection and handling protocols are the foundation of data quali
 We are committed to maintaining the highest standards of data integrity and confidentiality to protect data providers and ensure the reliability of our industry indicators.
 
 ::: {.column-screen .bg-light .pb-4 .mt-4}
-# The data problem
+# The Data Problem
 
 ::: {.column-body}
 Few data sources are available for accurately quantifying and tracking developments in the sustainable food and protein industries:
