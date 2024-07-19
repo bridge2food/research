@@ -42,7 +42,7 @@ Essential figures gauging capital expenditures and investments, reflecting the i
 
 ::: {.column-screen .bg-light .pb-4 .mt-4}
 ::: {.column-body}
-# Data providers
+# Participating companies
 
 Participation in Bridge2Food's Industry Surveys is by invitation only. Respondents are carefully selected and vetted to ensure aggregate indicators are accurate and representative of the sector.
 
@@ -54,9 +54,7 @@ Participating in Bridge2Food's Industry Surveys offers exclusive benefits:
 - Optional feature of company logo on data products
 - Opportunity to provide feedback that can help guide future surveys and influence sector-wide policies
 
-In addition to these advantages, respondent companies demonstrate leadership by supporting an evidence-based policy framework for their sector. 
-
-To express interest in participating in an Industry Survey, please contact vincent.brain\@bridge2food.com.
+To express interest in participating in an Industry Survey, contact vincent.brain\@bridge2food.com.
 :::
 :::
 
