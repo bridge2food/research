@@ -1,5 +1,5 @@
 ---
-title: Plant Protein Supplier (PPS) Survey
+title: Plant Protein Upstream Supplier (PPS) Survey
 format: 
   html:
     page-layout: article
@@ -18,7 +18,7 @@ title-block-banner: true
 # Overview 
 :::
 
-The Plant Protein Supplier (PPS) Survey captures benchmark data from the plant protein ingredient and equipment sectors. It includes upstream suppliers targeting producers of plant-based meat, dairy, and egg products.
+The Plant Protein Upstream Supplier (PPUS) Survey captures benchmark data from the plant protein ingredient and equipment sectors. It includes upstream suppliers targeting producers of plant-based meat, dairy, and egg products.
 
 Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant protein sector, this survey is an indispensable tool offering empirical guidance for strategic business planning.
 

@@ -87,7 +87,7 @@ Due to these constraints, policymakers and other stakeholders are often forced t
 
 | Industry Segment                                                | Frequency | Next Release    |
 |--------                                                         | -------   | ------          |
-| [Plant Protein Supplier (PPS) Survey](pps.qmd)                  | Quarterly | January 2, 2025 |
+| [Plant Protein Upstream Supplier (PPUS) Survey](ppus.qmd)                  | Quarterly | January 2, 2025 |
 | [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly | January 2, 2025 |
 | [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly | January 2, 2025 |
 | [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    | Quarterly | March 3, 2025   |
