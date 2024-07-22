@@ -58,7 +58,6 @@ To express interest in participating in an Industry Survey, contact vincent.brai
 :::
 :::
 
-
 # Security and Quality Control
 
 Rigorous data collection and handling protocols are the foundation of data quality. To produce reliably accurate and representative indicators, the following measures are implemented:
@@ -87,9 +86,9 @@ Due to these constraints, policymakers and other stakeholders are often forced t
 
 | Industry Segment                                                | Frequency | Next Release    |
 |--------                                                         | -------   | ------          |
-| [Plant Protein Upstream Supplier (PPUS) Survey](ppus.qmd)                  | Quarterly | January 2, 2025 |
-| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly | January 2, 2025 |
-| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly | January 2, 2025 |
+| [Plant Protein Upstream Supplier (PPUS) Survey](ppus.qmd)       | Quarterly | January 20, 2025 |
+| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly | January 20, 2025 |
+| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly | January 20, 2025 |
 | [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    | Quarterly | March 3, 2025   |
 | [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           | Quarterly | March 3, 2025   |
 | [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) | Quarterly | March 3, 2025   |
