@@ -18,7 +18,7 @@ title-block-banner: true
 # Overview 
 :::
 
-The Plant Meat Producer (PMP) Survey captures benchmark data from the plant-based meat sector. It includes both B2C and B2B producers with distribution in supermarkets and foodservice.
+The Plant Meat Producer (PMP) Survey captures benchmark data from the plant-based meat sector. It includes both B2C and B2B producers with distribution in retail and foodservice.
 
 Each quarter, the survey delivers valuable insights into the industry’s status and outlook, providing essential information for policymakers, investors, and other stakeholders. For companies operating in the plant-based meat sector, this survey is an indispensable tool offering empirical guidance for strategic business planning.
 
