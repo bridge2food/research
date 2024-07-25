@@ -1,0 +1,47 @@
+---
+title: "Plant Protein Upstream Supplier Survey"
+format: dashboard
+scrolling: true
+---
+
+```{r}
+source("ppus.R")
+```
+
+# Overview
+
+## Row
+
+### Column
+```{r}
+#| content: valuebox
+#| title: "Production Index"
+
+list(
+  icon = "file-medical",
+  color = "primary",
+  value = q2.2_sai
+)
+```
+
+### Column
+
+This is some test content
+
+### Column
+
+This is some test content
+
+## Row
+
+### Column
+
+This is some test content
+
+### Column
+
+This is some test content
+
+# Sample
+
+
