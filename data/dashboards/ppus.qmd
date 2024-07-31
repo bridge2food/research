@@ -10,33 +10,52 @@ source("ppus.R")
 
 # Overview
 
-## Row
+## Row {height="220px"}
 
 ### Column
 ```{r}
 #| content: valuebox
-#| title: "Production Index"
+#| title: "Industry Confidence"
 
 list(
-  icon = "file-medical",
-  color = "primary",
-  value = q2.2_sai
+  icon = delta_prod_arrow,
+  color = delta_prod_color,
+  value = ic
 )
 ```
 
 ### Column
 
-This is some test content
+```{r}
+#| content: valuebox
+#| title: "Data Period"
+
+list(
+  icon = "clock",
+  color = "secondary",
+  value = latest_period
+)
+```
 
 ### Column
 
-This is some test content
+```{r}
+#| content: valuebox
+#| title: "Next Release"
+
+list(
+  icon = "calendar",
+  color = "info",
+  value = "January 20, 2025"
+)
+```
 
 ## Row
 
 ### Column
-
-This is some test content
+```{r}
+test_chart
+```
 
 ### Column
 
