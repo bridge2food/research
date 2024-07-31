@@ -197,6 +197,53 @@ get_data <- function(survey_name, directory, quarter, year) {
   return(data)
 }
 
+# Function to extract year and quarter from file name
+extract_time_info <- function(file_name) {
+  base_name <- tools::file_path_sans_ext(basename(file_name))
+  parts <- strsplit(base_name, "-")[[1]]
+  year <- parts[2]
+  quarter <- gsub("Q", "", parts[3])
+  period <- paste0(year, " Q", quarter)
+  list(year = year, quarter = quarter, period = period)
+}
+
+# Function to calculate aggregated data
+calculate_agg <- function(data, period) {
+  numeric_cols <- sapply(data, is.numeric)
+  data_numeric <- data[, numeric_cols]
+  means <- colMeans(data_numeric, na.rm = TRUE)
+  agg <- as.data.frame(t(means), stringsAsFactors = FALSE)
+  agg$Period <- period
+  agg <- agg[, c("Period", names(means))] # Ensure Period is the first column
+  return(agg)
+}
+
+# Function to calculate indicators
+calculate_indicators <- function(data, period) {
+  orders <- data$Q2.3
+  stocks <- data$Q2.4
+  prod_exp <- data$Q2.5
+  ic <- mean(orders, na.rm = TRUE) - mean(stocks, na.rm = TRUE) + mean(prod_exp, na.rm = TRUE)
+  
+  indicators <- data.frame(
+    Period = period,
+    ic = ic
+  )
+  return(indicators)
+}
+
+# Function to process a single file and return agg and indicators data
+process_file <- function(file) {
+  time_info <- extract_time_info(file)
+  data <- read_sav(file)
+  
+  agg <- calculate_agg(data, time_info$period)
+  indicators <- calculate_indicators(data, time_info$period)
+  
+  list(agg = agg, indicators = indicators)
+}
+
+
 # Function to create a bar chart of frequencies of values in a column
 v_bar_chart <- function(df, column_name, title) {
   # Check if the column exists in the dataframe

@@ -18,9 +18,9 @@ source("ppus.R")
 #| title: "Industry Confidence"
 
 list(
-  icon = delta_prod_arrow,
-  color = delta_prod_color,
-  value = ic
+  icon = "arrow-up",
+  color = "primary",
+  value = "test"
 )
 ```
 
@@ -33,7 +33,7 @@ list(
 list(
   icon = "clock",
   color = "secondary",
-  value = latest_period
+  value = "latest_period"
 )
 ```
 
@@ -54,7 +54,7 @@ list(
 
 ### Column
 ```{r}
-test_chart
+#test_chart
 ```
 
 ### Column

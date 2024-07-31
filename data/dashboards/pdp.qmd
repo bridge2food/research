@@ -14,7 +14,7 @@ source("ppus.R")
 
 ### Column
 ```{r}
-q2.2
+#q2.2
 ```
 
 ### Column
