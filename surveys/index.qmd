@@ -84,15 +84,15 @@ Due to these constraints, policymakers and other stakeholders are often forced t
 
 # Surveys
 
-| Industry Segment                                                | Frequency | Next Release    |
-|--------                                                         | -------   | ------          |
-| [Plant Protein Upstream Supplier (PPUS) Survey](ppus.qmd)       | Quarterly | January 20, 2025 |
-| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly | January 20, 2025 |
-| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly | January 20, 2025 |
-| [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    | Quarterly | March 3, 2025   |
-| [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           | Quarterly | March 3, 2025   |
-| [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) | Quarterly | March 3, 2025   |
-| [Protein Technology Investor (PTI) Survey](pti.qmd)             | Quarterly | March 3, 2025   |
-| [Industry Analyst (IA) Survey](ia.qmd)                          | Quarterly | March 3, 2025   |
+| Industry Segment                                                | Frequency |
+|--------                                                         | -------   |
+| [Plant Protein Upstream Supplier (PPUS) Survey](ppus.qmd)       | Quarterly |
+| [Plant Meat Producer (PMP) Survey](pmp.qmd)                     | Quarterly |
+| [Plant Dairy Producer (PDP) Survey](pdp.qmd)                    | Quarterly |
+| [Mycoprotein Producer (MPP) Survey](mpp.qmd)                    | Quarterly |
+| [Cell-Cultured Food Producer (CCFP) Survey](ccfp.qmd)           | Quarterly |
+| [Microbial & Recombinant Food Producer (MRFP) Survey](mrfp.qmd) | Quarterly |
+| [Protein Technology Investor (PTI) Survey](pti.qmd)             | Quarterly |
+| [Industry Analyst (IA) Survey](ia.qmd)                          | Quarterly |
 
 : {.hover}
