@@ -25,27 +25,55 @@ ppus_prev_q <- prev_q_data("PPUS", file_path)
 #ppus_prev_y <- prev_y_data("PPUS", file_path)
 #ppus_test <- get_data("PPUS", file_path, "Q3", 2024)
 
-# Filter for numeric columns
+# Filter for and aggregate numeric columns
 numeric_cols <- sapply(ppus_latest, is.numeric)
 ppus_numeric <- ppus_latest[, numeric_cols]
-# Aggregate all numeric columns
 means <- colMeans(ppus_numeric, na.rm = TRUE)
 agg <- as.data.frame(t(means), stringsAsFactors = FALSE)
 agg$Period <- paste0(latest_year, "-", latest_quarter)
 agg <- agg[, c("Period", names(means))] # Ensure Period is the first column
 
 # append agg data to time series file
-ppus_ts <- read_rds(paste0(file_path, "/ppus-ts.rds")) %>%
+if (file.exists(paste0(file_path, "/ppus-agg.rds"))) {
+  ppus_agg <- read_rds(paste0(file_path, "/ppus-agg.rds"))
+} else {
+  ppus_agg <- data.frame()
+}
+ppus_agg <- ppus_agg %>%
   bind_rows(agg) %>%
   distinct() %>%
   arrange(Period) %>%
-  write_rds(file=paste0(file_path, "/ppus-ts.rds"))
+  write_rds(file=paste0(file_path, "/ppus-agg.rds"))
+
+# Indicators
+
+# Industry confidence indicator
+orders <- ppus_latest$Q2.3
+stocks <- ppus_latest$Q2.4
+prod_exp <- ppus_latest$Q2.5
+
+ic <- mean(orders, na.rm = T) - mean(stocks, na.rm = T) + mean(prod_exp, na.rm = T)
+
+ppus_ind_latest <- data.frame(
+  Period = latest_period,
+  ic = ic
+)
+
+# append latest indicators to time series file
+if (file.exists(paste0(file_path, "/ppus-indicators.rds"))) {
+  ppus_indicators <- read_rds(paste0(file_path, "/ppus-indicators.rds"))
+} else {
+  ppus_indicators <- data.frame()
+}
+ppus_indicators <- ppus_indicators %>%
+  bind_rows(ppus_ind_latest) %>%
+  distinct() %>%
+  arrange(Period) %>%
+  write_rds(file=paste0(file_path, "/ppus-indicators.rds"))
 
 
-# Industry confidence
-ic <- mean(ppus_latest$Q2.3, na.rm = T) + mean(ppus_latest$Q2.4, na.rm = T) + mean(ppus_latest$Q2.5, na.rm = T)
-ic <- round(ic, 2)
-ic1 <- agg$Q2.3 + agg$Q2.4 + agg$Q2.5
+
+
 
 ## arrow direction and color for valuebox
 if (ic > 0) {
