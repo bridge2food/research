@@ -86,7 +86,7 @@ calculate_indicators <- function(data, period) {
   orders <- data$Q2.3
   stocks <- data$Q2.4
   prod_exp <- data$Q2.5
-  ic <- mean(orders, na.rm = TRUE) - mean(stocks, na.rm = TRUE) + mean(prod_exp, na.rm = TRUE)
+  ic <- (sum(orders, na.rm = TRUE) - sum(stocks, na.rm = TRUE) + sum(prod_exp, na.rm = TRUE))/3
   
   indicators <- data.frame(
     Period = period,
@@ -196,9 +196,9 @@ delta_indicators <- function(survey_name, dir_path) {
     indicators_df <- indicators_df %>%
       mutate(
         !!delta_q_col := .data[[col]] - lag(.data[[col]]),
-        !!percent_delta_q_col := (ifelse(!is.na(lag(.data[[col]])), ((.data[[col]] - lag(.data[[col]])) / lag(.data[[col]])) * 100, NA)),
+        !!percent_delta_q_col := (ifelse(!is.na(lag(.data[[col]])), ((.data[[col]] - lag(.data[[col]])) / abs(lag(.data[[col]]))) * 100, NA)),
         !!delta_y_col := .data[[col]] - lag(.data[[col]], n = 4),
-        !!percent_delta_y_col := (ifelse(!is.na(lag(.data[[col]], n = 4)), ((.data[[col]] - lag(.data[[col]], n = 4)) / lag(.data[[col]], n = 4)) * 100, NA))
+        !!percent_delta_y_col := (ifelse(!is.na(lag(.data[[col]], n = 4)), ((.data[[col]] - lag(.data[[col]], n = 4)) / abs(lag(.data[[col]], n = 4))) * 100, NA))
       )
   }
   

@@ -18,9 +18,9 @@ source("ppus.R")
 #| title: "Industry Confidence"
 
 list(
-  icon = "arrow-up",
-  color = "primary",
-  value = "test"
+  icon = "bar-chart-line",
+  color = curr_ic_color,
+  value = round(curr_ic, 2)
 )
 ```
 
@@ -28,12 +28,12 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Data Period"
+#| title: "Change"
 
 list(
-  icon = "clock",
-  color = "secondary",
-  value = "latest_period"
+  icon = curr_ic_dq_icon,
+  color = curr_ic_dq_color,
+  value = round(curr_ic_dq,2)
 )
 ```
 
@@ -41,12 +41,12 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Next Release"
+#| title: "Percent Change"
 
 list(
-  icon = "calendar",
-  color = "info",
-  value = "January 20, 2025"
+  icon = curr_ic_pdq_icon,
+  color = curr_ic_pdq_color,
+  value = paste(round(curr_ic_pdq,2), "%")
 )
 ```
 

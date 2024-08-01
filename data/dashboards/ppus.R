@@ -29,26 +29,39 @@ d_indicators <- delta_indicators(survey_name, dir_path)
 
 # get period info
 period <- latest_period(survey_name)
-prev_period <- previous_period(survey_name)
 curr_period <- paste0(period$year, "-", period$quarter)
 
-
-# load data
-latest <- latest_data(survey_name)
-prev_q <- prev_q_data(survey_name)
-prev_y <- prev_y_data(survey_name)
-#test <- specified_period_data(survey_name, "2024-Q4")
+# Get the value of ic for the current period
+curr_ic <- d_indicators %>% filter(Period == curr_period) %>% pull(ic)
+curr_ic_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq)
+curr_ic_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq)
 
 ##############
 
-## arrow direction and color for valuebox
-# if (ic > 0) {
-#   delta_prod_arrow <- "arrow-up"
-#   delta_prod_color <- "success"
-# } else {
-#   delta_prod_arrow <- "arrow-down"
-#   delta_prod_color <- "warning"
-# }
+## arrows and colors for valueboxs
+if (curr_ic > 0) {
+  curr_ic_icon <- "arrow-up"
+  curr_ic_color <- "success"
+} else {
+  curr_ic_icon <- "arrow-down"
+  curr_ic_color <- "warning"
+}
+
+if (curr_ic_dq > 0) {
+  curr_ic_dq_icon <- "arrow-up"
+  curr_ic_dq_color <- "success"
+} else {
+  curr_ic_dq_icon <- "arrow-down"
+  curr_ic_dq_color <- "warning"
+}
+
+if (curr_ic_pdq > 0) {
+  curr_ic_pdq_icon <- "arrow-up"
+  curr_ic_pdq_color <- "success"
+} else {
+  curr_ic_pdq_icon <- "arrow-down"
+  curr_ic_pdq_color <- "warning"
+}
 
 
 
