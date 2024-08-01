@@ -4,16 +4,11 @@ format: dashboard
 scrolling: true
 ---
 
-```{r}
-source("ppus.R")
-```
+
 
 ## Row
 
 ### Column
-```{r}
-#q2.2
-```
 
 ### Column
 

@@ -10,97 +10,36 @@ library(tools)
 source(paste0(here(),"/data/", "dashboards/", "functions.R"))
 
 # set path for survey files
-file_path <- paste0(here(),"/data_raw/qualtrics/")
+dir_path <- paste0(here(),"/data_raw/qualtrics/")
 
-# define time variables
-latest_quarter <- latest_q("PPUS", file_path)
-latest_year <- latest_y("PPUS", file_path)
-previous_quarter <- previous_q("PPUS", file_path) #returns a list
-previous_year <- previous_y("PPUS", file_path)
-latest_period <- paste(latest_quarter, latest_year)
+# Define the survey name
+survey_name <- "PPUS"
+
+##########
+
+# These functions each loop over all files in dir_path and output a single file with historical data.
+# If methodology changes for calculating indicators in these functions,
+# it will change all historical data in the files generated.
+
+agg <- process_agg_data(survey_name, dir_path)
+indicators <- process_indicators_data(survey_name, dir_path)
+d_indicators <- delta_indicators(survey_name, dir_path)
+
+##########
+
+# get period info
+period <- latest_period(survey_name)
+prev_period <- previous_period(survey_name)
+curr_period <- paste0(period$year, "-", period$quarter)
+
 
 # load data
-ppus_latest <- latest_data("PPUS", file_path)
-ppus_prev_q <- prev_q_data("PPUS", file_path)
-#ppus_prev_y <- prev_y_data("PPUS", file_path)
-#ppus_test <- get_data("PPUS", file_path, "Q3", 2024)
+latest <- latest_data(survey_name)
+prev_q <- prev_q_data(survey_name)
+prev_y <- prev_y_data(survey_name)
+#test <- specified_period_data(survey_name, "2024-Q4")
 
-# Filter for and aggregate numeric columns
-# numeric_cols <- sapply(ppus_latest, is.numeric)
-# ppus_numeric <- ppus_latest[, numeric_cols]
-# means <- colMeans(ppus_numeric, na.rm = TRUE)
-# agg <- as.data.frame(t(means), stringsAsFactors = FALSE)
-# agg$Period <- paste0(latest_year, "-", latest_quarter)
-# agg <- agg[, c("Period", names(means))] # Ensure Period is the first column
-
-# append agg data to time series file
-# if (file.exists(paste0(file_path, "/ppus-agg.rds"))) {
-#   ppus_agg <- read_rds(paste0(file_path, "/ppus-agg.rds"))
-# } else {
-#   ppus_agg <- data.frame()
-# }
-# ppus_agg <- ppus_agg %>%
-#   bind_rows(agg) %>%
-#   distinct() %>%
-#   arrange(Period) %>%
-#   write_rds(file=paste0(file_path, "/ppus-agg.rds"))
-
-# Indicators
-
-# Industry confidence indicator
-#orders <- ppus_latest$Q2.3
-#stocks <- ppus_latest$Q2.4
-#prod_exp <- ppus_latest$Q2.5
-
-#ic <- mean(orders, na.rm = T) - mean(stocks, na.rm = T) + mean(prod_exp, na.rm = T)
-
-# ppus_ind_latest <- data.frame(
-#   Period = latest_period,
-#   ic = ic
-# )
-
-# append latest indicators to time series file
-# if (file.exists(paste0(file_path, "/ppus-indicators.rds"))) {
-#   ppus_indicators <- read_rds(paste0(file_path, "/ppus-indicators.rds"))
-# } else {
-#   ppus_indicators <- data.frame()
-# }
-# ppus_indicators <- ppus_indicators %>%
-#   bind_rows(ppus_ind_latest) %>%
-#   distinct() %>%
-#   arrange(Period) %>%
-#   write_rds(file=paste0(file_path, "/ppus-indicators.rds"))
-
-
-
-##########
-
-# Initialize data frames
-ppus_agg <- if (file.exists(paste0(file_path, "/ppus-agg.rds"))) read_rds(paste0(file_path, "/ppus-agg.rds")) else data.frame()
-ppus_indicators <- if (file.exists(paste0(file_path, "/ppus-indicators.rds"))) read_rds(paste0(file_path, "/ppus-indicators.rds")) else data.frame()
-
-# List and process all files
-files <- list.files(file_path, pattern = "^PPUS-\\d{4}-Q\\d\\.sav$", full.names = TRUE)
-
-for (file in files) {
-  result <- process_file(file)
-  ppus_agg <- bind_rows(ppus_agg, result$agg)
-  ppus_indicators <- bind_rows(ppus_indicators, result$indicators)
-}
-
-# Remove duplicates and sort
-ppus_agg <- ppus_agg %>% distinct() %>% arrange(Period)
-ppus_indicators <- ppus_indicators %>% distinct() %>% arrange(Period)
-
-# Save the updated data
-write_rds(ppus_agg, paste0(file_path, "/ppus-agg.rds"))
-write_rds(ppus_indicators, paste0(file_path, "/ppus-indicators.rds"))
-
-##########
-
-
-
-
+##############
 
 ## arrow direction and color for valuebox
 # if (ic > 0) {
@@ -111,11 +50,13 @@ write_rds(ppus_indicators, paste0(file_path, "/ppus-indicators.rds"))
 #   delta_prod_color <- "warning"
 # }
 
+
+
+##############
+
 # Charts
 # q2.2_bar_latest <- v_bar_chart(ppus_latest, "Q2.2", "this is the title")
 # q2.2_bar_prev_q <- v_bar_chart(ppus_prev_q, "Q2.2", "this is the title")
 # 
 # test_chart <- v_bar_chart(ppus_latest, "Q2.2", "Chart title here")
 # test_chart
-
-
