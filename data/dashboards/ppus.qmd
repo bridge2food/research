@@ -31,7 +31,7 @@ list(
 #| title: "Change"
 
 list(
-  icon = curr_ic_dq_icon,
+  icon = "triangle",
   color = curr_ic_dq_color,
   value = round(curr_ic_dq,2)
 )

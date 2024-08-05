@@ -48,10 +48,10 @@ if (curr_ic > 0) {
 }
 
 if (curr_ic_dq > 0) {
-  curr_ic_dq_icon <- "arrow-up"
+  curr_ic_dq_icon <- "caret-up-square"
   curr_ic_dq_color <- "success"
 } else {
-  curr_ic_dq_icon <- "arrow-down"
+  curr_ic_dq_icon <- "caret-down-square"
   curr_ic_dq_color <- "warning"
 }
 
