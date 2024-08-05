@@ -54,7 +54,8 @@ list(
 
 ### Column
 ```{r}
-#test_chart
+#| title: "Test Chart"
+test_chart
 ```
 
 ### Column

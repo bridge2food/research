@@ -7,7 +7,7 @@ library(tools)
 # Note: files must have naming convention [SURVEYNAME]-[YEAR]-[QN].sav
 
 # load functions
-source(paste0(here(),"/data/", "dashboards/", "functions.R"))
+source(paste0(here(),"/data", "/dashboards", "/functions", "/functions.R"))
 
 # set path for survey files
 dir_path <- paste0(here(),"/data_raw/qualtrics/")
@@ -67,9 +67,10 @@ if (curr_ic_pdq > 0) {
 
 ##############
 
+ppus_latest <- latest_data("PPUS")
+
 # Charts
-# q2.2_bar_latest <- v_bar_chart(ppus_latest, "Q2.2", "this is the title")
-# q2.2_bar_prev_q <- v_bar_chart(ppus_prev_q, "Q2.2", "this is the title")
-# 
-# test_chart <- v_bar_chart(ppus_latest, "Q2.2", "Chart title here")
-# test_chart
+#q2.2_bar_prev_q <- v_bar_chart(ppus_prev_q, "Q2.2", "this is the title")
+
+test_chart <- v_bar_chart(ppus_latest, "Q2.2", "Q2.2 Chart")
+test_chart
