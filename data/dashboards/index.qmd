@@ -2,6 +2,11 @@
 title: Dashboards
 format: dashboard
 scrolling: true
+include-in-header:
+  text: |
+    <link rel="shortcut icon" href="logo.svg" />
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 ---
 
 

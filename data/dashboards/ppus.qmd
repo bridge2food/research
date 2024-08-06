@@ -2,6 +2,11 @@
 title: "Plant Protein Upstream Supplier Survey"
 format: dashboard
 scrolling: true
+include-in-header:
+  text: |
+    <link rel="shortcut icon" href="/assets/images/logos/b2flogo.png" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/logos/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 ---
 
 ```{r}
@@ -54,13 +59,16 @@ list(
 
 ### Column
 ```{r}
-#| title: "Test Chart"
-test_chart
+#| title: "Production - Past Quarter"
+production_pq_chart
 ```
 
 ### Column
 
-This is some test content
+```{r}
+#| title: "Current Order Books"
+orders_c_chart
+```
 
 # Sample
 

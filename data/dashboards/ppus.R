@@ -15,6 +15,12 @@ dir_path <- paste0(here(),"/data_raw/qualtrics/")
 # Define the survey name
 survey_name <- "PPUS"
 
+ppus_latest <- latest_data(survey_name)
+
+# Variable naming conventions:
+# p = past, c = current, n = next, q = quarter
+
+
 ##########
 
 # These functions each loop over all files in dir_path and output a single file with historical data.
@@ -25,7 +31,7 @@ agg <- process_agg_data(survey_name, dir_path)
 indicators <- process_indicators_data(survey_name, dir_path)
 d_indicators <- delta_indicators(survey_name, dir_path)
 
-##########
+############# Valuebox values
 
 # get period info
 period <- latest_period(survey_name)
@@ -36,9 +42,8 @@ curr_ic <- d_indicators %>% filter(Period == curr_period) %>% pull(ic)
 curr_ic_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq)
 curr_ic_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq)
 
-##############
+################ Icons and colors for valueboxes
 
-## arrows and colors for valueboxs
 if (curr_ic > 0) {
   curr_ic_icon <- "arrow-up"
   curr_ic_color <- "success"
@@ -64,13 +69,10 @@ if (curr_ic_pdq > 0) {
 }
 
 
-
-##############
-
-ppus_latest <- latest_data("PPUS")
+############## Charts
 
 # Charts
 #q2.2_bar_prev_q <- v_bar_chart(ppus_prev_q, "Q2.2", "this is the title")
 
-test_chart <- v_bar_chart(ppus_latest, "Q2.2", "Q2.2 Chart")
-test_chart
+production_pq_chart <- v_bar_chart(ppus_latest, "po.prod_past_3.q")
+orders_c_chart <- v_bar_chart(ppus_latest, "po.orders_past_3.q")

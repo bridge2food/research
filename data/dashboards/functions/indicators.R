@@ -1,35 +1,28 @@
 # Function to calculate Industry Confidence Indicator
 calculate_industry_confidence <- function(data) {
-  orders <- data$Q2.3
-  stocks <- data$Q2.4
-  prod_exp <- data$Q2.5
+  orders <- data$po.orders_curr.q
+  stocks <- data$po.stocks_curr.q
+  prod_exp <- data$po.prod_next_3.q
   ic <- (sum(orders, na.rm = TRUE) - sum(stocks, na.rm = TRUE) + sum(prod_exp, na.rm = TRUE)) / 3
   return(ic)
 }
 
-# Placeholder function for Industry Uncertainty Indicator
+# Function for Industry Uncertainty Indicator
 calculate_industry_uncertainty <- function(data) {
-  # Calculate Industry Uncertainty Indicator here
-  iu <- sum(data$Q2.10, na.rm = T) # Placeholder value, replace with actual calculation
+  uncertainty <- data$po.uncertainty.q
+  iu <- sum(uncertainty, na.rm = T) # Placeholder value, replace with actual calculation
   return(iu)
 }
 
-# Placeholder function for Employment Outlook Indicator
+# Function for Employment Outlook Indicator
 calculate_employment_outlook <- function(data) {
-  # Calculate Employment Outlook Indicator here
-  eo <- sum(data$Q4.3, na.rm = T) # Placeholder value, replace with actual calculation
+  emp_exp <- data$lab.emp_next_3.q
+  eo <- sum(emp_exp, na.rm = T) # Placeholder value, replace with actual calculation
   return(eo)
 }
 
 # Top-level function to calculate all indicators
 calculate_indicators <- function(data, period) {
-  # Check if required columns exist
-  required_cols <- c("Q2.3", "Q2.4", "Q2.5")
-  missing_cols <- setdiff(required_cols, colnames(data))
-  if (length(missing_cols) > 0) {
-    warning(paste("Missing columns for indicators calculation:", paste(missing_cols, collapse = ", ")))
-    return(data.frame(Period = period, ic = NA, iu = NA, eo = NA))
-  }
   
   # Calculate each indicator
   ic <- calculate_industry_confidence(data)

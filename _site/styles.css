@@ -1,7 +1,7 @@
 /* css styles */
 
 .navbar-logo {
-  max-height: 32px;
+  max-height: 32px !important;
 }
 
 #quarto-header>nav {

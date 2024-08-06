@@ -1,7 +1,7 @@
 ################### Chart functions
 
 # Function to create a vertical bar chart of frequencies of values in a column
-v_bar_chart <- function(df, column_name, title) {
+v_bar_chart <- function(df, column_name) {
   # Check if the column exists in the dataframe
   if (!column_name %in% colnames(df)) {
     stop("The column does not exist in the dataframe")
@@ -21,7 +21,7 @@ v_bar_chart <- function(df, column_name, title) {
   
   # Customize the layout
   fig <- fig %>% layout(
-    title = title,
+    title = "",
     xaxis = list(title = ""),
     yaxis = list(title = "Count")
   )
