@@ -11,6 +11,7 @@ include-in-header:
 
 ```{r}
 source("ppus.R")
+source("bcs.R")
 ```
 
 # Overview
@@ -18,27 +19,25 @@ source("ppus.R")
 ## Row {height="220px"}
 
 ### Column
-```{r}
-#| content: valuebox
-#| title: "Industry Confidence"
 
-list(
-  icon = "bar-chart-line",
-  color = curr_ic_color,
-  value = round(curr_ic, 2)
-)
-```
+::: {.valuebox icon="bar-chart-line" color="secondary" title="Industry Confidence"}
+
+`r curr_ic`
+
+<i class="bi bi-`r caret(curr_ic_dq)` `r caret_color(curr_ic_dq)`"></i> `r curr_ic_dq` &nbsp;&nbsp; <i class="bi bi-`r caret(curr_ic_pdq)` `r caret_color(curr_ic_pdq)`"></i> `r curr_ic_pdq`
+:::
+
 
 ### Column
 
 ```{r}
 #| content: valuebox
-#| title: "Change"
+#| title: "Economic Uncertainty"
 
 list(
   icon = "triangle",
-  color = curr_ic_dq_color,
-  value = round(curr_ic_dq,2)
+  color = "secondary",
+  value = sprintf("%.2f", round(curr_iu, 2))
 )
 ```
 
@@ -46,30 +45,104 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Percent Change"
+#| title: "Employment Outlook"
 
 list(
-  icon = curr_ic_pdq_icon,
-  color = curr_ic_pdq_color,
-  value = paste(round(curr_ic_pdq,2), "%")
+  icon = "people",
+  color = "light",
+  value = sprintf("%.2f", round(curr_eo, 2))
+)
+```
+
+
+## Row
+
+```{r}
+#| content: valuebox
+
+list(
+  color = "warning",
+  value = "Orders & Production"
 )
 ```
 
 ## Row
 
 ### Column
-```{r}
-#| title: "Production - Past Quarter"
-production_pq_chart
-```
 
+```{r}
+#| title: "Orders in Recent Months"
+orders_past_3_pie
+```
 ### Column
 
 ```{r}
 #| title: "Current Order Books"
-orders_c_chart
+orders_curr_pie
 ```
 
-# Sample
+## Row
 
+### Column {.tabset}
+
+```{r}
+#| title: "Production - Past 3 Months"
+prod_past_3_pie
+```
+
+```{r}
+#| title: "Euro Area Historical"
+bcs_m_ea_prod_trend
+```
+
+### Column
+```{r}
+#| title: "Production Expectations - Next 3 Months"
+prod_next_3_pie
+```
+
+## Row
+
+### Column
+```{r}
+#| title: "Production Capacity"
+prod_cap_bar
+```
+
+### Column
+```{r}
+#| title: "Production - Limiting Factors"
+prod_limits_pie
+```
+
+## Row
+
+### Column
+
+### Column
+```{r}
+#| title: "Regions"
+regions_pie
+```
+
+## Row
+
+::: {.valuebox color="info"}
+Prices
+:::
+
+## Row
+
+### Column
+
+```{r}
+#| title: "Industry Confidence"
+bcs_m_ea_con
+```
+
+## Row
+
+::: {.valuebox color="info"}
+Employment
+:::
 

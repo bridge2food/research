@@ -37,42 +37,30 @@ d_indicators <- delta_indicators(survey_name, dir_path)
 period <- latest_period(survey_name)
 curr_period <- paste0(period$year, "-", period$quarter)
 
-# Get the value of ic for the current period
-curr_ic <- d_indicators %>% filter(Period == curr_period) %>% pull(ic)
-curr_ic_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq)
-curr_ic_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq)
+# Industry confidence indicator for current period
+curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic) %>% round(2))
+curr_ic_dq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2))
+curr_ic_pdq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2))
 
-################ Icons and colors for valueboxes
+# Economic uncertainty
+curr_iu <- d_indicators %>% filter(Period == curr_period) %>% pull(iu)
 
-if (curr_ic > 0) {
-  curr_ic_icon <- "arrow-up"
-  curr_ic_color <- "success"
-} else {
-  curr_ic_icon <- "arrow-down"
-  curr_ic_color <- "warning"
-}
-
-if (curr_ic_dq > 0) {
-  curr_ic_dq_icon <- "caret-up-square"
-  curr_ic_dq_color <- "success"
-} else {
-  curr_ic_dq_icon <- "caret-down-square"
-  curr_ic_dq_color <- "warning"
-}
-
-if (curr_ic_pdq > 0) {
-  curr_ic_pdq_icon <- "arrow-up"
-  curr_ic_pdq_color <- "success"
-} else {
-  curr_ic_pdq_icon <- "arrow-down"
-  curr_ic_pdq_color <- "warning"
-}
+# Employment outlook
+curr_eo <- d_indicators %>% filter(Period == curr_period) %>% pull(eo)
 
 
 ############## Charts
 
-# Charts
-#q2.2_bar_prev_q <- v_bar_chart(ppus_prev_q, "Q2.2", "this is the title")
+orders_past_3_pie <- pie_chart(ppus_latest, "po.orders_past_3.q")
+orders_curr_pie <- pie_chart(ppus_latest, "po.orders_curr.q")
 
-production_pq_chart <- v_bar_chart(ppus_latest, "po.prod_past_3.q")
-orders_c_chart <- v_bar_chart(ppus_latest, "po.orders_past_3.q")
+prod_past_3_pie <- pie_chart(ppus_latest, "po.prod_past_3.q")
+prod_next_3_pie <- pie_chart(ppus_latest, "po.prod_next_3.q")
+prod_cap_bar <- v_bar_chart(ppus_latest, "po.prod_cap.q")
+prod_limits_pie <- pie_chart_cols(ppus_latest, "po.prod_limits.q")
+prod_lvl_bar <- v_bar_chart(ppus_latest, "po.prod_lvl.q")
+
+comp_past_3_pie <- pie_chart(ppus_latest, "po.comp_past_3.q")
+comp_plans_pie <- pie_chart(ppus_latest, "po.plans.q")
+regions_pie <- pie_chart_cols(ppus_latest, "po.regions.q")
+

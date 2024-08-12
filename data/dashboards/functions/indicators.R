@@ -10,14 +10,14 @@ calculate_industry_confidence <- function(data) {
 # Function for Industry Uncertainty Indicator
 calculate_industry_uncertainty <- function(data) {
   uncertainty <- data$po.uncertainty.q
-  iu <- sum(uncertainty, na.rm = T) # Placeholder value, replace with actual calculation
+  iu <- sum(uncertainty, na.rm = T) 
   return(iu)
 }
 
 # Function for Employment Outlook Indicator
 calculate_employment_outlook <- function(data) {
   emp_exp <- data$lab.emp_next_3.q
-  eo <- sum(emp_exp, na.rm = T) # Placeholder value, replace with actual calculation
+  eo <- sum(emp_exp, na.rm = T) 
   return(eo)
 }
 
