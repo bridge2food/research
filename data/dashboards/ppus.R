@@ -61,6 +61,7 @@ prod_limits_pie <- pie_chart_cols(ppus_latest, "po.prod_limits.q")
 prod_lvl_bar <- v_bar_chart(ppus_latest, "po.prod_lvl.q")
 
 comp_past_3_pie <- pie_chart(ppus_latest, "po.comp_past_3.q")
-comp_plans_pie <- pie_chart(ppus_latest, "po.plans.q")
-regions_pie <- pie_chart_cols(ppus_latest, "po.regions.q")
+plans_pie <- pie_chart(ppus_latest, "po.plans.q")
 
+regions_pie <- pie_chart_cols(ppus_latest, "po.regions.q")
+regions_dist_pie <- pie_chart_cols_pct(ppus_latest, "po.regions_dist.q")

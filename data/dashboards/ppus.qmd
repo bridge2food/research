@@ -121,9 +121,29 @@ prod_limits_pie
 
 ### Column
 ```{r}
-#| title: "Regions"
+#| title: "Active Business Regions"
 regions_pie
 ```
+### Column
+```{r}
+#| title: "Regional Sales Distribution"
+regions_dist_pie
+```
+
+## Row
+
+### Column
+```{r}
+#| title: "Competitive Position"
+comp_past_3_pie
+```
+
+### Column
+```{r}
+#| title: "Business Plans Next 1-3 years"
+plans_pie
+```
+
 
 ## Row
 
