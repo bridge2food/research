@@ -20,6 +20,10 @@ ppus_latest <- latest_data(survey_name)
 # Variable naming conventions:
 # p = past, c = current, n = next, q = quarter
 
+# Fix typo in variable name (fixed in qualtrics, remove this after next data import)
+ppus_latest <- ppus_latest %>%
+  rename(ip.costs_next_3.q = po.costs_next_3.q)
+
 
 ##########
 
@@ -51,17 +55,48 @@ curr_eo <- d_indicators %>% filter(Period == curr_period) %>% pull(eo)
 
 ############## Charts
 
+# Summary
+
+uncertainty_bar <- v_bar_chart(ppus_latest, "po.uncertainty.q")
+plans_pie <- pie_chart(ppus_latest, "po.plans.q")
+comp_past_3_pie <- pie_chart(ppus_latest, "po.comp_past_3.q")
+regions_dist_donut <- donut_chart_cols_pct(ppus_latest, "po.regions_dist.q")
+
+# Production & Orders
+
 orders_past_3_pie <- pie_chart(ppus_latest, "po.orders_past_3.q")
 orders_curr_pie <- pie_chart(ppus_latest, "po.orders_curr.q")
 
+stocks_curr_pie <- pie_chart(ppus_latest, "po.stocks_curr.q")
+
 prod_past_3_pie <- pie_chart(ppus_latest, "po.prod_past_3.q")
 prod_next_3_pie <- pie_chart(ppus_latest, "po.prod_next_3.q")
+
+prod_lvl_box <- v_box_plot(ppus_latest, "po.prod_lvl.q")
 prod_cap_bar <- v_bar_chart(ppus_latest, "po.prod_cap.q")
+
 prod_limits_pie <- pie_chart_cols(ppus_latest, "po.prod_limits.q")
-prod_lvl_bar <- v_bar_chart(ppus_latest, "po.prod_lvl.q")
 
-comp_past_3_pie <- pie_chart(ppus_latest, "po.comp_past_3.q")
-plans_pie <- pie_chart(ppus_latest, "po.plans.q")
+# Inputs & Prices
 
-regions_pie <- pie_chart_cols(ppus_latest, "po.regions.q")
-regions_dist_pie <- pie_chart_cols_pct(ppus_latest, "po.regions_dist.q")
+costs_past_3_pie <- pie_chart(ppus_latest, "ip.costs_past_3.q")
+costs_next_3_pie <- pie_chart(ppus_latest, "ip.costs_next_3.q")
+
+prices_past_3_pie <- pie_chart(ppus_latest, "ip.prices_past_3.q")
+prices_next_3_pie <- pie_chart(ppus_latest, "ip.prices_next_3.q")
+
+# Labour
+
+emp_past_3_pie <- pie_chart(ppus_latest, "lab.emp_past_3.q")
+emp_next_3_pie <- pie_chart(ppus_latest, "lab.emp_next_3.q")
+
+lab_costs_past_3_pie <- pie_chart(ppus_latest, "lab.costs_past_3.q")
+
+lab_costs_lvl_pie <- pie_chart(ppus_latest, "lab.costs_lvl.q")
+
+lab_skill_pie <- pie_chart(ppus_latest, "lab.skill.q")
+
+# Investment & Innovation
+
+inv_past_3_bar <- stacked_h_bar_chart_cols(ppus_latest, "in.inv_past_3.q")
+inv_past_3_bar

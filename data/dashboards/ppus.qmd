@@ -14,7 +14,7 @@ source("ppus.R")
 source("bcs.R")
 ```
 
-# Overview
+# Summary
 
 ## Row {height="220px"}
 
@@ -54,31 +54,74 @@ list(
 )
 ```
 
-
 ## Row
 
+### Column
 ```{r}
-#| content: valuebox
+#| title: "Uncertainty"
+uncertainty_bar
+```
 
-list(
-  color = "warning",
-  value = "Orders & Production"
-)
+### Column
+```{r}
+#| title: "Business Plans Next 1-3 years"
+plans_pie
+```
+## Row
+
+### Column
+```{r}
+#| title: "Competitive Position"
+comp_past_3_pie
+```
+
+### Column
+```{r}
+#| title: "Regional Sales Distribution"
+regions_dist_donut
 ```
 
 ## Row
 
 ### Column
+
+```{r}
+#| title: "Industry Confidence"
+bcs_cof
+```
+
+
+# Production & Orders
+
+## Row
 
 ```{r}
 #| title: "Orders in Recent Months"
 orders_past_3_pie
 ```
-### Column
 
 ```{r}
 #| title: "Current Order Books"
 orders_curr_pie
+```
+
+## Row
+
+```{r}
+#| title: "Production Level"
+prod_lvl_box
+```
+
+```{r}
+#| title: "Production Capacity"
+prod_cap_bar
+```
+
+## Row
+
+```{r}
+#| title: "Current Stocks of Finished Products"
+stocks_curr_pie
 ```
 
 ## Row
@@ -96,73 +139,87 @@ bcs_m_ea_prod_trend
 ```
 
 ### Column
+
 ```{r}
 #| title: "Production Expectations - Next 3 Months"
 prod_next_3_pie
 ```
 
+
+
 ## Row
 
-### Column
-```{r}
-#| title: "Production Capacity"
-prod_cap_bar
-```
-
-### Column
 ```{r}
 #| title: "Production - Limiting Factors"
 prod_limits_pie
 ```
 
-## Row
-
-### Column
-
-### Column
-```{r}
-#| title: "Active Business Regions"
-regions_pie
-```
-### Column
-```{r}
-#| title: "Regional Sales Distribution"
-regions_dist_pie
-```
+# Inputs & Prices
 
 ## Row
 
-### Column
 ```{r}
-#| title: "Competitive Position"
-comp_past_3_pie
+#| title: "Input Costs (Excluding Labour) - Past 3 Months"
+costs_past_3_pie
 ```
 
-### Column
 ```{r}
-#| title: "Business Plans Next 1-3 years"
-plans_pie
-```
-
-
-## Row
-
-::: {.valuebox color="info"}
-Prices
-:::
-
-## Row
-
-### Column
-
-```{r}
-#| title: "Industry Confidence"
-bcs_m_ea_con
+#| title: "Expected Input Costs (Excluding Labour) - Next 3 Months"
+costs_next_3_pie
 ```
 
 ## Row
 
-::: {.valuebox color="info"}
-Employment
-:::
+```{r}
+#| title: "Selling Prices - Past 3 Months"
+prices_past_3_pie
+```
+
+```{r}
+#| title: "Expected Selling Prices - Next 3 Months"
+prices_next_3_pie
+```   
+
+# Labour
+
+## Row
+
+```{r}
+#| title: "Staff Numbers - Past 3 Months"
+emp_past_3_pie
+```
+
+```{r}
+#| title: "Expected Staff Numbers - Next 3 Months"
+emp_next_3_pie
+``` 
+
+## Row
+
+```{r}
+#| title: "Labour Costs - Past 3 Months"
+lab_costs_past_3_pie
+```
+```{r}
+#| title: "Difficulty Finding Sufficiently Skilled Labour"
+lab_skill_pie
+```
+
+## Row
+
+```{r}
+#| title: "Current Labour Costs"
+lab_costs_lvl_pie
+```
+
+# Investment & Innovation
+
+## Row
+
+```{r}
+#| title: "Investments - Past 3 Months"
+inv_past_3_bar
+```
+
+## Row
 

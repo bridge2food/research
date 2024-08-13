@@ -4,6 +4,9 @@ library(plotly)
 library(haven)
 library(tools)
 
+# load functions
+source(paste0(here(),"/data", "/dashboards", "/functions", "/functions.R"))
+
 # set path for bcs files
 dir_path <- paste0(here(),"/data_raw/bcs/")
 
@@ -36,19 +39,27 @@ bcs_q <- bcs_q %>%
 bcs_q8 <- bcs_q8 %>%
   mutate(period = as.Date(sapply(period, convert_period_to_date)))
 
+# Manually calculate confidence indicator in order to get two-decimal accuracy
+# Filter to 10 most recent years
+bcs_m_ea_cof <- bcs_m %>%
+  select(period, INDU.EA.10.COF.B.M, INDU.EA.10.2.B.M, INDU.EA.10.4.B.M, INDU.EA.10.5.B.M) %>%
+  mutate(cof = (INDU.EA.10.2.B.M - INDU.EA.10.4.B.M + INDU.EA.10.5.B.M)/3) %>%
+  filter(period >= as.Date(Sys.Date()) - years(10))
+bcs_m_ea_cof$cof <- round(bcs_m_ea_cof$cof, 2)
+
 ############# Plots
 
 # EA confidence indicator
-bcs_m_ea_con <- plot_ly(bcs_m, x = ~period, y = ~INDU.EA.10.COF.B.M, type = 'scatter', mode = 'lines')
+bcs_cof <- plot_ly(bcs_m_ea_cof, x = ~period, y = ~cof, type = 'scatter', mode = 'lines')
 
-bcs_m_ea_con <- bcs_m_ea_con %>%
+bcs_cof <- bcs_cof %>%
   layout(title = '',
          xaxis = list(title = 'Period'),
          yaxis = list(title = 'Balance')) %>%
   config(displayModeBar = FALSE)
 
 # Show the plot
-bcs_m_ea_con
+bcs_cof
 
 # EA production trend in recent months
 bcs_m_ea_prod_trend <- plot_ly(bcs_m, x = ~period, y = ~INDU.EU.10.1.B.M, type = 'scatter', mode = 'lines') %>%
