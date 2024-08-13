@@ -30,7 +30,7 @@ v_bar_chart <- function(df, column_name) {
   fig <- fig %>% layout(
     title = "",
     xaxis = list(title = ""),
-    yaxis = list(title = "Count"),
+    yaxis = list(title = ""),
     showlegend = FALSE  # Remove legend (if not needed)
   )
   
@@ -66,8 +66,11 @@ pie_chart <- function(df, column_name, order = "descending") {
     summarize(Freq = n()) %>%
     ungroup()
   
-  # Ensure the summary dataframe maintains the correct factor level order
-  summary_df$Value <- factor(summary_df$Value, levels = ordered_levels)
+  # Modify the factor labels to keep only the text before the hyphen
+  summary_df$Value <- str_remove(summary_df$Value, "\\s*[-–—].*")
+  
+  # Reapply the correct order to the factor levels in summary_df
+  summary_df$Value <- factor(summary_df$Value, levels = unique(summary_df$Value))
   
   # Create the pie chart using plotly
   fig <- plot_ly(

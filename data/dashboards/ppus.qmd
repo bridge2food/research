@@ -58,13 +58,13 @@ list(
 
 ### Column
 ```{r}
-#| title: "Uncertainty"
+#| title: "Business Uncertainty"
 uncertainty_bar
 ```
 
 ### Column
 ```{r}
-#| title: "Business Plans Next 1-3 years"
+#| title: "3-Year Business Plans"
 plans_pie
 ```
 ## Row
@@ -96,7 +96,7 @@ bcs_cof
 ## Row
 
 ```{r}
-#| title: "Orders in Recent Months"
+#| title: "Recent Orders"
 orders_past_3_pie
 ```
 
@@ -150,7 +150,7 @@ prod_next_3_pie
 ## Row
 
 ```{r}
-#| title: "Production - Limiting Factors"
+#| title: "Factors Limiting Production"
 prod_limits_pie
 ```
 
@@ -201,16 +201,17 @@ emp_next_3_pie
 lab_costs_past_3_pie
 ```
 ```{r}
-#| title: "Difficulty Finding Sufficiently Skilled Labour"
-lab_skill_pie
+#| title: "Labour Costs"
+lab_costs_lvl_pie
 ```
 
 ## Row
 
 ```{r}
-#| title: "Current Labour Costs"
-lab_costs_lvl_pie
+#| title: "Finding Skilled Labour"
+lab_skill_pie
 ```
+
 
 # Investment & Innovation
 
