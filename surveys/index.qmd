@@ -38,7 +38,7 @@ Workforce dynamics indicators reflecting changes in industry employment and the 
 
 Essential figures gauging capital expenditures and investments, reflecting the industry's confidence in future growth and innovation potential. By monitoring spending trends, stakeholders can assess the sector's medium and long-term outlook, while policymakers can use this information to design incentive structures that support industry needs.
 
-Read more [about our methodology](methodology.qmd).
+Read more [about methodology](methodology.qmd).
 
 ::: {.column-screen .bg-light .pb-4 .mt-4}
 ::: {.column-body}
