@@ -12,13 +12,15 @@ title-block-banner: true
 
 # Overview
 
-Bridge2Food's Industry Surveys provide essential data on the sustainable food and protein sectors. Addressed to representatives across a range of technology and supply chain segments, these surveys allow monitoring of developments in food and agriculture economies not captured elsewhere.
+Bridge2Food's industry surveys provide essential data on the sustainable food and protein sectors. Addressed to representatives across a range of technology and supply chain segments, these surveys allow monitoring of developments in food and agriculture economies not captured elsewhere.
 
-Bridge2Food's Industry Surveys have received funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
+Bridge2Food's industry surveys have received funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
 
 # Methodology
 
-Survey methodology follows that of the [Business and Consumer Surveys](https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys_en) conducted by the European Commission's Directorate General for Economic and Financial Affairs, allowing for sector-level breakdowns of official industry statistics. While questionnaires are adapted for each technology and market segment, the macro-level focus areas remain comparable across surveys:
+Survey methodology follows that of the [Business and Consumer Surveys](https://economy-finance.ec.europa.eu/economic-forecast-and-surveys/business-and-consumer-surveys_en) conducted by the European Commission's Directorate General for Economic and Financial Affairs, allowing for sector-level breakdowns of official industry statistics.
+
+While questionnaires are adapted for each technology and market segment, the macro-level focus areas remain comparable across surveys:
 
 ## Production & Orders
 
@@ -35,6 +37,8 @@ Workforce dynamics indicators reflecting changes in industry employment and the 
 ## Investment & Innovation
 
 Essential figures gauging capital expenditures and investments, reflecting the industry's confidence in future growth and innovation potential. By monitoring spending trends, stakeholders can assess the sector's medium and long-term outlook, while policymakers can use this information to design incentive structures that support industry needs.
+
+Read more [about our methodology](methodology.qmd).
 
 ::: {.column-screen .bg-light .pb-4 .mt-4}
 ::: {.column-body}
