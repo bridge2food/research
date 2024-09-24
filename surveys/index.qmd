@@ -44,13 +44,13 @@ Read more [about methodology](methodology.qmd).
 ::: {.column-body}
 # Participating Companies
 
-Participation in Bridge2Food's Industry Surveys is by invitation only. Respondents are carefully selected and vetted to ensure aggregate indicators are accurate and representative of the sector.
+Participation in Bridge2Food's industry surveys is by invitation only. Respondents are carefully selected and vetted to ensure aggregate indicators are accurate and representative of the sector.
 
-To express interest in participating in an Industry Survey, contact vincent.brain\@bridge2food.com.
+To express interest in participating in an industry survey, contact vincent.brain\@bridge2food.com.
 
 ## Benefits for Respondents
 
-Participating in Bridge2Food's Industry Surveys offers exclusive benefits:
+Participating in Bridge2Food's industry surveys offers exclusive benefits:
 
 - Pre-public access to data releases and special reports
 - Optional feature of company logo on data products
@@ -78,7 +78,7 @@ Few data sources are available for accurately quantifying and tracking developme
 - Government data collection schemes and reporting platforms are often geographically limited, and have yet to include figures for important product categories, such as plant-based milks, despite their ubiquity in retail and foodservice in many countries
 - Figures and analyses provided by advocacy groups or private sector research may lack neutrality, technical rigor, or carry perceived bias, limiting their utility in contexts that demand broad inclusiveness and objectivity
 
-Due to these constraints, policymakers and other stakeholders are often forced to make decisions based upon anecdotal or potentially biased information sources. Bridge2Food's Industry Surveys provide a framework for evidence-based policy and strategic decisions in the sustainable food and protein sectors.
+Due to these constraints, policymakers and other stakeholders are often forced to make decisions based upon anecdotal or potentially biased information sources. Bridge2Food's industry surveys provide a framework for evidence-based policy and strategic decisions in the sustainable food and protein sectors.
 :::
 
 :::
