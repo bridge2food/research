@@ -50,4 +50,4 @@ View a B2F industry survey [example questionnaire](https://qualtricsxmgtnmmghg4.
 
 B2F survey data aggregation and visualisation code is publicly available on [GitHub](https://github.com/bridge2food/research/tree/main/data/dashboards).
 
-For questions or additional clarifications, please email communication@bridge2food.com.
+For questions or additional clarifications, please email research@bridge2food.com.
