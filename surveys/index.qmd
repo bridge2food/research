@@ -14,7 +14,7 @@ title-block-banner: true
 
 Bridge2Food's industry surveys provide essential data on the sustainable food and protein sectors. Addressed to representatives across a range of technology and supply chain segments, these surveys allow monitoring of developments in food and agriculture economies not captured elsewhere.
 
-Bridge2Food's industry surveys have received funding from the European Union's [HORIZON EUROPE](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
+Bridge2Food's industry surveys have received funding from the European Union's [Horizon Europe](https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en) research and innovation programme under grant agreement [No 101059632](https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43108390/101059632/HORIZON).
 
 # Methodology
 
