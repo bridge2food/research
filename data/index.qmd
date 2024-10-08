@@ -17,9 +17,9 @@ Questionnaires are sent to respondents on the first working day of the survey qu
 
 | Survey          | Frequency       | Next Release    |
 |--------         |--------         | --------        |
-| [PPS](/surveys/pps.qmd)  | Quarterly       | January 2, 2025 |
-| [PMP](pmp.qmd)  | Biannual        | January 2, 2025 |
-| [PDP](pdp.qmd)  | Annual          | January 2, 2025 |
+| [PPUS](/surveys/ppus.qmd)  | Quarterly       | TBD |
+| [PMP](/surveys/pmp.qmd)  | Quarterly        | TBD |
+| [PDP](/surveys/pdp.qmd)  | Quarterly          | TBD |
 
 : {.striped .hover}
 
