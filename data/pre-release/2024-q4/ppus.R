@@ -53,7 +53,7 @@ curr_ic_dq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>%
 curr_ic_pdq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2))
 
 # Economic uncertainty
-curr_iu <- d_indicators %>% filter(Period == curr_period) %>% pull(iu)
+curr_bu <- d_indicators %>% filter(Period == curr_period) %>% pull(bu)
 
 # Employment outlook
 curr_eo <- d_indicators %>% filter(Period == curr_period) %>% pull(eo)

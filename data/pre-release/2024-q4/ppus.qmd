@@ -32,12 +32,12 @@ source("bcs.R")
 
 ```{r}
 #| content: valuebox
-#| title: "Economic Uncertainty"
+#| title: "Business Uncertainty"
 
 list(
   icon = "triangle",
   color = "secondary",
-  value = sprintf("%.2f", round(curr_iu, 2))
+  value = sprintf("%.2f", round(curr_bu, 2))
 )
 ```
 

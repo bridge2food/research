@@ -10,10 +10,10 @@ calculate_industry_confidence <- function(data) {
 }
 
 # Function for Industry Uncertainty Indicator
-calculate_industry_uncertainty <- function(data) {
+calculate_business_uncertainty <- function(data) {
   uncertainty <- data$po.uncertainty.q
-  iu <- sum(uncertainty, na.rm = T) 
-  return(iu)
+  bu <- sum(uncertainty, na.rm = T) 
+  return(bu)
 }
 
 # Function for Employment Outlook Indicator
@@ -28,14 +28,14 @@ calculate_indicators <- function(data, period) {
   
   # Calculate each indicator
   ic <- calculate_industry_confidence(data)
-  iu <- calculate_industry_uncertainty(data)
+  bu <- calculate_business_uncertainty(data)
   eo <- calculate_employment_outlook(data)
   
   # Combine indicators into a data frame
   indicators <- data.frame(
     Period = period,
     ic = ic,
-    iu = iu,
+    bu = bu,
     eo = eo
   )
   return(indicators)
