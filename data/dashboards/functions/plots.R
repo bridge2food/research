@@ -438,10 +438,10 @@ stacked_h_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
 # where n represents categories and k represents choices within each category
 
 stacked_v_bar_chart_cols_nk <- function(data, 
-                                          base_col_name, 
-                                          label_sep = " - ",    # Separator between name_prefix and the rest
-                                          k_label_words = 2,    # Number of words representing k_label
-                                          wrap_width = 30) {     # Width for text wrapping
+                                        base_col_name, 
+                                        label_sep = " - ",    # Separator between name_prefix and the rest
+                                        k_label_words = 2,    # Number of words representing k_label
+                                        wrap_width = 30) {     # Width for text wrapping
   
   # 1. Construct the regex pattern to match columns like base_col_name_n_k
   pattern <- paste0("^", base_col_name, "_\\d+_\\d+$")
@@ -477,6 +477,13 @@ stacked_v_bar_chart_cols_nk <- function(data,
     pivot_longer(cols = everything(), names_to = "full_name", values_to = "Count") %>%
     left_join(col_info_df, by = "full_name")
   
+  # **New Code Starts Here**
+  
+  # Calculate the total sample size (number of respondents)
+  total_respondents <- nrow(data)
+  
+  # **New Code Ends Here**
+  
   # 7. Extract 'n_label' and 'k_label'
   
   # Helper function to extract n_label and k_label from a label string
@@ -490,19 +497,19 @@ stacked_v_bar_chart_cols_nk <- function(data,
     
     if (ncol(parts) < 2) {
       # If label_sep is not found, assign default labels
-      return(list(n_label = paste0("Group ", n), k_label = paste0("Option ", k)))
+      return(list(n_label = label, k_label = ""))
     }
     
     # parts[1] is name_prefix, parts[2] is "n_part k_part"
     n_part_k_part <- parts[2]
     
-    # Split n_part_k_part into n_part and k_part based on k_label_words
+    # Split n_part_k_part into words
     words <- str_split(n_part_k_part, "\\s+")[[1]]
     
-    if (length(words) < k_label_words) {
-      # Not enough words to split
-      n_label <- n_part_k_part
-      k_label <- paste0("Option ", k)
+    if (length(words) <= k_label_words) {
+      # All words belong to k_label
+      n_label <- ""
+      k_label <- n_part_k_part
     } else {
       n_label <- paste(head(words, length(words) - k_label_words), collapse = " ")
       k_label <- paste(tail(words, k_label_words), collapse = " ")
@@ -585,20 +592,29 @@ stacked_v_bar_chart_cols_nk <- function(data,
     stop("Duplicated levels found in 'k_label'. Please ensure that each choice has a unique label.")
   }
   
-  # 12. Create the stacked vertical bar chart using plotly
+  # **Modified Code Starts Here**
+  
+  # 13. Calculate percentages relative to the total sample size
+  counts_df <- counts_df %>%
+    mutate(Percentage = Count / total_respondents * 100)
+  
+  # **Modified Code Ends Here**
+  
+  # 14. Create the stacked vertical bar chart using plotly
   bar_chart <- plot_ly(
     data = counts_df,
     x = ~n_label,
     y = ~Count,
     color = ~k_label,
     type = 'bar',
-    text = ~I(paste0(k_label, ": ", Count)),
+    text = ~I(paste0(k_label, "<br>", Count, "<br>", round(Percentage, 2), "%")),
     hoverinfo = 'text',
-    hovertemplate = '%{text}<extra></extra>'
+    hovertemplate = '%{text}<extra></extra>',
+    textposition = 'none'
   ) %>%
     layout(
       title = '',
-      barmode = 'stack',
+      #barmode = 'stack',
       xaxis = list(title = ""),
       yaxis = list(title = ""),
       legend = list(title = list(text = ""))
