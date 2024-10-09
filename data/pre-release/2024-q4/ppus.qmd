@@ -242,5 +242,8 @@ inv_structure
 
 ## Row
 
-
+```{r}
+#| title: "Drivers of Investments (Only Q4)"
+inv_drivers
+```
 

@@ -105,9 +105,11 @@ lab_skill_pie <- pie_chart(ppus_latest, "lab.skill.q")
 # Investment & Innovation
 
 inv_past_3_bar <- stacked_v_bar_chart_cols(ppus_latest, "in.inv_past_3.q")
+inv_past_3_bar
 
 inv_curr_y_pie <- pie_chart(ppus_latest, "in.inv_curr_y.q4")
 inv_next_y_pie <- pie_chart(ppus_latest, "in.inv_next_y.q4")
 
 inv_structure <- stacked_v_bar_chart_cols_nk(ppus_latest, "in.inv_structure.q4")
-inv_structure
+inv_drivers <- stacked_v_bar_chart_cols_nk(ppus_latest, "in.inv_drivers.q4")
+

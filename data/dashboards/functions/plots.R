@@ -335,7 +335,7 @@ stacked_v_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
     y = ~Count,
     color = ~Value,  # Color the bars by the response label
     type = 'bar',
-    text = ~paste0(Value, "<br>", Count, "<br>", round(Percentage, 2), "%"),
+    text = ~I(paste0(Value, "<br>", Count, "<br>", round(Percentage, 2), "%")), # Make sure to us I() to prevent issues when there is only one occurance of a value
     hoverinfo = 'text',
     hovertemplate = '%{text}<extra></extra>'
   ) %>%
@@ -417,7 +417,7 @@ stacked_h_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
     color = ~Value, # Color the bars by the response label
     type = 'bar',
     orientation = 'h',  # Horizontal orientation
-    text = ~paste0(Value, "<br>", Count, "<br>", round(Percentage, 2), "%"),
+    text = ~I(paste0(Value, "<br>", Count, "<br>", round(Percentage, 2), "%")),
     hoverinfo = 'text',
     hovertemplate = '%{text}<extra></extra>'
   ) %>%
@@ -592,7 +592,7 @@ stacked_v_bar_chart_cols_nk <- function(data,
     y = ~Count,
     color = ~k_label,
     type = 'bar',
-    text = ~paste0(k_label, ": ", Count),
+    text = ~I(paste0(k_label, ": ", Count)),
     hoverinfo = 'text',
     hovertemplate = '%{text}<extra></extra>'
   ) %>%
