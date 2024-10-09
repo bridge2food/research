@@ -52,7 +52,7 @@ curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pu
 curr_ic_dq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2))
 curr_ic_pdq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2))
 
-# Economic uncertainty
+# Business uncertainty
 curr_bu <- d_indicators %>% filter(Period == curr_period) %>% pull(bu)
 
 # Employment outlook
@@ -105,4 +105,9 @@ lab_skill_pie <- pie_chart(ppus_latest, "lab.skill.q")
 # Investment & Innovation
 
 inv_past_3_bar <- stacked_v_bar_chart_cols(ppus_latest, "in.inv_past_3.q")
-inv_past_3_bar
+
+inv_curr_y_pie <- pie_chart(ppus_latest, "in.inv_curr_y.q4")
+inv_next_y_pie <- pie_chart(ppus_latest, "in.inv_next_y.q4")
+
+inv_structure <- stacked_v_bar_chart_cols_nk(ppus_latest, "in.inv_structure.q4")
+inv_structure

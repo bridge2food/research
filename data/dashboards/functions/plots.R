@@ -431,3 +431,179 @@ stacked_h_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
   
   return(bar_chart)
 }
+
+#####
+
+# Function to create a stacked vertical bar chart across columns with naming structure name_n_k
+# where n represents categories and k represents choices within each category
+
+stacked_v_bar_chart_cols_nk <- function(data, 
+                                          base_col_name, 
+                                          label_sep = " - ",    # Separator between name_prefix and the rest
+                                          k_label_words = 2,    # Number of words representing k_label
+                                          wrap_width = 30) {     # Width for text wrapping
+  
+  # 1. Construct the regex pattern to match columns like base_col_name_n_k
+  pattern <- paste0("^", base_col_name, "_\\d+_\\d+$")
+  
+  # 2. Select columns matching the pattern
+  matching_cols <- data %>%
+    select(matches(pattern))
+  
+  # 3. Check if any columns match
+  if (ncol(matching_cols) == 0) {
+    stop("No columns match the given base column name structure.")
+  }
+  
+  # 4. Extract 'n' and 'k' from column names using regex
+  col_names <- colnames(matching_cols)
+  col_info <- str_match(col_names, paste0("^", base_col_name, "_(\\d+)_(\\d+)$"))
+  
+  if (any(is.na(col_info))) {
+    stop("Some columns do not match the expected pattern 'base_col_name_n_k'.")
+  }
+  
+  # 5. Create a data frame with column information
+  col_info_df <- data.frame(
+    full_name = col_names,
+    n = col_info[,2],
+    k = col_info[,3],
+    stringsAsFactors = FALSE
+  )
+  
+  # 6. Count the number of 1s in each sub-category (column)
+  counts_df <- matching_cols %>%
+    summarise(across(everything(), ~ sum(. == 1, na.rm = TRUE))) %>%
+    pivot_longer(cols = everything(), names_to = "full_name", values_to = "Count") %>%
+    left_join(col_info_df, by = "full_name")
+  
+  # 7. Extract 'n_label' and 'k_label'
+  
+  # Helper function to extract n_label and k_label from a label string
+  extract_labels <- function(label, label_sep, k_label_words) {
+    if (is.null(label) || is.na(label)) {
+      return(list(n_label = NA, k_label = NA))
+    }
+    
+    # Split the label using label_sep
+    parts <- str_split_fixed(label, fixed(label_sep), 2)
+    
+    if (ncol(parts) < 2) {
+      # If label_sep is not found, assign default labels
+      return(list(n_label = paste0("Group ", n), k_label = paste0("Option ", k)))
+    }
+    
+    # parts[1] is name_prefix, parts[2] is "n_part k_part"
+    n_part_k_part <- parts[2]
+    
+    # Split n_part_k_part into n_part and k_part based on k_label_words
+    words <- str_split(n_part_k_part, "\\s+")[[1]]
+    
+    if (length(words) < k_label_words) {
+      # Not enough words to split
+      n_label <- n_part_k_part
+      k_label <- paste0("Option ", k)
+    } else {
+      n_label <- paste(head(words, length(words) - k_label_words), collapse = " ")
+      k_label <- paste(tail(words, k_label_words), collapse = " ")
+    }
+    
+    return(list(n_label = n_label, k_label = k_label))
+  }
+  
+  # 7a. Extract unique n_labels
+  n_labels_df <- col_info_df %>%
+    group_by(n) %>%
+    slice(1) %>%  # Take the first k for each n
+    ungroup() %>%
+    rowwise() %>%
+    mutate(labels = list(extract_labels(attr(data[[full_name]], "label"), label_sep, k_label_words))) %>%
+    mutate(n_label = labels$n_label) %>%
+    select(n, n_label)
+  
+  # 7b. Extract unique k_labels
+  k_labels_df <- col_info_df %>%
+    group_by(k) %>%
+    slice(1) %>%  # Take the first n for each k
+    ungroup() %>%
+    rowwise() %>%
+    mutate(labels = list(extract_labels(attr(data[[full_name]], "label"), label_sep, k_label_words))) %>%
+    mutate(k_label = labels$k_label) %>%
+    select(k, k_label)
+  
+  # 8. Assign 'n_label' and 'k_label' back to counts_df
+  counts_df <- counts_df %>%
+    left_join(n_labels_df, by = "n") %>%
+    left_join(k_labels_df, by = "k")
+  
+  # 9. Clean labels by handling text inside parentheses and adding line breaks
+  clean_label <- function(label) {
+    if (is.na(label)) return(label)
+    # Handle text inside parentheses by moving it to a new line and wrapping
+    # Match text inside parentheses
+    label_clean <- str_replace(label, "\\((.*)\\)", function(x) {
+      inner_text <- str_match(x, "\\((.*)\\)")[2]
+      wrapped_text <- str_wrap(inner_text, width = wrap_width)
+      paste0("<br>(", str_replace_all(wrapped_text, "\n", "<br>"), ")")
+    })
+    return(label_clean)
+  }
+  
+  # Apply cleaning to 'n_label' and 'k_label'
+  counts_df <- counts_df %>%
+    mutate(
+      n_label = sapply(n_label, clean_label),
+      k_label = sapply(k_label, clean_label)
+    )
+  
+  # 10. Ensure 'n_label' and 'k_label' are factors with proper ordering
+  # Sort n_labels_df by numeric 'n' and set factor levels
+  n_labels_df_sorted <- n_labels_df %>%
+    mutate(n_numeric = as.numeric(n)) %>%
+    arrange(n_numeric) %>%
+    mutate(n_label = factor(clean_label(n_label), levels = unique(clean_label(n_label))))
+  
+  # Sort k_labels_df by numeric 'k' and set factor levels
+  k_labels_df_sorted <- k_labels_df %>%
+    mutate(k_numeric = as.numeric(k)) %>%
+    arrange(k_numeric) %>%
+    mutate(k_label = factor(clean_label(k_label), levels = unique(clean_label(k_label))))
+  
+  # Assign factor levels to counts_df based on the sorted labels
+  counts_df <- counts_df %>%
+    mutate(
+      n_label = factor(n_label, levels = levels(n_labels_df_sorted$n_label)),
+      k_label = factor(k_label, levels = levels(k_labels_df_sorted$k_label))
+    )
+  
+  # 11. Check for duplicated levels in 'n_label' and 'k_label'
+  if (any(duplicated(levels(counts_df$n_label)))) {
+    stop("Duplicated levels found in 'n_label'. Please ensure that each group has a unique label.")
+  }
+  
+  if (any(duplicated(levels(counts_df$k_label)))) {
+    stop("Duplicated levels found in 'k_label'. Please ensure that each choice has a unique label.")
+  }
+  
+  # 12. Create the stacked vertical bar chart using plotly
+  bar_chart <- plot_ly(
+    data = counts_df,
+    x = ~n_label,
+    y = ~Count,
+    color = ~k_label,
+    type = 'bar',
+    text = ~paste0(k_label, ": ", Count),
+    hoverinfo = 'text',
+    hovertemplate = '%{text}<extra></extra>'
+  ) %>%
+    layout(
+      title = '',
+      barmode = 'stack',
+      xaxis = list(title = ""),
+      yaxis = list(title = ""),
+      legend = list(title = list(text = ""))
+    ) %>%
+    config(displayModeBar = FALSE)
+  
+  return(bar_chart)
+}

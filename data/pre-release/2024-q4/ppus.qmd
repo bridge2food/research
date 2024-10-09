@@ -224,3 +224,23 @@ inv_past_3_bar
 
 ## Row
 
+```{r}
+#| title: "Current Year Investments - Compared to Last Year (Only Q4)"
+inv_curr_y_pie
+```
+```{r}
+#| title: "Next Year Investment Expectations - Compared to this Year (Only Q4)"
+inv_next_y_pie
+```
+
+## Row
+
+```{r}
+#| title: "Structure of Investments (Only Q4)"
+inv_structure
+```
+
+## Row
+
+
+
