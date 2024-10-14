@@ -87,7 +87,7 @@ regions_dist_donut
 
 ```{r}
 #| title: "Industry Confidence"
-bcs_cof
+# bcs_cof
 ```
 
 
@@ -126,8 +126,6 @@ stocks_curr_pie
 
 ## Row
 
-### Column {.tabset}
-
 ```{r}
 #| title: "Production - Past 3 Months"
 prod_past_3_pie
@@ -135,10 +133,8 @@ prod_past_3_pie
 
 ```{r}
 #| title: "Euro Area Historical"
-bcs_m_ea_prod_trend
+# bcs_m_ea_prod_trend
 ```
-
-### Column
 
 ```{r}
 #| title: "Production Expectations - Next 3 Months"
