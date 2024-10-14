@@ -7,6 +7,7 @@ include-in-header:
     <link rel="shortcut icon" href="/assets/images/logos/b2flogo.png" />
     <link rel="icon" type="image/x-icon" href="/assets/images/logos/favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
 ---
 
 ```{r}
@@ -24,35 +25,37 @@ source("bcs.R")
 
 `r curr_ic`
 
-<i class="bi bi-`r caret(curr_ic_dq)` `r caret_color(curr_ic_dq)`"></i> `r curr_ic_dq` &nbsp;&nbsp; <i class="bi bi-`r caret(curr_ic_pdq)` `r caret_color(curr_ic_pdq)`"></i> `r curr_ic_pdq`
+`r curr_ic_deltas_html`
+
+<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_ic_tooltip`"></i>
+
 :::
 
 
 ### Column
 
-```{r}
-#| content: valuebox
-#| title: "Business Uncertainty"
+::: {.valuebox icon="triangle" color="secondary" title="Business Uncertainty"}
 
-list(
-  icon = "triangle",
-  color = "secondary",
-  value = sprintf("%.2f", round(curr_bu, 2))
-)
-```
+`r curr_bu`
+
+`r curr_bu_deltas_html`
+
+<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_bu_tooltip`"></i>
+  
+:::
+
 
 ### Column
 
-```{r}
-#| content: valuebox
-#| title: "Employment Outlook"
+::: {.valuebox icon="people" color="light" title="Employment Outlook"}
 
-list(
-  icon = "people",
-  color = "light",
-  value = sprintf("%.2f", round(curr_eo, 2))
-)
-```
+`r curr_eo`
+
+`r curr_eo_deltas_html`
+
+<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_eo_tooltip`"></i>
+
+:::
 
 ## Row
 

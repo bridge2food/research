@@ -72,14 +72,57 @@ curr_period <- paste0(period$year, "-", period$quarter)
 
 # Industry confidence indicator for current period (dq = delta quarter, pdq = percent delta quarter)
 curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic) %>% round(2))
-curr_ic_dq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2))
-curr_ic_pdq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2))
+curr_ic_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2)
+curr_ic_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2)
 
 # Business uncertainty
-curr_bu <- d_indicators %>% filter(Period == curr_period) %>% pull(bu)
+curr_bu <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(bu) %>% round(2))
+curr_bu_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(bu_dq) %>% round(2)
+curr_bu_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(bu_pdq) %>% round(2)
 
 # Employment outlook
-curr_eo <- d_indicators %>% filter(Period == curr_period) %>% pull(eo)
+curr_eo <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(eo) %>% round(2))
+curr_eo_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(eo_dq) %>% round(2)
+curr_eo_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(eo_pdq) %>% round(2)
+
+# Create HTML snippets for each delta indicator
+curr_ic_dq_html <- create_delta_html(curr_ic_dq)
+curr_ic_pdq_html <- create_delta_html(curr_ic_pdq, is_percent = TRUE)
+
+curr_bu_dq_html <- create_delta_html(curr_bu_dq)
+curr_bu_pdq_html <- create_delta_html(curr_bu_pdq, is_percent = TRUE)
+
+curr_eo_dq_html <- create_delta_html(curr_eo_dq)
+curr_eo_pdq_html <- create_delta_html(curr_eo_pdq, is_percent = TRUE)
+
+# Combine the delta indicators with spacing only if both are present
+# Industry Confidence
+if (curr_ic_dq_html != "" && curr_ic_pdq_html != "") {
+  curr_ic_deltas_html <- paste0(curr_ic_dq_html, " &nbsp;&nbsp; ", curr_ic_pdq_html)
+} else {
+  # If either delta indicator is missing, do not display any deltas
+  curr_ic_deltas_html <- ""
+}
+# Business Uncertainty
+if (curr_bu_dq_html != "" && curr_bu_pdq_html != "") {
+  curr_bu_deltas_html <- paste0(curr_bu_dq_html, " &nbsp;&nbsp; ", curr_bu_pdq_html)
+} else {
+  # If either delta indicator is missing, do not display any deltas
+  curr_bu_deltas_html <- ""
+}
+# Employment Outlook
+if (curr_eo_dq_html != "" && curr_eo_pdq_html != "") {
+  curr_eo_deltas_html <- paste0(curr_eo_dq_html, " &nbsp;&nbsp; ", curr_eo_pdq_html)
+} else {
+  # If either delta indicator is missing, do not display any deltas
+  curr_eo_deltas_html <- ""
+}
+
+# Define tooltip text for Industry Confidence
+curr_ic_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
+curr_bu_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
+curr_eo_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
+
 
 ############## Charts
 

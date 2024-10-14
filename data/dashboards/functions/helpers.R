@@ -53,3 +53,32 @@ caret_color <- function(value) {
   }
 }
 
+# Function to create HTML snippet for a delta indicator
+create_delta_html <- function(delta_value, is_percent = FALSE) {
+  # Check if delta_value is numeric and not NA
+  if (!is.na(delta_value) && is.numeric(delta_value)) {
+    # Determine caret icon and color
+    icon <- caret(delta_value)
+    color_class <- caret_color(delta_value)
+    
+    # Format delta value to two decimal places
+    formatted_delta <- sprintf("%.2f", round(delta_value, 2))
+    
+    # Append percent sign if needed
+    if (is_percent) {
+      formatted_delta <- paste0(formatted_delta, "%")
+    }
+    
+    # Create HTML string
+    html_snippet <- sprintf(
+      '<i class="bi bi-%s %s"></i> %s',
+      icon,
+      color_class,
+      formatted_delta
+    )
+    return(html_snippet)
+  } else {
+    # Return empty string if delta_value is NA or not numeric
+    return('')
+  }
+}
