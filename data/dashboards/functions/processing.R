@@ -10,7 +10,8 @@ process_data <- function(survey_name, dir_path, calc_func) {
   for (file in files) {
     time_info <- extract_time_info(file)
     period <- time_info$period
-    data <- read_sav(file)
+    data <- read_sav(file) %>%
+      filter(Finished == 1) # Only include completed surveys
     result <- calc_func(data, period)
     df <- bind_rows(df, result)
   }

@@ -41,7 +41,7 @@ ppus_latest <- latest_data(survey_name) %>%
 
 # These functions each loop over all files in dir_path and output a single file with historical data.
 # If methodology changes for calculating indicators in these functions,
-# it will change all historical data in the files generated.
+# it will change all historical data in the dataframes generated.
 
 agg <- process_agg_data(survey_name, dir_path)
 indicators <- process_indicators_data(survey_name, dir_path)
@@ -53,7 +53,7 @@ d_indicators <- delta_indicators(indicators)
 period <- latest_period(survey_name)
 curr_period <- paste0(period$year, "-", period$quarter)
 
-# Industry confidence indicator for current period
+# Industry confidence indicator for current period (dq = delta quarter, pdq = percent delta quarter)
 curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic) %>% round(2))
 curr_ic_dq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2))
 curr_ic_pdq <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2))
