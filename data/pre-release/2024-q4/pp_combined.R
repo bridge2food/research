@@ -22,14 +22,33 @@ if (include_pre_release) {
 }
 
 # Define the survey names
-survey_names <- c("PPUS", "PMP", "PDP")  # Replace with the survey names you want to include
+survey_names <- c("PPUS")  # Replace with the survey names you want to include
 
-# Filter completed and add segments
+# Combine data from survey_names for latest period
 pp_latest <- lapply(survey_names, function(survey_name) {
   latest_data(survey_name) %>%
     filter(Finished == 1) # %>%
     # select(po.prod_past_3.q:last_col())
 }) %>% do.call(rbind, .)
+
+# Combine data from survey_names and all periods for calculating agg and indicators # Note: bind_rows() removes some variable labels
+pp_all <- lapply(survey_names, function(survey_name) {
+  files <- list_survey_files(survey_name)
+  data_list <- lapply(files, function(file) {
+    time_info <- extract_time_info(file)
+    period <- time_info$period
+    data <- read_sav(file) %>%
+      filter(Finished == 1) %>%
+      mutate(Period = period)
+    return(data)
+  })
+  # Combine data frames from the current survey
+  do.call(rbind, data_list)
+})
+
+# Combine data frames from all surveys
+pp_all <- do.call(rbind, pp_all)
+
 
 # Variable naming conventions:
 # p = past, c = current, n = next, q = quarter
@@ -40,19 +59,18 @@ pp_latest <- lapply(survey_names, function(survey_name) {
 # If methodology changes for calculating indicators in these functions,
 # it will change all historical data in the files generated.
 
-agg <- lapply(survey_names, function(survey_name) {
-  process_agg_data(survey_name, dir_path)
-}) %>% 
-  bind_rows() %>%
-  group_by(Period) %>%  # Group by Period to preserve it
-  summarize(across(where(is.numeric), mean, na.rm = TRUE), .groups = 'drop')  # Average numeric columns within each Period
+# Calculate aggregated data using pp_all
+agg <- pp_all %>%
+  group_by(Period) %>%
+  do(calculate_agg(., unique(.$Period))) %>%
+  ungroup()
 
-indicators <- lapply(survey_names, function(survey_name) {
-  process_indicators_data(survey_name, dir_path)
-}) %>% 
-  bind_rows() %>%
-  group_by(Period) %>%  # Group by Period to preserve it
-  summarize(across(where(is.numeric), mean, na.rm = TRUE), .groups = 'drop')  # Average numeric columns within each Period
+
+# Calculate indicators using pp_all
+indicators <- pp_all %>%
+  group_by(Period) %>%
+  do(calculate_indicators(., unique(.$Period))) %>%
+  ungroup()
 
 d_indicators <- delta_indicators(indicators)
 
@@ -119,8 +137,12 @@ if (curr_eo_dq_html != "" && curr_eo_pdq_html != "") {
 }
 
 # Define tooltip text for Industry Confidence
-curr_ic_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
-curr_bu_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
+curr_ic_tooltip <- "The ICI is based on three components from survey responses: <br>
+* Production Expectations: Managers are asked how they expect their production to develop over the next three months.
+* Assessment of Order Books: This measures how managers assess the current levels of their order books (domestic and export orders).
+* Assessment of Stocks of Finished Products: This indicates whether managers consider the current levels of their stocks of finished products to be too high, too low, or adequate. A positive ICI value suggests that businesses are generally optimistic about future production and demand.
+A negative ICI value indicates pessimism, where businesses are more concerned about weak orders and higher-than-desired stock levels."
+curr_bu_tooltip <- "Ranges from -100 to 100. Higher numbers represent greater uncertainty."
 curr_eo_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
 
 

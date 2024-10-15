@@ -27,7 +27,7 @@ source("bcs.R")
 
 `r curr_ic_deltas_html`
 
-<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_ic_tooltip`"></i>
+<i class="bi bi-info-circle info-icon" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="`r curr_ic_tooltip`"></i>
 
 :::
 
@@ -40,7 +40,7 @@ source("bcs.R")
 
 `r curr_bu_deltas_html`
 
-<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_bu_tooltip`"></i>
+<i class="bi bi-info-circle info-icon" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="`r curr_bu_tooltip`"></i>
   
 :::
 
@@ -53,9 +53,10 @@ source("bcs.R")
 
 `r curr_eo_deltas_html`
 
-<i class="bi bi-info-circle info-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="`r curr_eo_tooltip`"></i>
+<i class="bi bi-info-circle info-icon" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="`r curr_eo_tooltip`"></i>
 
 :::
+
 
 ## Row
 

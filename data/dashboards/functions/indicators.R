@@ -2,24 +2,26 @@
 
 # Function to calculate Industry Confidence Indicator
 calculate_industry_confidence <- function(data) {
-  orders <- data$po.orders_curr.q
-  stocks <- data$po.stocks_curr.q
-  prod_exp <- data$po.prod_next_3.q
-  ic <- (sum(orders, na.rm = TRUE) - sum(stocks, na.rm = TRUE) + sum(prod_exp, na.rm = TRUE)) / 3
+  
+  orders_nb <- mean(data$po.orders_curr.q, na.rm = TRUE)*100
+  stocks_nb <- mean(data$po.stocks_curr.q, na.rm = TRUE)*100
+  prod_exp_nb <- mean(data$po.prod_next_3.q, na.rm = TRUE)*100
+  
+  ic <- (orders_nb - stocks_nb + prod_exp_nb) / 3
   return(ic)
 }
 
-# Function for Industry Uncertainty Indicator
+# Business uncertainty indicator
 calculate_business_uncertainty <- function(data) {
-  uncertainty <- data$po.uncertainty.q
-  bu <- sum(uncertainty, na.rm = T) 
+  bu <- mean(data$po.uncertainty.q, na.rm = TRUE) * (-100)
   return(bu)
 }
+
 
 # Function for Employment Outlook Indicator
 calculate_employment_outlook <- function(data) {
   emp_exp <- data$lab.emp_next_3.q
-  eo <- sum(emp_exp, na.rm = T) 
+  eo <- mean(emp_exp, na.rm = T)*100 
   return(eo)
 }
 
