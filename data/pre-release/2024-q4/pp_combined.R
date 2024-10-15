@@ -22,7 +22,7 @@ if (include_pre_release) {
 }
 
 # Define the survey names
-survey_names <- c("PPUS")  # Replace with the survey names you want to include
+survey_names <- c("PPUS", "PMP", "PDP")  # Replace with the survey names you want to include
 
 # Combine data from survey_names for latest period
 pp_latest <- lapply(survey_names, function(survey_name) {
@@ -137,7 +137,7 @@ if (curr_eo_dq_html != "" && curr_eo_pdq_html != "") {
 }
 
 # Define tooltip text for Industry Confidence
-curr_ic_tooltip <- "The ICI is based on three components from survey responses: <br>
+curr_ic_tooltip <- "Composite indicator based on three components <br>
 * Production Expectations: Managers are asked how they expect their production to develop over the next three months.
 * Assessment of Order Books: This measures how managers assess the current levels of their order books (domestic and export orders).
 * Assessment of Stocks of Finished Products: This indicates whether managers consider the current levels of their stocks of finished products to be too high, too low, or adequate. A positive ICI value suggests that businesses are generally optimistic about future production and demand.
