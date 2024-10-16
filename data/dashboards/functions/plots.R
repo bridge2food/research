@@ -138,29 +138,31 @@ pie_chart <- function(df, column_name, order = "descending") {
 }
 
 
-
-
-
-
 # Function to create a pie chart of frequencies of values across columns with a given naming structure
 pie_chart_cols <- function(data, base_col_name) {
-  # Use select and starts_with to get columns that match the pattern
+  # Load necessary libraries
+  library(dplyr)
+  library(plotly)
+  
+  # Select columns that start with the base_col_name
   matching_cols <- data %>%
     select(starts_with(base_col_name)) 
   
-  # Filter the columns that follow the pattern "base_col_name_number"
+  # Further filter to match the pattern "base_col_name_number"
   matching_cols <- matching_cols %>%
     select(matches(paste0("^", base_col_name, "_\\d+$")))
   
+  # Check if any columns match the pattern
   if (ncol(matching_cols) == 0) {
     stop("No columns match the given base column name structure.")
   }
   
-  # Retrieve the value labels using attr(), and ensure they are in the correct order
+  # Retrieve the value labels using attr(), ensuring correct order
   factor_labels <- sapply(matching_cols, function(col) {
     val_labels <- attr(col, "labels")
     if (!is.null(val_labels)) {
-      val_labels <- val_labels[order(names(val_labels))]  # Ensure labels are ordered correctly
+      # Order labels based on their names
+      val_labels <- val_labels[order(names(val_labels))]  
       return(names(val_labels))
     } else {
       return(colnames(data))
@@ -170,27 +172,63 @@ pie_chart_cols <- function(data, base_col_name) {
   # Summarize the values of the matching columns
   column_sums <- colSums(matching_cols, na.rm = TRUE)
   
-  # Set the names of the sums to the corresponding factor labels
+  # Assign names to the sums based on factor labels
   names(column_sums) <- unlist(factor_labels)
   
   # Ensure the order of factor labels is maintained
   ordered_factor_labels <- unique(unlist(factor_labels))
   
-  # Create a pie chart using Plotly
+  # Create a data frame for easier manipulation
+  plot_data <- data.frame(
+    label = ordered_factor_labels,
+    value = column_sums[ordered_factor_labels],
+    stringsAsFactors = FALSE
+  )
+  
+  # Calculate total sum
+  total_sum <- sum(plot_data$value, na.rm = TRUE)
+  
+  # Handle case where total_sum is zero
+  if (total_sum == 0) {
+    stop("All categories have zero values. No pie chart to display.")
+  }
+  
+  # Calculate percentage and round to one decimal place
+  plot_data$percent <- (plot_data$value / total_sum) * 100
+  plot_data$percent_rounded <- round(plot_data$percent, 1)
+  
+  # Create text labels: show "X%" only if value > 0
+  plot_data$text_label <- ifelse(plot_data$value > 0, 
+                                 paste0(plot_data$percent_rounded, "%"),
+                                 "")
+  
+  # Create the pie chart using Plotly
   pie_chart <- plot_ly(
-    labels = ordered_factor_labels,
-    values = column_sums[ordered_factor_labels],  # Ensure the values follow the correct order
+    data = plot_data,
+    labels = ~label,
+    values = ~value,
     type = 'pie',
-    sort = FALSE  # Prevent Plotly from sorting the slices
+    text = ~text_label,            # Conditional text labels
+    textinfo = 'text',             # Use the 'text' field for labels only
+    textposition = 'inside',
+    customdata = ~percent_rounded, # Pass pre-rounded percent as custom data
+    hovertemplate = paste0(
+      "<b>%{label}</b><br>",
+      "Count: %{value}<br>",
+      "Percentage: %{customdata}%<extra></extra>"
+    ),
+    sort = FALSE,                   # Prevent Plotly from sorting the slices
+    showlegend = TRUE              # Ensure legend is displayed
   ) %>%
     layout(
       title = "",
-      legend = list(traceorder = "normal")  # Keep the legend order as defined by the factor levels
+      legend = list(traceorder = "normal")  # Maintain legend order
     ) %>%
     config(displayModeBar = FALSE)
   
   return(pie_chart)
 }
+
 
 # Function to create a pie chart of frequencies of values across columns with a given naming structure, which excludes suffixes "_n"
 # Also cleans variable labels to only keep text after "- "
