@@ -40,45 +40,89 @@ v_bar_chart <- function(df, column_name) {
   return(fig)
 }
 
+
+
+library(dplyr)
+library(tidyr)
+library(plotly)
+library(haven)
+
 # Function to create a pie chart of frequencies of values in a column
 pie_chart <- function(df, column_name, order = "descending") {
+  
   # Check if the column exists in the dataframe
   if (!column_name %in% colnames(df)) {
     stop("The column does not exist in the dataframe.")
   }
   
-  # Ensure the column is treated as a factor
-  df[[column_name]] <- as_factor(df[[column_name]])
+  # Extract labels and their corresponding values from the 'labels' attribute
+  labels <- attr(df[[column_name]], "labels")
   
-  # Determine the correct order of factor levels
-  if (order == "descending") {
-    ordered_levels <- sort(unique(df[[column_name]]), decreasing = TRUE)
-  } else if (order == "ascending") {
-    ordered_levels <- sort(unique(df[[column_name]]), decreasing = FALSE)
+  # Ensure that the 'labels' attribute exists
+  if (is.null(labels)) {
+    stop("The specified column does not have a 'labels' attribute. Please ensure it is a labelled column from 'haven'.")
   }
   
-  # Apply the ordered levels to the factor
-  df[[column_name]] <- factor(df[[column_name]], levels = ordered_levels)
+  # Convert labels to numeric, preserving decimal points if any
+  # If labels are non-numeric or cannot be converted, throw an error
+  numeric_labels <- suppressWarnings(as.numeric(labels))
   
-  # Create a summary of frequencies of values in the column, preserving factor order
-  summary_df <- df %>%
-    group_by(Value = df[[column_name]]) %>%
-    summarize(Freq = n()) %>%
-    ungroup()
+  if (any(is.na(numeric_labels) & !is.na(labels))) {
+    stop("Some labels could not be converted to numeric values. Please ensure all labels are numeric.")
+  }
   
-  # Modify the factor labels to keep only the text before the hyphen
-  summary_df$Value <- str_remove(summary_df$Value, "\\s*[-–—].*")
+  # Create a dataframe mapping values to labels
+  labels_df <- data.frame(
+    Value = numeric_labels,
+    label = names(labels),
+    stringsAsFactors = FALSE
+  )
   
-  # Reapply the correct order to the factor levels in summary_df
-  summary_df$Value <- factor(summary_df$Value, levels = unique(summary_df$Value))
+  # Summarize frequencies of each value present in the data
+  data_summary <- df %>%
+    group_by(Value = as.numeric(df[[column_name]])) %>%  # Ensure values are numeric
+    summarize(Freq = n(), .groups = 'drop')
   
-  # Create the pie chart using plotly
+  # Merge with all possible labels to include those with zero frequency
+  summary_df <- labels_df %>%
+    left_join(data_summary, by = "Value") %>%
+    mutate(Freq = ifelse(is.na(Freq), 0, Freq))
+  
+  # Arrange summary_df based on the desired order
+  if (order == "ascending") {
+    summary_df <- summary_df %>% arrange(Value)
+  } else if (order == "descending") {
+    summary_df <- summary_df %>% arrange(desc(Value))
+  } else {
+    stop("Invalid order parameter. Use 'ascending' or 'descending'.")
+  }
+  
+  # Convert 'label' to a factor with levels in the sorted order
+  summary_df <- summary_df %>%
+    mutate(label = factor(label, levels = summary_df$label))
+  
+  # **Add a 'text' column to conditionally display percentages**
+  summary_df <- summary_df %>%
+    mutate(
+      # Calculate percentage only if Freq > 0; otherwise, set as NA
+      percent = ifelse(Freq > 0, (Freq / sum(Freq)) * 100, NA),
+      text = ifelse(
+        Freq > 0,
+        paste0(sprintf("%.1f%%", percent)),
+        ""
+      )
+    )
+  
+  # Create the pie chart using Plotly
   fig <- plot_ly(
     data = summary_df,
-    labels = ~Value,
+    labels = ~label,
     values = ~Freq,
     type = 'pie',
-    sort = FALSE  # Prevent Plotly from re-sorting the slices
+    text = ~text,                        # Use the custom 'text' column
+    textinfo = 'text',                   # Display only the 'text' field
+    hoverinfo = 'label+value+percent',   # Include label, count, and percent in hover
+    sort = FALSE                         # Prevent Plotly from re-sorting the slices
   )
   
   # Customize the layout to ensure the legend order matches the factor levels
@@ -87,11 +131,16 @@ pie_chart <- function(df, column_name, order = "descending") {
     legend = list(traceorder = "normal")  # Keep the legend order as defined by the factor levels
   )
   
-  # Remove the plotly toolbar for a cleaner presentation
+  # Remove the Plotly toolbar for a cleaner presentation
   fig <- fig %>% config(displayModeBar = FALSE)
   
   return(fig)
 }
+
+
+
+
+
 
 # Function to create a pie chart of frequencies of values across columns with a given naming structure
 pie_chart_cols <- function(data, base_col_name) {

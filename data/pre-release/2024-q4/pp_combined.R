@@ -137,13 +137,9 @@ if (curr_eo_dq_html != "" && curr_eo_pdq_html != "") {
 }
 
 # Define tooltip text for Industry Confidence
-curr_ic_tooltip <- "Composite indicator based on three components <br>
-* Production Expectations: Managers are asked how they expect their production to develop over the next three months.
-* Assessment of Order Books: This measures how managers assess the current levels of their order books (domestic and export orders).
-* Assessment of Stocks of Finished Products: This indicates whether managers consider the current levels of their stocks of finished products to be too high, too low, or adequate. A positive ICI value suggests that businesses are generally optimistic about future production and demand.
-A negative ICI value indicates pessimism, where businesses are more concerned about weak orders and higher-than-desired stock levels."
-curr_bu_tooltip <- "Ranges from -100 to 100. Higher numbers represent greater uncertainty."
-curr_eo_tooltip <- "This indicator measures the overall confidence level of the industry for the current period."
+curr_ic_tooltip <- "Composite indicator derived from production expectations, current order books, and current stocks of finished products. Higher values for this figure indicate greater industry confidence."
+curr_bu_tooltip <- "Net balance of responses to the question asking managers to assess uncertainty in the future development of their business. Higher values for this figuere represent greater uncertainty."
+curr_eo_tooltip <- "Net balance of responses to the question asking managers about expected changes in staff numbers over the next three months."
 
 
 ############## Charts
@@ -198,3 +194,4 @@ inv_next_y_pie <- pie_chart(pp_latest, "in.inv_next_y.q4")
 
 inv_structure <- stacked_v_bar_chart_cols_nk(pp_latest, "in.inv_structure.q4")
 inv_drivers <- stacked_v_bar_chart_cols_nk(pp_latest, "in.inv_drivers.q4")
+
