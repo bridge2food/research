@@ -146,12 +146,11 @@ prod_next_3_pie
 ```
 
 
-
 ## Row
 
 ```{r}
 #| title: "Factors Limiting Production"
-prod_limits_pie
+prod_limits_bar
 ```
 
 # Inputs & Prices

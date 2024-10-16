@@ -165,6 +165,7 @@ prod_lvl_box <- v_box_plot(pp_latest, "po.prod_lvl.q_1")
 prod_cap_bar <- v_bar_chart(pp_latest, "po.prod_cap.q")
 
 prod_limits_pie <- pie_chart_cols(pp_latest, "po.prod_limits.q")
+prod_limits_bar <- v_bar_chart_cols(pp_latest, "po.prod_limits.q")
 
 # Inputs & Prices
 

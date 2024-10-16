@@ -229,6 +229,217 @@ pie_chart_cols <- function(data, base_col_name) {
   return(pie_chart)
 }
 
+# Function to create a vertical bar chart of frequencies with wrapped labels
+v_bar_chart_cols <- function(data, base_col_name, max_char = 15) {
+  # Load necessary libraries
+  library(dplyr)
+  library(plotly)
+  
+  # Select columns that start with the base_col_name
+  matching_cols <- data %>%
+    select(starts_with(base_col_name)) 
+  
+  # Further filter to match the pattern "base_col_name_number"
+  matching_cols <- matching_cols %>%
+    select(matches(paste0("^", base_col_name, "_\\d+$")))
+  
+  # Check if any columns match the pattern
+  if (ncol(matching_cols) == 0) {
+    stop("No columns match the given base column name structure.")
+  }
+  
+  # Retrieve the value labels using attr(), ensuring correct order
+  factor_labels <- sapply(matching_cols, function(col) {
+    val_labels <- attr(col, "labels")
+    if (!is.null(val_labels)) {
+      # Order labels based on their names
+      val_labels <- val_labels[order(names(val_labels))]  
+      return(names(val_labels))
+    } else {
+      return(colnames(data))
+    }
+  }, simplify = TRUE, USE.NAMES = FALSE)
+  
+  # Summarize the values of the matching columns
+  column_sums <- colSums(matching_cols, na.rm = TRUE)
+  
+  # Assign names to the sums based on factor labels
+  names(column_sums) <- unlist(factor_labels)
+  
+  # Ensure the order of factor labels is maintained
+  ordered_factor_labels <- unique(unlist(factor_labels))
+  
+  # Create a data frame for easier manipulation
+  plot_data <- data.frame(
+    label = ordered_factor_labels,
+    value = column_sums[ordered_factor_labels],
+    stringsAsFactors = FALSE
+  )
+  
+  # Calculate total number of respondents
+  total_respondents <- nrow(data)
+  
+  # Handle case where total_respondents is zero
+  if (total_respondents == 0) {
+    stop("The data contains zero respondents. No bar chart to display.")
+  }
+  
+  # Calculate percentage and round to one decimal place
+  plot_data$percent <- (plot_data$value / total_respondents) * 100
+  plot_data$percent_rounded <- round(plot_data$percent, 1)
+  
+  # Create text labels: show "X%" only if value > 0
+  plot_data$text_label <- ifelse(plot_data$value > 0, 
+                                 paste0(plot_data$percent_rounded, "%"),
+                                 "")
+  
+  # Wrap the label text if it's too long
+  plot_data$label_wrapped <- sapply(plot_data$label, wrap_text, max_char = max_char)
+  
+  # Sort the data in descending order of percentage
+  plot_data <- plot_data %>%
+    arrange(desc(percent))
+  
+  # Convert 'label_wrapped' to a factor with levels ordered by descending percentage
+  plot_data$label_wrapped <- factor(plot_data$label_wrapped, levels = plot_data$label_wrapped)
+  
+  # Create the vertical bar chart using Plotly
+  bar_chart <- plot_ly(
+    data = plot_data,
+    x = ~label_wrapped,
+    y = ~percent,  # Use precise percentage for bar heights
+    type = 'bar',
+    text = ~text_label,                 # Conditional text labels
+    textposition = 'auto',              # Position text automatically
+    customdata = ~value,                # Pass count as custom data
+    hovertemplate = paste0(
+      "<b>%{x}</b><br>",
+      "Count: %{customdata}<br>",
+      "Percentage: %{y:.1f}%<extra></extra>"
+    )
+  ) %>%
+    layout(
+      # Remove title and axis titles by setting them to empty strings
+      title = "",
+      xaxis = list(title = ""),
+      yaxis = list(title = ""),
+      bargap = 0.2,  # Gap between bars
+      showlegend = FALSE  # Hide legend as it's unnecessary for single-series bar charts
+    ) %>%
+    config(displayModeBar = FALSE)  # Hide the mode bar for a cleaner look
+  
+  return(bar_chart)
+}
+
+
+# Function to create a horizontal bar chart of frequencies with wrapped labels
+h_bar_chart_cols <- function(data, base_col_name, max_char = 15) {
+  # Load necessary libraries
+  library(dplyr)
+  library(plotly)
+  
+  # Helper function to wrap text by inserting <br> tags
+  # (Assuming wrap_text is defined outside, you can remove this if already defined)
+  # wrap_text <- function(text, max_char = 15) { ... }
+  
+  # Select columns that start with the base_col_name
+  matching_cols <- data %>%
+    select(starts_with(base_col_name)) 
+  
+  # Further filter to match the pattern "base_col_name_number"
+  matching_cols <- matching_cols %>%
+    select(matches(paste0("^", base_col_name, "_\\d+$")))
+  
+  # Check if any columns match the pattern
+  if (ncol(matching_cols) == 0) {
+    stop("No columns match the given base column name structure.")
+  }
+  
+  # Retrieve the value labels using attr(), ensuring correct order
+  factor_labels <- sapply(matching_cols, function(col) {
+    val_labels <- attr(col, "labels")
+    if (!is.null(val_labels)) {
+      # Order labels based on their names
+      val_labels <- val_labels[order(names(val_labels))]  
+      return(names(val_labels))
+    } else {
+      return(colnames(data))
+    }
+  }, simplify = TRUE, USE.NAMES = FALSE)
+  
+  # Summarize the values of the matching columns
+  column_sums <- colSums(matching_cols, na.rm = TRUE)
+  
+  # Assign names to the sums based on factor labels
+  names(column_sums) <- unlist(factor_labels)
+  
+  # Ensure the order of factor labels is maintained
+  ordered_factor_labels <- unique(unlist(factor_labels))
+  
+  # Create a data frame for easier manipulation
+  plot_data <- data.frame(
+    label = ordered_factor_labels,
+    value = column_sums[ordered_factor_labels],
+    stringsAsFactors = FALSE
+  )
+  
+  # Calculate total number of respondents
+  total_respondents <- nrow(data)
+  
+  # Handle case where total_respondents is zero
+  if (total_respondents == 0) {
+    stop("The data contains zero respondents. No bar chart to display.")
+  }
+  
+  # Calculate percentage and round to one decimal place
+  plot_data$percent <- (plot_data$value / total_respondents) * 100
+  plot_data$percent_rounded <- round(plot_data$percent, 1)
+  
+  # Create text labels: show "X%" only if value > 0
+  plot_data$text_label <- ifelse(plot_data$value > 0, 
+                                 paste0(plot_data$percent_rounded, "%"),
+                                 "")
+  
+  # Wrap the label text if it's too long
+  plot_data$label_wrapped <- sapply(plot_data$label, wrap_text, max_char = max_char)
+  
+  # Sort the data in descending order of percentage
+  plot_data <- plot_data %>%
+    arrange(desc(percent))
+  
+  # Convert 'label_wrapped' to a factor with levels ordered by descending percentage
+  plot_data$label_wrapped <- factor(plot_data$label_wrapped, levels = rev(plot_data$label_wrapped))
+  
+  # Create the horizontal bar chart using Plotly
+  bar_chart <- plot_ly(
+    data = plot_data,
+    x = ~percent,       # Use precise percentage for bar lengths
+    y = ~label_wrapped,
+    type = 'bar',
+    orientation = 'h',  # Set orientation to horizontal
+    text = ~text_label,                 # Conditional text labels
+    textposition = 'auto',              # Position text automatically
+    customdata = ~value,                # Pass count as custom data
+    hovertemplate = paste0(
+      "<b>%{y}</b><br>",
+      "Count: %{customdata}<br>",
+      "Percentage: %{x:.1f}%<extra></extra>"
+    )
+  ) %>%
+    layout(
+      # Remove title and axis titles by setting them to empty strings
+      xaxis = list(title = ""),
+      yaxis = list(title = ""),
+      bargap = 0.2,  # Gap between bars
+      showlegend = FALSE  # Hide legend as it's unnecessary for single-series bar charts
+    ) %>%
+    config(displayModeBar = FALSE)  # Hide the mode bar for a cleaner look
+  
+  return(bar_chart)
+}
+
+
+
 
 # Function to create a pie chart of frequencies of values across columns with a given naming structure, which excludes suffixes "_n"
 # Also cleans variable labels to only keep text after "- "

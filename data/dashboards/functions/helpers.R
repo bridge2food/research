@@ -82,3 +82,43 @@ create_delta_html <- function(delta_value, is_percent = FALSE) {
     return('')
   }
 }
+
+# Helper function to wrap text by inserting <br> tags
+wrap_text <- function(text, max_char = 15) {
+  # Split the text into words
+  words <- unlist(strsplit(text, " "))
+  
+  # Initialize variables
+  wrapped_text <- ""
+  current_line <- ""
+  
+  for (word in words) {
+    # Check if adding the next word exceeds the max_char limit
+    if (nchar(current_line) + nchar(word) + 1 <= max_char) {
+      if (current_line == "") {
+        current_line <- word
+      } else {
+        current_line <- paste(current_line, word, sep = " ")
+      }
+    } else {
+      # Add the current line to wrapped_text and start a new line
+      if (wrapped_text == "") {
+        wrapped_text <- current_line
+      } else {
+        wrapped_text <- paste(wrapped_text, current_line, sep = "<br>")
+      }
+      current_line <- word
+    }
+  }
+  
+  # Add any remaining text
+  if (current_line != "") {
+    if (wrapped_text == "") {
+      wrapped_text <- current_line
+    } else {
+      wrapped_text <- paste(wrapped_text, current_line, sep = "<br>")
+    }
+  }
+  
+  return(wrapped_text)
+}
