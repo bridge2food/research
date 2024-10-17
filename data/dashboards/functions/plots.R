@@ -890,13 +890,9 @@ stacked_v_bar_chart_cols_nk <- function(data,
     stop("Duplicated levels found in 'k_label'. Please ensure that each choice has a unique label.")
   }
   
-  # **Modified Code Starts Here**
-  
   # 13. Calculate percentages relative to the total sample size
   counts_df <- counts_df %>%
     mutate(Percentage = Count / total_respondents * 100)
-  
-  # **Modified Code Ends Here**
   
   # 14. Create the stacked vertical bar chart using plotly
   bar_chart <- plot_ly(
