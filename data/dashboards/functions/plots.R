@@ -334,13 +334,6 @@ v_bar_chart_cols <- function(data, base_col_name, max_char = 15) {
 
 # Function to create a horizontal bar chart of frequencies with wrapped labels
 h_bar_chart_cols <- function(data, base_col_name, max_char = 15) {
-  # Load necessary libraries
-  library(dplyr)
-  library(plotly)
-  
-  # Helper function to wrap text by inserting <br> tags
-  # (Assuming wrap_text is defined outside, you can remove this if already defined)
-  # wrap_text <- function(text, max_char = 15) { ... }
   
   # Select columns that start with the base_col_name
   matching_cols <- data %>%
@@ -730,7 +723,6 @@ stacked_h_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
   return(bar_chart)
 }
 
-#####
 
 # Function to create a stacked vertical bar chart across columns with naming structure name_n_k
 # where n represents categories and k represents choices within each category
@@ -775,12 +767,8 @@ stacked_v_bar_chart_cols_nk <- function(data,
     pivot_longer(cols = everything(), names_to = "full_name", values_to = "Count") %>%
     left_join(col_info_df, by = "full_name")
   
-  # **New Code Starts Here**
-  
   # Calculate the total sample size (number of respondents)
   total_respondents <- nrow(data)
-  
-  # **New Code Ends Here**
   
   # 7. Extract 'n_label' and 'k_label'
   
