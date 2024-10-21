@@ -20,3 +20,54 @@
 .card-header {
   background-color: #eee;
 }
+
+/* Custom CSS to adjust sidebar transition effects and fix toggle button position */
+
+/* Existing styles with added height and overflow adjustments */
+.bslib-sidebar-layout .sidebar,
+.bslib-sidebar-layout .main {
+  transition: margin 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+  height: 100%;           /* Ensure elements fill the available height */
+  overflow-y: auto;       /* Allow internal scrolling if content overflows */
+}
+
+.bslib-sidebar-layout[data-bslib-sidebar-open="closed"] .sidebar {
+  transform: translateX(-100%) !important;
+}
+
+.bslib-sidebar-layout[data-bslib-sidebar-open="closed"] .main {
+  margin-left: 0 !important;
+}
+
+/* New style to prevent vertical scrollbar during sidebar transition */
+.bslib-sidebar-layout {
+  overflow: hidden;       /* Prevent overflow during transition */
+}
+
+/* Styles to fix the toggle button position */
+.bslib-sidebar-layout .collapse-toggle {
+  position: absolute;
+  top: 15px;              /* Adjust as needed */
+  left: 15px;             /* Adjust as needed */
+  z-index: 1000;          /* Ensure it stays on top */
+  transition: transform 0.3s ease-in-out !important;
+  background-color: white;/* Optional: to improve visibility */
+  border: none;           /* Optional: remove border */
+  border-radius: 4px;     /* Optional: add border radius */
+  padding: 5px;           /* Optional: adjust padding */
+}
+
+/* Adjust position when the sidebar is collapsed */
+.bslib-sidebar-layout[data-bslib-sidebar-open="closed"] .collapse-toggle {
+  left: 15px;             /* Keep it in the same position */
+}
+
+/* Rotate the toggle button icon when the sidebar is collapsed */
+.bslib-sidebar-layout .collapse-toggle .collapse-icon {
+  transition: transform 0.3s ease-in-out !important;
+}
+
+.bslib-sidebar-layout[data-bslib-sidebar-open="closed"] .collapse-toggle .collapse-icon {
+  transform: rotate(180deg); /* Adjust rotation as needed */
+}
+
