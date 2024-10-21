@@ -21,7 +21,7 @@ source("bcs.R")
 
 ### Column
 
-::: {.valuebox icon="bar-chart-line" color="secondary" title="Industry Confidence"}
+::: {.valuebox icon="bar-chart-steps" color="secondary" title="Industry Confidence"}
 
 `r curr_ic`
 
@@ -34,7 +34,7 @@ source("bcs.R")
 
 ### Column
 
-::: {.valuebox icon="triangle" color="secondary" title="Business Uncertainty"}
+::: {.valuebox icon="cloud-sun" color="secondary" title="Business Uncertainty"}
 
 `r curr_bu`
 
