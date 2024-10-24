@@ -41,12 +41,6 @@ v_bar_chart <- function(df, column_name) {
 }
 
 
-
-library(dplyr)
-library(tidyr)
-library(plotly)
-library(haven)
-
 # Function to create a pie chart of frequencies of values in a column
 pie_chart <- function(df, column_name, order = "descending") {
   

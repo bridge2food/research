@@ -1,6 +1,9 @@
 ---
 title: "Plant Protein Combined Surveys"
-format: dashboard
+format:
+  dashboard:
+    sidebar:
+      collapse: true
 scrolling: true
 include-in-header:
   text: |
