@@ -38,6 +38,10 @@ BCS programme industry survey data utilise weighting schemes to improve represen
 
 The BCS programme's industry surveys are conducted in the languages of the respondent countries and may be carried out in different formats, including via telephone interview. B2F industry surveys are conducted solely in English via the web-based survey software Qualtrics. While the core meaning of each question remains harmonised with the BCS programme's industry surveys, the phrasing of some B2F survey questions may vary slightly to optimise presentation and clarity in written format.
 
+# Sampling
+
+BCS programme sampling frames are created from various sources such as official statistical registers or from membership lists of business associations and chambers of commerce. Participation in BCS programme surveys is voluntary in most countries, although it is compulsory for some or all surveys in Spain, France, Italy, Luxembourg, the Netherlands, Poland, and Portugal. B2F industry survey sampling frames come from the Bridge2Food database of companies and organisations. Unlike BCS programme surveys, all B2F industry survey respondents participate on a voluntary basis. Participation in B2F surveys is incentivised by providing respondents with pre-release access to aggregated survey data and summary reports.
+
 # Labour
 
 B2F industry surveys include questions about labour that are not present in BCS programme surveys. These cover topics such as labour costs and the availability of skilled workers, offering deeper insights into the sector's labour supply and demand dynamics.
