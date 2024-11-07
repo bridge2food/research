@@ -30,6 +30,10 @@ The BCS programme's industry surveys focus exclusively on the European regional 
 
 Typically, data must be collected for at least three years before applying seasonal adjustments. The BCS programme's industry survey data are available as both seasonally adjusted and non-seasonally adjusted figures. Currently, B2F industry survey data are only available as non-seasonally adjusted.
 
+# Weighting
+
+BCS programme industry survey data utilise weighting schemes to improve representativeness and comparability of data. These weights are calculated based upon company size within industry surveys, sector size for composite indicators that combine data from different industries, and country size for indicators that aggregate data to the EU or Euro-area levels. Currently, B2F surveys results are reported as aggregate unweighted data. In future releases, weighted data will be made available.
+
 # Language, Phrasing, and Data Collection
 
 The BCS programme's industry surveys are conducted in the languages of the respondent countries and may be carried out in different formats, including via telephone interview. B2F industry surveys are conducted solely in English via the web-based survey software Qualtrics. While the core meaning of each question remains harmonised with the BCS programme's industry surveys, the phrasing of some B2F survey questions may vary slightly to optimise presentation and clarity in written format.
