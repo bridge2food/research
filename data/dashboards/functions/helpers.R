@@ -53,35 +53,68 @@ caret_color <- function(value) {
   }
 }
 
-# Function to create HTML snippet for a delta indicator
-create_delta_html <- function(delta_value, is_percent = FALSE) {
-  # Check if delta_value is numeric and not NA
-  if (!is.na(delta_value) && is.numeric(delta_value)) {
-    # Determine caret icon and color
+# Function to create HTML snippet for delta values given a dataframe and a column name
+# Note, this only works with the dataframes with naming convention created by
+# the calc_deltas() function
+
+create_delta_html <- function(data, column, show_na = FALSE) {
+  # Ensure curr_period is defined in the environment
+  if (!exists("curr_period")) {
+    stop("The variable 'curr_period' is not defined in the environment")
+  }
+  
+  # Filter data for the latest period
+  latest_data <- data %>% filter(Period == curr_period)
+  
+  # Construct column names based on the naming conventions
+  delta_col <- paste0(column, "_dq")
+  percent_delta_col <- paste0(column, "_pdq")
+  
+  # Check if the required columns exist in the dataframe
+  if (!(delta_col %in% colnames(data)) || !(percent_delta_col %in% colnames(data))) {
+    stop("Delta columns not found in the dataframe")
+  }
+  
+  # Get the delta and percent delta values for the latest period
+  delta_value <- latest_data[[delta_col]]
+  percent_delta_value <- latest_data[[percent_delta_col]]
+  
+  # Check if delta values are numeric and not NA
+  if (!is.na(delta_value) && is.numeric(delta_value) && !is.na(percent_delta_value) && is.numeric(percent_delta_value)) {
+    # Determine caret icon and color based on delta_value
     icon <- caret(delta_value)
     color_class <- caret_color(delta_value)
     
-    # Format delta value to two decimal places
+    # Format the values to two decimal places
     formatted_delta <- sprintf("%.2f", round(delta_value, 2))
+    formatted_percent_delta <- sprintf("%.2f%%", round(percent_delta_value, 2))  # Include percent sign
     
-    # Append percent sign if needed
-    if (is_percent) {
-      formatted_delta <- paste0(formatted_delta, "%")
-    }
-    
-    # Create HTML string
+    # Create the HTML string
     html_snippet <- sprintf(
-      '<i class="bi bi-%s %s"></i> %s',
+      '<i class="bi bi-%s %s"></i> %s (%s)',
       icon,
       color_class,
-      formatted_delta
+      formatted_delta,
+      formatted_percent_delta
     )
     return(html_snippet)
   } else {
-    # Return empty string if delta_value is NA or not numeric
-    return('')
+    # If show_na = TRUE, return "NA" with an up caret icon; otherwise, return an empty string
+    if (show_na) {
+      icon <- caret(1)  # Default to up caret for NA case
+      color_class <- caret_color(1)  # Default to success color
+      html_snippet <- sprintf(
+        '<i class="bi bi-%s %s"></i> NA (NA%%)',
+        icon,
+        color_class
+      )
+      return(html_snippet)
+    } else {
+      return('')
+    }
   }
 }
+
 
 # Helper function to wrap text by inserting <br> tags
 wrap_text <- function(text, max_char = 15) {
@@ -121,4 +154,79 @@ wrap_text <- function(text, max_char = 15) {
   }
   
   return(wrapped_text)
+}
+
+
+get_curr_nb <- function(column_name) {
+  # Check if the column exists in the dataframe
+  if (!column_name %in% colnames(netbalances)) {
+    stop("The specified column does not exist in the netbalances dataframe")
+  }
+  
+  # Check if the curr_period variable exists in the environment
+  if (!exists("curr_period")) {
+    stop("The variable 'curr_period' is not defined in the environment")
+  }
+  
+  # Retrieve the value for the current period and round to 2 decimal places
+  result <- netbalances %>%
+    filter(Period == curr_period) %>%
+    pull(column_name) %>%
+    round(2)
+  
+  return(result)
+}
+
+# Function to calculate quarterly and annual changes and percent changes
+# of each column in a dataframe, creating variables with the following
+# naming convention:
+# In dq, pdq, dy, pdy, d = delta, p = percent, q = quarter, y = year.
+
+calc_deltas <- function(dataframe) {
+  # Ensure the Period column is sorted
+  dataframe <- dataframe %>% arrange(Period)
+  
+  # Extract year and quarter from Period
+  dataframe <- dataframe %>%
+    mutate(
+      Year = as.numeric(str_extract(Period, "^\\d{4}")),
+      Quarter = str_extract(Period, "Q\\d")
+    )
+  
+  # Get the column names excluding the first column (Period) and the temporary Year and Quarter columns
+  cols <- colnames(dataframe)[-c(1, ncol(dataframe)-1, ncol(dataframe))]
+  
+  # Calculate quarterly and yearly deltas and percent deltas
+  for (col in cols) {
+    delta_q_col <- paste0(col, "_dq")
+    percent_delta_q_col <- paste0(col, "_pdq")
+    delta_y_col <- paste0(col, "_dy")
+    percent_delta_y_col <- paste0(col, "_pdy")
+    
+    dataframe <- dataframe %>%
+      mutate(
+        !!delta_q_col := .data[[col]] - lag(.data[[col]]),
+        !!percent_delta_q_col := (ifelse(!is.na(lag(.data[[col]])), ((.data[[col]] - lag(.data[[col]])) / abs(lag(.data[[col]]))) * 100, NA)),
+        !!delta_y_col := .data[[col]] - lag(.data[[col]], n = 4),
+        !!percent_delta_y_col := (ifelse(!is.na(lag(.data[[col]], n = 4)), ((.data[[col]] - lag(.data[[col]], n = 4)) / abs(lag(.data[[col]], n = 4))) * 100, NA))
+      )
+  }
+  
+  # Reorder columns to place delta and percent delta columns immediately after the original columns
+  new_order <- c("Period")
+  for (col in cols) {
+    delta_q_col <- paste0(col, "_dq")
+    percent_delta_q_col <- paste0(col, "_pdq")
+    delta_y_col <- paste0(col, "_dy")
+    percent_delta_y_col <- paste0(col, "_pdy")
+    new_order <- append(new_order, c(col, delta_q_col, percent_delta_q_col, delta_y_col, percent_delta_y_col))
+  }
+  
+  # Select columns in the new order
+  dataframe <- dataframe %>% select(all_of(new_order), everything())
+  
+  # Remove the temporary Year and Quarter columns
+  dataframe <- dataframe %>% select(-Year, -Quarter)
+  
+  return(dataframe)
 }

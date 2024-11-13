@@ -899,3 +899,47 @@ stacked_v_bar_chart_cols_nk <- function(data,
   
   return(bar_chart)
 }
+
+
+# Function to create a line plot with "Period" on the x-axis
+line_plot <- function(df, y_column_name) {
+  # Check if "Period" and the specified y-column exist in the dataframe
+  if (!"Period" %in% colnames(df)) {
+    stop("The 'Period' column does not exist in the dataframe")
+  }
+  if (!y_column_name %in% colnames(df)) {
+    stop("The specified y-column does not exist in the dataframe")
+  }
+  
+  # Convert the "Period" column to a factor with ordered levels to ensure correct plotting order
+  df$Period <- factor(df$Period, levels = unique(df$Period), ordered = TRUE)
+  
+  # Check if the y-column is numeric for line plotting
+  if (!is.numeric(df[[y_column_name]])) {
+    stop("The specified y-column must be numeric for line plotting")
+  }
+  
+  # Create the line plot using plotly
+  fig <- plot_ly(
+    data = df,
+    x = ~Period,
+    y = as.formula(paste0("~", y_column_name)),
+    type = 'scatter',
+    mode = 'lines+markers',
+    hovertext = ~paste0("Period: ", Period, "<br>Value: ", df[[y_column_name]]),
+    hoverinfo = 'text'
+  )
+  
+  # Customize the layout
+  fig <- fig %>% layout(
+    title = "",
+    xaxis = list(title = ""),
+    yaxis = list(title = ""),
+    showlegend = FALSE  # Remove legend (if not needed)
+  )
+  
+  # Remove the plotly toolbar
+  fig <- fig %>% config(displayModeBar = FALSE)
+  
+  return(fig)
+}

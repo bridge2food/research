@@ -28,8 +28,8 @@ process_data <- function(survey_name, dir_path, calc_func) {
 }
 
 # Main processing functions
-process_agg_data <- function(survey_name, dir_path) {
-  process_data(survey_name, dir_path, calculate_agg)
+process_nb_data <- function(survey_name, dir_path) {
+  process_data(survey_name, dir_path, calculate_nb)
 }
 
 process_indicators_data <- function(survey_name, dir_path) {

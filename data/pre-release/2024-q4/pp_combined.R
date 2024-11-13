@@ -31,7 +31,8 @@ pp_latest <- lapply(survey_names, function(survey_name) {
     # select(po.prod_past_3.q:last_col())
 }) %>% do.call(rbind, .)
 
-# Combine data from survey_names and all periods for calculating agg and indicators # Note: bind_rows() removes some variable labels
+# Combine data from survey_names and all periods for calculating netbalances and indicators
+# Note: bind_rows() removes some variable labels, so we use rbind
 pp_all <- lapply(survey_names, function(survey_name) {
   files <- list_survey_files(survey_name)
   data_list <- lapply(files, function(file) {
@@ -49,22 +50,15 @@ pp_all <- lapply(survey_names, function(survey_name) {
 # Combine data frames from all surveys
 pp_all <- do.call(rbind, pp_all)
 
-
-# Variable naming conventions:
-# p = past, c = current, n = next, q = quarter
-
 ##########
 
-# These functions each loop over all files in dir_path and output a single file with historical data.
-# If methodology changes for calculating indicators in these functions,
-# it will change all historical data in the files generated.
-
-# Calculate aggregated data using pp_all
-agg <- pp_all %>%
+# Calculate netbalances using pp_all
+netbalances <- pp_all %>%
   group_by(Period) %>%
-  do(calculate_agg(., unique(.$Period))) %>%
+  do(calculate_nb(., unique(.$Period))) %>%
   ungroup()
 
+d_netbalances <- calc_deltas(netbalances)
 
 # Calculate indicators using pp_all
 indicators <- pp_all %>%
@@ -72,9 +66,8 @@ indicators <- pp_all %>%
   do(calculate_indicators(., unique(.$Period))) %>%
   ungroup()
 
-d_indicators <- delta_indicators(indicators)
+d_indicators <- calc_deltas(indicators)
 
-############# Valuebox values
 
 # Get the latest period across all surveys
 periods <- lapply(survey_names, latest_period)
@@ -88,67 +81,50 @@ max_quarter <- max(latest_quarters[latest_years == max_year])
 period <- list(year = max_year, quarter = max_quarter)
 curr_period <- paste0(period$year, "-", period$quarter)
 
-# Industry confidence indicator for current period (dq = delta quarter, pdq = percent delta quarter)
-curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic) %>% round(2))
-curr_ic_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_dq) %>% round(2)
-curr_ic_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(ic_pdq) %>% round(2)
 
-# Business uncertainty
-curr_bu <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(bu) %>% round(2))
-curr_bu_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(bu_dq) %>% round(2)
-curr_bu_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(bu_pdq) %>% round(2)
+############## Dashboard Content
 
-# Employment outlook
-curr_eo <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(eo) %>% round(2))
-curr_eo_dq <- d_indicators %>% filter(Period == curr_period) %>% pull(eo_dq) %>% round(2)
-curr_eo_pdq <- d_indicators %>% filter(Period == curr_period) %>% pull(eo_pdq) %>% round(2)
-
-# Create HTML snippets for each delta indicator
-curr_ic_dq_html <- create_delta_html(curr_ic_dq)
-curr_ic_pdq_html <- create_delta_html(curr_ic_pdq, is_percent = TRUE)
-
-curr_bu_dq_html <- create_delta_html(curr_bu_dq)
-curr_bu_pdq_html <- create_delta_html(curr_bu_pdq, is_percent = TRUE)
-
-curr_eo_dq_html <- create_delta_html(curr_eo_dq)
-curr_eo_pdq_html <- create_delta_html(curr_eo_pdq, is_percent = TRUE)
-
-# Combine the delta indicators with spacing only if both are present
-# Industry Confidence
-if (curr_ic_dq_html != "" && curr_ic_pdq_html != "") {
-  curr_ic_deltas_html <- paste0(curr_ic_dq_html, " &nbsp;&nbsp; ", curr_ic_pdq_html)
-} else {
-  # If either delta indicator is missing, do not display any deltas
-  curr_ic_deltas_html <- ""
-}
-# Business Uncertainty
-if (curr_bu_dq_html != "" && curr_bu_pdq_html != "") {
-  curr_bu_deltas_html <- paste0(curr_bu_dq_html, " &nbsp;&nbsp; ", curr_bu_pdq_html)
-} else {
-  # If either delta indicator is missing, do not display any deltas
-  curr_bu_deltas_html <- ""
-}
-# Employment Outlook
-if (curr_eo_dq_html != "" && curr_eo_pdq_html != "") {
-  curr_eo_deltas_html <- paste0(curr_eo_dq_html, " &nbsp;&nbsp; ", curr_eo_pdq_html)
-} else {
-  # If either delta indicator is missing, do not display any deltas
-  curr_eo_deltas_html <- ""
-}
-
-# Define tooltip text for Industry Confidence
+# Tooltips
 curr_ic_tooltip <- "Composite indicator derived from production expectations, current order books, and current stocks of finished products. Higher values for this figure indicate greater industry confidence."
 curr_bu_tooltip <- "Net balance of responses to the question asking managers to assess uncertainty in the future development of their business. Higher values for this figuere represent greater uncertainty."
 curr_eo_tooltip <- "Net balance of responses to the question asking managers about expected changes in staff numbers over the next three months."
 
 
-############## Charts
-
 # Summary
 
+## Value boxes
+
+### Industry confidence
+curr_ic <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(ic) %>% round(2))
+curr_ic_deltas_html <- create_delta_html(d_indicators, "ic")
+
+### Business uncertainty
+curr_bu <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(bu) %>% round(2))
+curr_bu_deltas_html <- create_delta_html(d_indicators, "bu")
+
+### Employment outlook
+curr_eo <- sprintf("%.2f", d_indicators %>% filter(Period == curr_period) %>% pull(eo) %>% round(2))
+curr_eo_deltas_html <- create_delta_html(d_indicators, "eo")
+
+## Plots
+
+### Business Uncertainty
 uncertainty_bar <- v_bar_chart(pp_latest, "po.uncertainty.q")
+curr_bu_deltas_html_na <- create_delta_html(d_indicators, "bu", show_na = T)
+bu_line <- line_plot(indicators, "bu")
+bu_text <- "Net balance of responses to the question asking managers to assess uncertainty in the future development of their business. Higher values represent greater uncertainty."
+
+### 3-Year Business Plans
 plans_pie <- pie_chart(pp_latest, "po.plans.q")
+plans_nb <- get_curr_nb("po.plans.q")
+plans_nb_delta_html <- create_delta_html(d_netbalances, "po.plans.q", show_na = T)
+plans_line <- line_plot(netbalances, "po.plans.q")
+plans_text <- "Net balance of responses to the question asking managers to describe their company's three-year business plans. Higher values indicate greater intent to pursue growth."
+
+### Competitive Position
 comp_past_3_pie <- pie_chart(pp_latest, "po.comp_past_3.q")
+
+### Regional Sales Distribution
 regions_dist_donut <- donut_chart_cols_pct(pp_latest, "po.regions_dist.q")
 
 # Production & Orders
