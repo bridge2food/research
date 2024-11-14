@@ -230,3 +230,22 @@ calc_deltas <- function(dataframe) {
   
   return(dataframe)
 }
+
+# Function to generate html displaying a variable's net balance and delta figures
+nb_html <- function(variable_name) {
+  # Dynamically retrieve variable values
+  nb <- get(paste0(variable_name, "_nb"))
+  nb_delta_html <- get(paste0(variable_name, "_nb_delta_html"))
+  text <- get(paste0(variable_name, "_text"))
+  
+  # Generate HTML code
+  html_code <- paste0(
+    '<div class="mt-5 text-center">\n',
+    '<span class="display-1">', nb, '</span>\n\n',
+    nb_delta_html, '\n\n',
+    '<span class="text-muted small m-4 p-4">', text, '</span>\n',
+    '</div>'
+  )
+  
+  return(html_code)
+}

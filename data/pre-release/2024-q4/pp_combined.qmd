@@ -76,7 +76,7 @@ uncertainty_bar
 
 `r curr_bu_deltas_html_na`
 
-<span class="text-muted text-start small m-5 p-4">`r bu_text`</span>
+<span class="text-muted small m-5 p-4">`r bu_text`</span>
 </div>
 :::
 
@@ -91,15 +91,11 @@ Available in 2025-Q2...
 #| title: "3-Year Business Plans"
 plans_pie
 ```
-::: {.card title="Latest Period"}
-<div class="mt-5 text-center">
-<span class="display-1">`r plans_nb`</span>
 
-`r plans_nb_delta_html`
-
-<span class="text-muted text-start small m-5 p-4">`r plans_text`</span>
-</div>
-:::
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(plans_nb_html)
+```
 
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
@@ -109,11 +105,22 @@ Available in 2025-Q2...
 
 ## Row
 
-### Column
+### Column {.tabset}
 ```{r}
 #| title: "Competitive Position"
 comp_past_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(comp_past_3_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
 
 ### Column
 ```{r}
@@ -135,175 +142,440 @@ regions_dist_donut
 
 ## Row
 
+### Column {.tabset}
+
 ```{r}
 #| title: "Recent Orders"
 orders_past_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(orders_past_3_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
 
 ```{r}
 #| title: "Current Order Books"
 orders_curr_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(orders_curr_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ## Row
+
+### Column {.tabset}
 
 ```{r}
 #| title: "Production Level"
 prod_lvl_box
 ```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
 
 ```{r}
 #| title: "Production Capacity"
-prod_cap_bar
+prod_cap_pie
 ```
 
-## Row
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(prod_cap_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+## Row {.tabset}
 
 ```{r}
 #| title: "Current Stocks of Finished Products"
 stocks_curr_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(stocks_curr_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ## Row
 
+### Column {.tabset}
+
 ```{r}
-#| title: "Production - Past 3 Months"
+#| title: "Recent Production"
 prod_past_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(prod_past_3_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ```{r}
 #| title: "Euro Area Historical"
 # bcs_m_ea_prod_trend
 ```
+### Column {.tabset}
 
 ```{r}
-#| title: "Production Expectations - Next 3 Months"
+#| title: "Production Expectations"
 prod_next_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(prod_next_3_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 
-## Row
+## Row {.tabset}
 
 ```{r}
 #| title: "Factors Limiting Production"
 prod_limits_bar
 ```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 # Inputs & Prices
 
 ## Row
 
-```{r}
-#| title: "Input Costs (Excluding Labour) - Past 3 Months"
-costs_past_3_pie
-```
+### Column {.tabset}
 
 ```{r}
-#| title: "Expected Input Costs (Excluding Labour) - Next 3 Months"
+#| title: "Recent Input Costs"
+costs_past_3_pie
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(costs_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
+
+```{r}
+#| title: "Expected Input Costs"
 costs_next_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(costs_next_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ## Row
 
-```{r}
-#| title: "Selling Prices - Past 3 Months"
-prices_past_3_pie
-```
+### Column {.tabset}
 
 ```{r}
-#| title: "Expected Selling Prices - Next 3 Months"
+#| title: "Recent Selling Prices"
+prices_past_3_pie
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(prices_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
+
+```{r}
+#| title: "Expected Selling Prices"
 prices_next_3_pie
-```   
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(prices_next_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 # Labour
 
 ## Row
 
-```{r}
-#| title: "Staff Numbers - Past 3 Months"
-emp_past_3_pie
-```
+### Column {.tabset}
 
 ```{r}
-#| title: "Expected Staff Numbers - Next 3 Months"
+#| title: "Recent Staff Numbers"
+emp_past_3_pie
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(emp_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
+
+```{r}
+#| title: "Expected Staff Numbers"
 emp_next_3_pie
-``` 
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(emp_next_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ## Row
 
+### Column {.tabset}
+
 ```{r}
-#| title: "Labour Costs - Past 3 Months"
+#| title: "Recent Labour Costs"
 lab_costs_past_3_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(lab_costs_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
 ```{r}
 #| title: "Labour Costs"
 lab_costs_lvl_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(lab_costs_lvl_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
-## Row
+## Row {.tabset}
 
 ```{r}
 #| title: "Finding Skilled Labour"
 lab_skill_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(lab_skill_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 
 # Investment & Innovation
 
-## Row
+## Row {.tabset}
 
 ```{r}
-#| title: "Investments - Past 3 Months"
+#| title: "Recent Investments"
 inv_past_3_bar
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(inv_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
 ## Row
 
+### Column {.tabset}
+
 ```{r}
-#| title: "Current Year Investments - Compared to Last Year (Only Q4)"
+#| title: "Current Year Investments"
 inv_curr_y_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(inv_curr_y_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
+
 ```{r}
-#| title: "Next Year Investment Expectations - Compared to this Year (Only Q4)"
+#| title: "Next Year Investment Expectations"
 inv_next_y_pie
 ```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(inv_next_y_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
 
-## Row
+## Row {.tabset}
 
 ```{r}
-#| title: "Structure of Investments (Only Q4)"
+#| title: "Structure of Investments (Only asked in Q4)"
 inv_structure
 ```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+## Row {.tabset}
+
+```{r}
+#| title: "Drivers of Investments (Only asked in Q4)"
+inv_drivers
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+# Notes
+
+## Row {height="220px"}
+
+```{r}
+#| content: valuebox
+#| title: "Latest Data Period"
+list(
+  icon = "calendar-check",
+  color = "secondary",
+  value = curr_period
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Pre-Release Access"
+list(
+  icon = "file-earmark-lock",
+  color = "secondary",
+  value = "Dec. 2-15"
+)
+```
+
+```{r}
+#| content: valuebox
+#| title: "Public Release"
+list(
+  icon = "universal-access-circle",
+  color = "light",
+  value = "Dec. 16"
+)
+```
+
 
 ## Row
 
-```{r}
-#| title: "Drivers of Investments (Only Q4)"
-inv_drivers
-```
+::: {.card title="About"}
 
-# Notes {.card}
+The Plant Protein Combined Surveys data dashboard displays aggregated data from three surveys covering five segments of the supply chain: 
 
-**Net Balance**
+* Plant Protein Upstream Suppliers (PPUS) Survey
+  - Primary ingredients suppliers
+  - Secondary ingredients suppliers
+  - Equipment & technollgy suppliers
+* Plant Meat Producers (PMP) Survey
+* Plant Dairy Producers (PDP) Survey
+
+For more information about these surveys, please visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
+
+:::
+
+::: {.card title="Net Balances"}
 
 The concept of net balance is often used in surveys, economic analysis, and business reporting to indicate the overall tendency or sentiment within a group by measuring the difference between positive and negative responses or changes. Net balance simplifies complex data by summarizing it as a single percentage figure, making trends or shifts more interpretable at a glance.
 
 Net balance is typically calculated as the difference between the percentage of respondents (or data points) that report an increase or positive change and the percentage that report a decrease or negative change. 
 
 **Interpreting Net Balance Figures**
+<br>
 
-Positive Net Balance: A positive net balance suggests that a larger proportion of respondents or data points are experiencing positive change than negative change. Higher positive values imply stronger net positivity.
+**Positive Net Balance**: A positive net balance suggests that a larger proportion of respondents or data points are experiencing positive change than negative change. Higher positive values imply stronger net positivity.
 
-Negative Net Balance: A negative net balance means that more respondents or data points report a negative change than a positive one. The further into negative territory, the stronger the net negative sentiment.
+**Negative Net Balance**: A negative net balance means that more respondents or data points report a negative change than a positive one. The further into negative territory, the stronger the net negative sentiment.
 
-Zero Net Balance: A net balance close to zero (0%) suggests that positive and negative responses are roughly equal, indicating a neutral or balanced sentiment. This could mean stability, but it could also imply stagnation, depending on the context.
+**Zero Net Balance**: A net balance close to zero (0%) suggests that positive and negative responses are roughly equal, indicating a neutral or balanced sentiment. This could mean stability, but it could also imply stagnation, depending on the context.
 
-Net balance figures can range from -100 to 100, representing the full spectrum of possible responses:
-
-+100: Indicates that all respondents or data points report a positive change.
-
-0: Indicates a neutral balance, where the percentage of positive responses equals the percentage of negative responses (e.g., 50% positive and 50% negative).
-
--100: Indicates that all respondents or data points report a negative change.
-
-This range from -100 to 100 provides a standardized way to interpret sentiment or change, where the value’s position within this range shows the direction and strength of the net sentiment.
+Net balance figures can range from -100 to 100, providing a standardized way to interpret sentiment or change, where the value’s position within this range shows the direction and strength of the net sentiment.
+:::
