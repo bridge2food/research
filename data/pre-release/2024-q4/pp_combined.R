@@ -21,15 +21,19 @@ if (include_pre_release) {
   dir_path <- base_dir
 }
 
-# Define the survey names
-survey_names <- c("PPUS", "PMP", "PDP")  # Replace with the survey names you want to include
+# Replace with the survey names you want to include
+survey_names <- c("PPUS", "PMP", "PDP")
 
-# Combine data from survey_names for latest period
-pp_latest <- lapply(survey_names, function(survey_name) {
-  latest_data(survey_name) %>%
-    filter(Finished == 1) # %>%
-    # select(po.prod_past_3.q:last_col())
-}) %>% do.call(rbind, .)
+# Get the latest period across all surveys
+periods <- lapply(survey_names, latest_period)
+latest_years <- sapply(periods, function(p) p$year)
+latest_quarters <- sapply(periods, function(p) p$quarter)
+
+# Find the maximum year and corresponding maximum quarter
+max_year <- max(latest_years)
+max_quarter <- max(latest_quarters[latest_years == max_year])
+period <- list(year = max_year, quarter = max_quarter)
+curr_period <- paste0(period$year, "-", period$quarter)
 
 # Combine data from survey_names and all periods for calculating netbalances and indicators
 # Note: bind_rows() removes some variable labels, so we use rbind
@@ -38,9 +42,11 @@ pp_all <- lapply(survey_names, function(survey_name) {
   data_list <- lapply(files, function(file) {
     time_info <- extract_time_info(file)
     period <- time_info$period
-    data <- read_sav(file) %>%
-      filter(Finished == 1) %>%
-      mutate(Period = period)
+    data <- read_sav(file)
+    
+    # Apply filters using the function from filters.R
+    data <- apply_transforms(data, period, survey_name)
+    
     return(data)
   })
   # Combine data frames from the current survey
@@ -49,6 +55,10 @@ pp_all <- lapply(survey_names, function(survey_name) {
 
 # Combine data frames from all surveys
 pp_all <- do.call(rbind, pp_all)
+
+# Create data frame for only latest period data
+pp_latest <- pp_all %>%
+  filter(Period == curr_period)
 
 ##########
 
@@ -69,17 +79,7 @@ indicators <- pp_all %>%
 d_indicators <- calc_deltas(indicators)
 
 
-# Get the latest period across all surveys
-periods <- lapply(survey_names, latest_period)
-latest_years <- sapply(periods, function(p) p$year)
-latest_quarters <- sapply(periods, function(p) p$quarter)
 
-# Find the maximum year and corresponding maximum quarter
-max_year <- max(latest_years)
-max_quarter <- max(latest_quarters[latest_years == max_year])
-
-period <- list(year = max_year, quarter = max_quarter)
-curr_period <- paste0(period$year, "-", period$quarter)
 
 
 ############## Dashboard Content
