@@ -11,7 +11,7 @@ global_transforms <- function(data, period, survey_name) {
 period_specific_transforms <- list(
   "2024-Q4" = function(data) {
     data %>%
-      filter(Company != "Magnificent Proteins")
+      filter(Company != "Magnificent Proteins") # not currently in production
   }
   # Add more periods as needed
 )
