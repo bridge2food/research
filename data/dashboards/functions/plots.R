@@ -943,3 +943,53 @@ line_plot <- function(df, y_column_name) {
   
   return(fig)
 }
+
+# Function to create a basic pie chart of frequencies of values in a column
+# For columns that don't have factor labels
+pie_chart_basic <- function(df, column_name, order = "descending") {
+  
+  # Check if the column exists in the dataframe
+  if (!column_name %in% colnames(df)) {
+    stop("The column does not exist in the dataframe.")
+  }
+  
+  # Summarize frequencies of each value in the specified column
+  data_summary <- df %>%
+    group_by(!!sym(column_name)) %>%
+    summarise(Freq = n(), .groups = 'drop')
+  
+  # Rename the grouping column to a consistent name "Label" for easier usage in plot_ly
+  data_summary <- data_summary %>%
+    rename(Label = !!sym(column_name))
+  
+  # Arrange summary_df based on the desired order
+  if (order == "ascending") {
+    data_summary <- data_summary %>% arrange(Freq)
+  } else if (order == "descending") {
+    data_summary <- data_summary %>% arrange(desc(Freq))
+  } else {
+    stop("Invalid order parameter. Use 'ascending' or 'descending'.")
+  }
+  
+  # Create the pie chart using Plotly
+  fig <- plot_ly(
+    data = data_summary,
+    labels = ~Label,
+    values = ~Freq,
+    type = 'pie',
+    textinfo = 'percent',                    # Display percentage on the slices
+    hoverinfo = 'label+value+percent',       # Include label, count, and percent in hover
+    sort = FALSE                             # Prevent Plotly from re-sorting the slices
+  )
+  
+  # Customize the layout to ensure the legend order matches the factor levels
+  fig <- fig %>% layout(
+    title = "",
+    legend = list(traceorder = "normal")     # Keep the legend order as defined by the factor levels
+  )
+  
+  # Remove the Plotly toolbar for a cleaner presentation
+  fig <- fig %>% config(displayModeBar = FALSE)
+  
+  return(fig)
+}

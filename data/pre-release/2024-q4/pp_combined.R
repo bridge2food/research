@@ -125,6 +125,9 @@ comp_past_3_nb_html <- nb_html("comp_past_3")
 ## Regional Sales Distribution
 regions_dist_donut <- donut_chart_cols_pct(pp_latest, "po.regions_dist.q")
 
+## Segments
+segments_pie <- pie_chart_basic(pp_latest, "Segment")
+
 # Production & Orders
 
 ## Orders - Past 3 Months

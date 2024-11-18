@@ -128,15 +128,6 @@ Available in 2025-Q2...
 regions_dist_donut
 ```
 
-## Row
-
-### Column
-
-```{r}
-#| title: "Industry Confidence"
-# bcs_cof
-```
-
 
 # Production & Orders
 
@@ -530,7 +521,7 @@ list(
 list(
   icon = "file-earmark-lock",
   color = "secondary",
-  value = "Dec. 2-15"
+  value = "Dec. 2-8"
 )
 ```
 
@@ -540,7 +531,7 @@ list(
 list(
   icon = "universal-access-circle",
   color = "light",
-  value = "Dec. 16"
+  value = "Dec. 9"
 )
 ```
 
@@ -579,3 +570,10 @@ Net balance is typically calculated as the difference between the percentage of 
 
 Net balance figures can range from -100 to 100, providing a standardized way to interpret sentiment or change, where the value’s position within this range shows the direction and strength of the net sentiment.
 :::
+
+## Row
+
+```{r}
+#| title: "Industry Segements"
+segments_pie
+```
