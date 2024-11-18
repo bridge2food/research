@@ -44,7 +44,7 @@ pp_all <- lapply(survey_names, function(survey_name) {
     period <- time_info$period
     data <- read_sav(file)
     
-    # Apply filters using the function from filters.R
+    # Apply transforms from transforms.R
     data <- apply_transforms(data, period, survey_name)
     
     return(data)

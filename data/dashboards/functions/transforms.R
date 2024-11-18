@@ -1,13 +1,13 @@
 # transforms.R
 
-# Define the global filter (applied to all periods and surveys)
+# Define the global transforms (applied to all periods and surveys)
 global_transforms <- function(data, period, survey_name) {
   data %>%
     filter(Finished == 1) %>%
     mutate(Period = period, Survey = survey_name)
 }
 
-# Define period-specific filters
+# Define period-specific transforms
 period_specific_transforms <- list(
   "2024-Q4" = function(data) {
     data %>%
@@ -16,7 +16,7 @@ period_specific_transforms <- list(
   # Add more periods as needed
 )
 
-# Main function to apply all filters
+# Main function to apply all transforms
 apply_transforms <- function(data, period, survey_name) {
   # Apply the global filter
   data <- global_transforms(data, period, survey_name)
