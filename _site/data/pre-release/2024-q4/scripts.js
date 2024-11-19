@@ -5,7 +5,8 @@ window.onload = function() {
   );
   var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl, {
-      html: true
+      html: true,
+      trigger: 'focus'
     });
   });
 };
