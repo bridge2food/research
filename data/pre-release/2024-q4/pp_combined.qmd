@@ -501,7 +501,7 @@ Available in 2025-Q2...
 </div>
 :::
 
-# Notes
+# Metadata
 
 ## Row {height="220px"}
 
@@ -545,12 +545,12 @@ list(
 
 The Plant Protein Combined Surveys data dashboard displays aggregated data from three surveys covering five segments of the supply chain: 
 
-* Plant Protein Upstream Suppliers (PPUS) Survey
+* [Plant Protein Upstream Suppliers (PPUS) Survey](https://research.bridge2food.com/surveys/ppus)
   - Primary ingredients suppliers
   - Secondary ingredients suppliers
   - Equipment & technollgy suppliers
-* Plant Meat Producers (PMP) Survey
-* Plant Dairy Producers (PDP) Survey
+* [Plant Meat Producers (PMP) Survey](https://research.bridge2food.com/surveys/pmp)
+* [Plant Dairy Producers (PDP) Survey](https://research.bridge2food.com/surveys/pdp)
 
 ### Current Period Segment Distribution
 
