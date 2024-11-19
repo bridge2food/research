@@ -515,15 +515,16 @@ list(
 )
 ```
 
-```{r}
-#| content: valuebox
-#| title: "Pre-Release Access"
-list(
-  icon = "file-earmark-lock",
-  color = "secondary",
-  value = "Dec. 2-8"
-)
-```
+::: {.valuebox icon="file-earmark-lock" color="secondary" title="Pre-Release Access"}
+
+Dec. 2-8
+
+<i class="bi bi-info-circle info-icon" 
+   data-bs-toggle="popover" 
+   data-bs-placement="top" 
+   data-bs-content="Only available to participating companies. <a href='https://research.bridge2food.com/surveys/#participating-companies'>Learn more</a>.">
+</i>
+:::
 
 ```{r}
 #| content: valuebox
@@ -549,11 +550,20 @@ The Plant Protein Combined Surveys data dashboard displays aggregated data from 
 * Plant Meat Producers (PMP) Survey
 * Plant Dairy Producers (PDP) Survey
 
-For more information about these surveys, please visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
+### Current Period Segment Distribution
+
+`r segments_pie`
+
+For more information about these surveys, visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
+
+For questions, comments, or to express interest in participating in this framework in upcoming data periods, email research@bridge2food.com.
 
 :::
 
-::: {.card title="Net Balances"}
+
+::: {.card title="Understanding Net Balances"}
+
+Many of the data and indicators presented in this dashboard are expressed as net balances.
 
 The concept of net balance is often used in surveys, economic analysis, and business reporting to indicate the overall tendency or sentiment within a group by measuring the difference between positive and negative responses or changes. Net balance simplifies complex data by summarizing it as a single percentage figure, making trends or shifts more interpretable at a glance.
 
@@ -570,10 +580,4 @@ Net balance is typically calculated as the difference between the percentage of 
 
 Net balance figures can range from -100 to 100, providing a standardized way to interpret sentiment or change, where the value’s position within this range shows the direction and strength of the net sentiment.
 :::
-
-## Row
-
-```{r}
-#| title: "Industry Segements"
-segments_pie
-```
+  

@@ -26,6 +26,9 @@ period_specific_transforms <- list(
         mutate(Segment = "Plant-Based Dairy")
     }
     
+    data <- data %>%
+      filter(po.prod_lvl.q_1 > 0)
+    
     return(data)
   }
   # Add more periods as needed
