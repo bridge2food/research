@@ -552,7 +552,7 @@ The Plant Protein Combined Surveys data dashboard displays aggregated data from 
 * [Plant Meat Producers (PMP) Survey](https://research.bridge2food.com/surveys/pmp)
 * [Plant Dairy Producers (PDP) Survey](https://research.bridge2food.com/surveys/pdp)
 
-### Current Period Segment Distribution
+### Latest Period Segment Distribution
 
 `r segments_pie`
 
