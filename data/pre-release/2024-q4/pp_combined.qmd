@@ -457,7 +457,7 @@ cat(inv_curr_y_nb_html)
 ```
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
-Available in 2025-Q2...
+Available in 2025-Q4...
 </div>
 :::
 
@@ -473,7 +473,7 @@ cat(inv_next_y_nb_html)
 ```
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
-Available in 2025-Q2...
+Available in 2025-Q4...
 </div>
 :::
 
@@ -485,7 +485,7 @@ inv_structure
 ```
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
-Available in 2025-Q2...
+Available in 2025-Q4...
 </div>
 :::
 
@@ -497,7 +497,7 @@ inv_drivers
 ```
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
-Available in 2025-Q2...
+Available in 2025-Q4...
 </div>
 :::
 
