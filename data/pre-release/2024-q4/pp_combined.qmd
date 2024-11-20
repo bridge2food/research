@@ -70,7 +70,7 @@ source("bcs.R")
 uncertainty_bar
 ```
 
-::: {.card title="Latest Period"}
+::: {.card title="Net Balance"}
 <div class="mt-5 text-center">
 <span class="display-1">`r curr_bu`</span>
 
@@ -93,7 +93,7 @@ plans_pie
 ```
 
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(plans_nb_html)
 ```
 
@@ -111,7 +111,7 @@ Available in 2025-Q2...
 comp_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(comp_past_3_nb_html)
 ```
 
@@ -140,7 +140,7 @@ regions_dist_donut
 orders_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(orders_past_3_nb_html)
 ```
 
@@ -157,7 +157,7 @@ Available in 2025-Q2...
 orders_curr_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(orders_curr_nb_html)
 ```
 
@@ -174,7 +174,7 @@ Available in 2025-Q2...
 stocks_curr_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(stocks_curr_nb_html)
 ```
 
@@ -206,7 +206,7 @@ prod_cap_pie
 ```
 
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(prod_cap_nb_html)
 ```
 
@@ -225,7 +225,7 @@ Available in 2025-Q2...
 prod_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(prod_past_3_nb_html)
 ```
 
@@ -246,7 +246,7 @@ Available in 2025-Q2...
 prod_next_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(prod_next_3_nb_html)
 ```
 
@@ -280,7 +280,7 @@ Available in 2025-Q2...
 costs_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(costs_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -296,7 +296,7 @@ Available in 2025-Q2...
 costs_next_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(costs_next_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -314,7 +314,7 @@ Available in 2025-Q2...
 prices_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(prices_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -330,7 +330,7 @@ Available in 2025-Q2...
 prices_next_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(prices_next_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -350,7 +350,7 @@ Available in 2025-Q2...
 emp_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(emp_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -366,7 +366,7 @@ Available in 2025-Q2...
 emp_next_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(emp_next_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -384,7 +384,7 @@ Available in 2025-Q2...
 lab_costs_past_3_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(lab_costs_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -399,7 +399,7 @@ Available in 2025-Q2...
 lab_costs_lvl_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(lab_costs_lvl_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -415,7 +415,7 @@ Available in 2025-Q2...
 lab_skill_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(lab_skill_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -434,7 +434,7 @@ Available in 2025-Q2...
 inv_past_3_bar
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(inv_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -452,7 +452,7 @@ Available in 2025-Q2...
 inv_curr_y_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(inv_curr_y_nb_html)
 ```
 ::: {.card title="Time Series"}
@@ -468,7 +468,7 @@ Available in 2025-Q2...
 inv_next_y_pie
 ```
 ```{r, results='asis'}
-#| title: "Latest Period"
+#| title: "Net Balance"
 cat(inv_next_y_nb_html)
 ```
 ::: {.card title="Time Series"}
