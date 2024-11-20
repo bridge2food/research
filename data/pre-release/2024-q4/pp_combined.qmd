@@ -167,6 +167,23 @@ Available in 2025-Q2...
 </div>
 :::
 
+## Row {.tabset}
+
+```{r}
+#| title: "Current Stocks of Finished Products"
+stocks_curr_pie
+```
+```{r, results='asis'}
+#| title: "Latest Period"
+cat(stocks_curr_nb_html)
+```
+
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
 ## Row
 
 ### Column {.tabset}
@@ -191,23 +208,6 @@ prod_cap_pie
 ```{r, results='asis'}
 #| title: "Latest Period"
 cat(prod_cap_nb_html)
-```
-
-::: {.card title="Time Series"}
-<div class="mt-5 text-center">
-Available in 2025-Q2...
-</div>
-:::
-
-## Row {.tabset}
-
-```{r}
-#| title: "Current Stocks of Finished Products"
-stocks_curr_pie
-```
-```{r, results='asis'}
-#| title: "Latest Period"
-cat(stocks_curr_nb_html)
 ```
 
 ::: {.card title="Time Series"}
