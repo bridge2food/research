@@ -76,7 +76,7 @@ uncertainty_bar
 
 `r curr_bu_deltas_html_na`
 
-<span class="text-muted small m-5 p-4">`r bu_text`</span>
+<span class="text-muted small m-5 p-4">Net balance of responses to the question asking managers to assess uncertainty in the future development of their business. Sign inverted so that higher values represent greater uncertainty.</span>
 </div>
 :::
 
