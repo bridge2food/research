@@ -346,6 +346,22 @@ Available in 2025-Q2...
 ### Column {.tabset}
 
 ```{r}
+#| title: "Recent Labour Costs"
+lab_costs_past_3_pie
+```
+```{r, results='asis'}
+#| title: "Net Balance"
+cat(lab_costs_past_3_nb_html)
+```
+::: {.card title="Time Series"}
+<div class="mt-5 text-center">
+Available in 2025-Q2...
+</div>
+:::
+
+### Column {.tabset}
+
+```{r}
 #| title: "Recent Staff Numbers"
 emp_past_3_pie
 ```
@@ -359,6 +375,8 @@ Available in 2025-Q2...
 </div>
 :::
 
+## Row
+
 ### Column {.tabset}
 
 ```{r}
@@ -368,24 +386,6 @@ emp_next_3_pie
 ```{r, results='asis'}
 #| title: "Net Balance"
 cat(emp_next_3_nb_html)
-```
-::: {.card title="Time Series"}
-<div class="mt-5 text-center">
-Available in 2025-Q2...
-</div>
-:::
-
-## Row
-
-### Column {.tabset}
-
-```{r}
-#| title: "Recent Labour Costs"
-lab_costs_past_3_pie
-```
-```{r, results='asis'}
-#| title: "Net Balance"
-cat(lab_costs_past_3_nb_html)
 ```
 ::: {.card title="Time Series"}
 <div class="mt-5 text-center">
