@@ -543,12 +543,11 @@ list(
 
 ::: {.card title="About"}
 
-The Plant Protein Combined Surveys data dashboard displays aggregated data from three surveys covering five segments of the supply chain: 
+The Plant Protein Combined Surveys data dashboard displays aggregated data from three surveys covering four segments of the supply chain: 
 
 * [Plant Protein Upstream Suppliers (PPUS) Survey](https://research.bridge2food.com/surveys/ppus)
   - Primary ingredients suppliers
   - Secondary ingredients suppliers
-  - Equipment & technollgy suppliers
 * [Plant Meat Producers (PMP) Survey](https://research.bridge2food.com/surveys/pmp)
 * [Plant Dairy Producers (PDP) Survey](https://research.bridge2food.com/surveys/pdp)
 

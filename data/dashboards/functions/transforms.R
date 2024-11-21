@@ -15,7 +15,8 @@ period_specific_transforms <- list(
       segment_mapping <- read_csv(paste0(base_dir,"PPUS-2024-Q4-segment-mapping.csv"))
       data <- data %>%
         filter(Company != "Magnificent Proteins") %>%  # not currently in production
-        left_join(segment_mapping, by = "Company")  # Join to add Segment information
+        left_join(segment_mapping, by = "Company") %>%  # Join to add Segment information
+        filter(Segment != "Equipment & Technology")
     }
     if (survey_name == "PMP") {
       data <- data %>%
