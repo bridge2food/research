@@ -22,7 +22,7 @@ if (include_pre_release) {
 }
 
 # Replace with the survey names you want to include
-survey_names <- c("PPUS", "PMP", "PDP")
+survey_names <- c("PDP")
 
 # Get the latest period across all surveys
 periods <- lapply(survey_names, latest_period)
@@ -59,6 +59,7 @@ pp_all <- do.call(rbind, pp_all)
 # Create data frame for only latest period data
 pp_latest <- pp_all %>%
   filter(Period == curr_period)
+
 
 ##########
 
