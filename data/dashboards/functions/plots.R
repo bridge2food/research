@@ -19,7 +19,7 @@ v_bar_chart <- function(df, column_name) {
   fig <- plot_ly(
     data = summary_df,
     x = ~Value,
-    y = ~Freq,
+    y = ~Percentage,
     type = 'bar',
     hovertext = ~paste0(Value, '<br>', Freq, '<br>', round(Percentage, 2), '%'),
     hoverinfo = 'hovertext',
@@ -30,7 +30,7 @@ v_bar_chart <- function(df, column_name) {
   fig <- fig %>% layout(
     title = "",
     xaxis = list(title = ""),
-    yaxis = list(title = ""),
+    yaxis = list(title = "%"),
     showlegend = FALSE  # Remove legend (if not needed)
   )
   
@@ -115,7 +115,7 @@ pie_chart <- function(df, column_name, order = "descending") {
     type = 'pie',
     text = ~text,                        # Use the custom 'text' column
     textinfo = 'text',                   # Display only the 'text' field
-    hoverinfo = 'label+value+percent',   # Include label, count, and percent in hover
+    hoverinfo = 'label+percent',   # Include label, count, and percent in hover
     sort = FALSE                         # Prevent Plotly from re-sorting the slices
   )
   
@@ -307,16 +307,16 @@ v_bar_chart_cols <- function(data, base_col_name, max_char = 15) {
     textposition = 'auto',              # Position text automatically
     customdata = ~value,                # Pass count as custom data
     hovertemplate = paste0(
-      "<b>%{x}</b><br>",
-      "Count: %{customdata}<br>",
-      "Percentage: %{y:.1f}%<extra></extra>"
+      "%{x}<br>",
+      #"Count: %{customdata}<br>",
+      "%{y:.1f}%<extra></extra>"
     )
   ) %>%
     layout(
       # Remove title and axis titles by setting them to empty strings
       title = "",
       xaxis = list(title = ""),
-      yaxis = list(title = ""),
+      yaxis = list(title = "% Respondents"),
       bargap = 0.2,  # Gap between bars
       showlegend = FALSE  # Hide legend as it's unnecessary for single-series bar charts
     ) %>%
@@ -509,7 +509,9 @@ donut_chart_cols_pct <- function(data, base_col_name) {
     labels = names(column_means),
     values = column_means,
     type = 'pie',
-    hole = 0.4
+    hole = 0.4,
+    textinfo = 'label+percent',
+    hoverinfo = 'label+percent'
   ) %>%
     layout(title = "") %>%
     config(displayModeBar = FALSE)
@@ -617,10 +619,10 @@ stacked_v_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
   bar_chart <- plot_ly(
     data = summary_df,
     x = ~Category,
-    y = ~Count,
+    y = ~Percentage,
     color = ~Value,  # Color the bars by the response label
     type = 'bar',
-    text = ~I(paste0(Value, "<br>", Count, "<br>", round(Percentage, 2), "%")), # Make sure to us I() to prevent issues when there is only one occurance of a value
+    text = ~I(paste0(Value, "<br>", round(Percentage, 2), "%")), # Make sure to us I() to prevent issues when there is only one occurance of a value
     hoverinfo = 'text',
     hovertemplate = '%{text}<extra></extra>'
   ) %>%
@@ -628,7 +630,7 @@ stacked_v_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
       title = "",
       barmode = 'stack',  # Stack the bars
       xaxis = list(title = ""),
-      yaxis = list(title = "")
+      yaxis = list(title = "%")
     ) %>%
     config(displayModeBar = FALSE)
   
@@ -880,10 +882,10 @@ stacked_v_bar_chart_cols_nk <- function(data,
   bar_chart <- plot_ly(
     data = counts_df,
     x = ~n_label,
-    y = ~Count,
+    y = ~Percentage,
     color = ~k_label,
     type = 'bar',
-    text = ~I(paste0(k_label, "<br>", Count, "<br>", round(Percentage, 2), "%")),
+    text = ~I(paste0(k_label, "<br>", round(Percentage, 2), "%")),
     hoverinfo = 'text',
     hovertemplate = '%{text}<extra></extra>',
     textposition = 'none'
@@ -892,7 +894,7 @@ stacked_v_bar_chart_cols_nk <- function(data,
       title = '',
       #barmode = 'stack',
       xaxis = list(title = ""),
-      yaxis = list(title = ""),
+      yaxis = list(title = "% Respondents"),
       legend = list(title = list(text = ""))
     ) %>%
     config(displayModeBar = FALSE)
@@ -946,7 +948,7 @@ line_plot <- function(df, y_column_name) {
 
 # Function to create a basic pie chart of frequencies of values in a column
 # For columns that don't have factor labels
-pie_chart_basic <- function(df, column_name, order = "descending") {
+pie_chart_basic <- function(df, column_name, order = "ascending") {
   
   # Check if the column exists in the dataframe
   if (!column_name %in% colnames(df)) {
@@ -964,12 +966,15 @@ pie_chart_basic <- function(df, column_name, order = "descending") {
   
   # Arrange summary_df based on the desired order
   if (order == "ascending") {
-    data_summary <- data_summary %>% arrange(Freq)
+    data_summary <- data_summary %>% arrange(Label)
   } else if (order == "descending") {
-    data_summary <- data_summary %>% arrange(desc(Freq))
+    data_summary <- data_summary %>% arrange(desc(Label))
   } else {
     stop("Invalid order parameter. Use 'ascending' or 'descending'.")
   }
+  
+  # Calculate the total count (N)
+  total_count <- sum(data_summary$Freq)
   
   # Create the pie chart using Plotly
   fig <- plot_ly(
@@ -985,7 +990,9 @@ pie_chart_basic <- function(df, column_name, order = "descending") {
   # Customize the layout to ensure the legend order matches the factor levels
   fig <- fig %>% layout(
     title = "",
-    legend = list(traceorder = "normal")     # Keep the legend order as defined by the factor levels
+    legend = list(
+      title = list(text = paste("         ", "N =", total_count))
+    )
   )
   
   # Remove the Plotly toolbar for a cleaner presentation

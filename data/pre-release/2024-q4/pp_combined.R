@@ -125,9 +125,6 @@ comp_past_3_nb_html <- nb_html("comp_past_3")
 ## Regional Sales Distribution
 regions_dist_donut <- donut_chart_cols_pct(pp_latest, "po.regions_dist.q")
 
-## Segments
-segments_pie <- pie_chart_basic(pp_latest, "Segment")
-
 # Production & Orders
 
 ## Orders - Past 3 Months
@@ -184,7 +181,6 @@ prod_lvl_box <- v_box_plot(pp_latest, "po.prod_lvl.q_1")
 ## Factors Limiting Production
 prod_limits_bar <- v_bar_chart_cols(pp_latest, "po.prod_limits.q")
 # prod_limits_pie <- pie_chart_cols(pp_latest, "po.prod_limits.q")
-
 
 # Inputs & Prices
 
@@ -338,6 +334,7 @@ inv_structure <- stacked_v_bar_chart_cols_nk(pp_latest, "in.inv_structure.q4")
 ## Drivers of Investments
 inv_drivers <- stacked_v_bar_chart_cols_nk(pp_latest, "in.inv_drivers.q4")
 
-# Notes
+# Metadata
 
-pre_release_period <- "December 2-15 2024"
+## Segments
+segments_pie <- pie_chart_basic(pp_latest, "Segment")
