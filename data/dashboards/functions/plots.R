@@ -21,7 +21,7 @@ v_bar_chart <- function(df, column_name) {
     x = ~Value,
     y = ~Percentage,
     type = 'bar',
-    hovertext = ~paste0(Value, '<br>', Freq, '<br>', round(Percentage, 2), '%'),
+    hovertext = ~paste0(Value,'<br>', round(Percentage, 2), '%'),
     hoverinfo = 'hovertext',
     hovertemplate = '%{hovertext}<extra></extra>'  # Custom hover text with no additional trace info
   )
