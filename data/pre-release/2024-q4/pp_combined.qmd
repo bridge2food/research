@@ -555,9 +555,9 @@ The Plant Protein Combined Surveys data dashboard displays aggregated data from 
 
 `r segments_pie`
 
-For more information about this industry reporting and intelligence framework, visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
+For more information about the framework, visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
 
-For questions, comments, or to express interest in participating in the framework in upcoming data periods, email research@bridge2food.com.
+For questions, comments, or to express interest in participating in upcoming data periods, email research@bridge2food.com.
 
 :::
 
