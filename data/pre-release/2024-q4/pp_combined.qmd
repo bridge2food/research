@@ -569,6 +569,7 @@ Many data and indicators in this dashboard are derived from or expressed as net 
 Net balance is calculated as the difference between the percentage of respondents (or data points) reporting a positive change and those reporting a negative change. This figure simplifies data, making trends and shifts easier to interpret and understand at a glance.
 
 **Interpreting Net Balance Figures:**
+<br>
 
 * **Positive Net Balance**: Indicates more positive than negative responses, with higher values reflecting stronger positivity.
 
