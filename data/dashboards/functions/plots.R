@@ -1005,7 +1005,9 @@ pie_chart_basic <- function(df, column_name, order = "ascending") {
   fig <- fig %>% layout(
     title = "",
     legend = list(
-      title = list(text = paste("         ", "N =", total_count))
+      title = list(text = paste("         ", "N =", total_count)),
+      yanchor = 'middle',
+      y = 0.5
     )
   )
   
