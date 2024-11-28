@@ -564,21 +564,18 @@ For questions, comments, or to express interest in participating in upcoming dat
 
 ::: {.card title="Understanding Net Balances"}
 
-Many of the data and indicators presented in this dashboard are expressed as net balances.
+Many data and indicators in this dashboard are derived from or expressed as net balances, a concept widely used in surveys, economic analysis, and business reporting to summarize sentiment or trends within a group.
 
-The concept of net balance is often used in surveys, economic analysis, and business reporting to indicate the overall tendency or sentiment within a group by measuring the difference between positive and negative responses or changes. Net balance simplifies complex data by summarizing it as a single percentage figure, making trends or shifts more interpretable at a glance.
+Net balance is calculated as the difference between the percentage of respondents (or data points) reporting a positive change and those reporting a negative change. This figure simplifies data, making trends and shifts easier to interpret and understand at a glance.
 
-Net balance is typically calculated as the difference between the percentage of respondents (or data points) that report an increase or positive change and the percentage that report a decrease or negative change. 
+**Interpreting Net Balance Figures:**
 
-**Interpreting Net Balance Figures**
-<br>
+* **Positive Net Balance**: Indicates more positive than negative responses, with higher values reflecting stronger positivity.
 
-**Positive Net Balance**: A positive net balance suggests that a larger proportion of respondents or data points are experiencing positive change than negative change. Higher positive values imply stronger net positivity.
+* **Negative Net Balance**: Indicates more negative than positive responses, with lower values reflecting stronger negativity.
 
-**Negative Net Balance**: A negative net balance means that more respondents or data points report a negative change than a positive one. The further into negative territory, the stronger the net negative sentiment.
+* **Zero Net Balance**: Suggests a balance between positive and negative responses, indicating neutrality, stability, or potential stagnation.
 
-**Zero Net Balance**: A net balance close to zero (0%) suggests that positive and negative responses are roughly equal, indicating a neutral or balanced sentiment. This could mean stability, but it could also imply stagnation, depending on the context.
-
-Net balance figures can range from -100 to 100, providing a standardized way to interpret sentiment or change, where the value’s position within this range shows the direction and strength of the net sentiment.
+Net balance values range from -100 to 100, offering a standardized scale to gauge the direction and strength of sentiment or change.
 :::
   
