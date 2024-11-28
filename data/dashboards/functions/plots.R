@@ -122,7 +122,10 @@ pie_chart <- function(df, column_name, order = "descending") {
   # Customize the layout to ensure the legend order matches the factor levels
   fig <- fig %>% layout(
     title = "",
-    legend = list(traceorder = "normal")  # Keep the legend order as defined by the factor levels
+    legend = list(
+      traceorder = "normal",
+      yanchor = 'middle',
+      y = 0.5)  # Keep the legend order as defined by the factor levels
   )
   
   # Remove the Plotly toolbar for a cleaner presentation
@@ -513,7 +516,11 @@ donut_chart_cols_pct <- function(data, base_col_name) {
     textinfo = 'label+percent',
     hoverinfo = 'label+percent'
   ) %>%
-    layout(title = "") %>%
+    layout(title = "",
+           legend = list(
+             yanchor = 'middle',
+             y = 0.5
+           )) %>%
     config(displayModeBar = FALSE)
   
   return(donut_chart)
@@ -630,7 +637,11 @@ stacked_v_bar_chart_cols <- function(data, base_col_name, wrap_width = 30) {
       title = "",
       barmode = 'stack',  # Stack the bars
       xaxis = list(title = ""),
-      yaxis = list(title = "%")
+      yaxis = list(title = "%"),
+      legend = list(
+        yanchor = 'middle',
+        y = 0.5
+      )
     ) %>%
     config(displayModeBar = FALSE)
   
@@ -895,7 +906,10 @@ stacked_v_bar_chart_cols_nk <- function(data,
       #barmode = 'stack',
       xaxis = list(title = ""),
       yaxis = list(title = "% Respondents"),
-      legend = list(title = list(text = ""))
+      legend = list(
+        title = list(text = ""),
+        yanchor = 'middle',
+        y = 0.5)
     ) %>%
     config(displayModeBar = FALSE)
   
