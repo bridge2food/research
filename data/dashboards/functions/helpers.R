@@ -249,3 +249,38 @@ nb_html <- function(variable_name) {
   
   return(html_code)
 }
+
+# Function to generate user:pass combos for basic-auth
+generate_credentials <- function(dataframe) {
+  # Load required library
+  library(stringi)
+  
+  # Check if the Company column exists
+  if (!"Company" %in% colnames(dataframe)) {
+    stop("The dataframe must have a 'Company' column.")
+  }
+  
+  # Create a function to generate usernames
+  generate_username <- function(company) {
+    username <- tolower(gsub("[^a-zA-Z0-9]", "", company)) # Remove non-alphanumeric characters
+    substring(username, 1, 20) # Limit to 20 characters
+  }
+  
+  # Create a function to generate passwords
+  generate_password <- function() {
+    stri_rand_strings(1, 20, "[A-Za-z0-9]") # Generate a random 20-character password
+  }
+  
+  # Generate usernames and passwords
+  dataframe$username <- sapply(dataframe$Company, generate_username)
+  dataframe$password <- sapply(1:nrow(dataframe), function(x) generate_password())
+  
+  # Combine usernames and passwords with a colon
+  credentials <- paste(dataframe$username, dataframe$password, sep = ":")
+  
+  # Join all credentials with a space
+  single_line_output <- paste(credentials, collapse = " ")
+  
+  # Return the single line output
+  return(single_line_output)
+}

@@ -60,6 +60,10 @@ pp_all <- do.call(rbind, pp_all)
 pp_latest <- pp_all %>%
   filter(Period == curr_period)
 
+# Generate credentials for basic-auth
+# Output can be pasted into _headers file
+# generate_credentials(pp_latest)
+
 ##########
 
 # Calculate netbalances using pp_all
