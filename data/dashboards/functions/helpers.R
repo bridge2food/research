@@ -250,7 +250,7 @@ nb_html <- function(variable_name) {
   return(html_code)
 }
 
-# Function to generate user:pass combos for basic-auth
+# Function to generate username:password combos for basic-auth
 generate_credentials <- function(dataframe) {
   # Load required library
   library(stringi)
@@ -266,14 +266,44 @@ generate_credentials <- function(dataframe) {
     substring(username, 1, 20) # Limit to 20 characters
   }
   
-  # Create a function to generate passwords
-  generate_password <- function() {
-    stri_rand_strings(1, 20, "[A-Za-z0-9]") # Generate a random 20-character password
+  # Improved password generation function
+  generate_password <- function(length = 20) {
+    if(length < 4) {
+      stop("Password length should be at least 4 to include all character types.")
+    }
+    
+    # Define character sets
+    uppercase_letters <- LETTERS
+    lowercase_letters <- letters
+    digits <- 0:9
+    special_chars <- c("!", "@", "#", "$", "%", "^", "&", "*")
+    
+    # Ensure at least one character from each set
+    password_chars <- c(
+      sample(uppercase_letters, 1),
+      sample(lowercase_letters, 1),
+      sample(digits, 1),
+      sample(special_chars, 1)
+    )
+    
+    # Fill the remaining length with a random mix of all characters
+    all_chars <- c(uppercase_letters, lowercase_letters, digits, special_chars)
+    if(length > 4) {
+      password_chars <- c(
+        password_chars,
+        sample(all_chars, length - 4, replace = TRUE)
+      )
+    }
+    
+    # Shuffle the characters to prevent predictable sequences
+    password <- paste(sample(password_chars), collapse = "")
+    
+    return(password)
   }
   
   # Generate usernames and passwords
   dataframe$username <- sapply(dataframe$Company, generate_username)
-  dataframe$password <- sapply(1:nrow(dataframe), function(x) generate_password())
+  dataframe$password <- replicate(nrow(dataframe), generate_password(20))
   
   # Combine usernames and passwords with a colon
   credentials <- paste(dataframe$username, dataframe$password, sep = ":")
@@ -284,3 +314,5 @@ generate_credentials <- function(dataframe) {
   # Return the single line output
   return(single_line_output)
 }
+
+
