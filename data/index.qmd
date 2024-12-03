@@ -8,19 +8,15 @@ title-block-banner: true
 
 # Calendar
 
-Questionnaires are sent to respondents on the first working day of the survey quarter. Submissions are collected during the first calendar month of the survey quarter and public data releases are scheduled for the first working day of the next quarter.
-
 
 | Survey          | Frequency       | Next Release    |
 |--------         |--------         | --------        |
-| [PPUS](/surveys/ppus.qmd)  | Quarterly       | TBD |
-| [PMP](/surveys/pmp.qmd)  | Quarterly        | TBD |
-| [PDP](/surveys/pdp.qmd)  | Quarterly          | TBD |
+| [PPUS](/surveys/ppus.qmd)  | Quarterly       | December 9, 2024 |
+| [PMP](/surveys/pmp.qmd)  | Quarterly        | December 9, 2024 |
+| [PDP](/surveys/pdp.qmd)  | Quarterly          | December 9, 2024 |
 
 : {.striped .hover}
 
-<br>
 
-**Note**: Quarterly surveys include questions about the previous quarter as well as expectations for the current and future quarters. This means that releases of indicators of industry experience are lagged by two quarters, while indicators of industry expectations are lagged by one quarter.
 
   

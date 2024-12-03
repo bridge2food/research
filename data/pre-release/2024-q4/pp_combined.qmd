@@ -579,4 +579,3 @@ Net balance is calculated as the difference between the percentage of respondent
 
 Net balance values range from -100 to 100, offering a standardized scale to gauge the direction and strength of sentiment or change.
 :::
-  
