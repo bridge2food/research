@@ -2,6 +2,10 @@
     max-height: 32px !important;
   }
 
+.quarto-dashboard .nav-link {
+  text-align: center;
+}
+
 .valuebox {
   position: relative;
 }

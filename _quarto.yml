@@ -4,6 +4,7 @@ project:
     - "_headers"
 
 website:
+  google-analytics: "G-GGQM0K9GC8"
   navbar:
     right: 
       - href: projects.qmd
