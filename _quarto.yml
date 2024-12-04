@@ -4,6 +4,10 @@ project:
     - "_headers"
 
 website:
+  google-analytics: "G-GGQM0K9GC8"
+  cookie-consent:
+    type: implied
+    style: simple
   navbar:
     right: 
       - href: projects.qmd

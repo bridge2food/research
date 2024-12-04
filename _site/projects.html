@@ -26,6 +26,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <link href=".//assets/images/logos/favicon.ico" rel="icon">
+<script src="site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -53,29 +55,48 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GGQM0K9GC8"></script>
 
-<script>
+<script type="text/plain" cookie-consent="tracking">
 
-  window.dataLayer = window.dataLayer || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-GGQM0K9GC8', { 'anonymize_ip': true});
+</script>
 
-  function gtag(){dataLayer.push(arguments);}
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<!-- Additional Google Analytics Tracking ID -->
 
-  gtag('js', new Date());
+<script type="text/plain" data-cookie-consent="tracking">
 
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag(){dataLayer.push(arguments);}
 
-  // Initialize the first GA tracking ID
+    gtag('js', new Date());
 
-  gtag('config', 'G-GGQM0K9GC8');
+  
 
+    // Initialize the second GA tracking ID
 
-
-  // Initialize the second GA tracking ID
-
-  gtag('config', 'G-G1P4V01PPW');
+    gtag('config', 'G-G1P4V01PPW');
 
 </script>
 
@@ -795,7 +816,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p><br> Copyright 2024 <a href="https://bridge2food.com/">Bridge2Food</a>. All rights reserved. <br><br></p>
-</div>
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
