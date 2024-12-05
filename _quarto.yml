@@ -4,6 +4,11 @@ project:
     - "_headers"
 
 website:
+  image: /assets/images/logos/b2flogo.png
+  twitter-card:
+    site: "@bridge2food"
+    creator: "@bridge2food"
+    card-style: summary_large_image
   cookie-consent:
     type: implied
     style: simple
@@ -26,7 +31,6 @@ website:
       <br> Copyright 2024 [Bridge2Food](https://bridge2food.com/). All rights reserved. <br><br>
   search: false
   favicon: /assets/images/logos/favicon.ico
-  twitter-card: true
   open-graph: true
 
 
