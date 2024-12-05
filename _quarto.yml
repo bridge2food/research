@@ -4,7 +4,7 @@ project:
     - "_headers"
 
 website:
-  image: /assets/images/logos/b2flogo.png
+  image: /assets/images/logos/b2flogopad.png
   twitter-card:
     site: "@bridge2food"
     creator: "@bridge2food"
