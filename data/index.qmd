@@ -7,6 +7,10 @@ format:
 title-block-banner: true
 ---
 
+::: fs-4
+{{< iconify bi:lightbulb >}} [Register interest](https://qualtricsxmgtnmmghg4.qualtrics.com/jfe/form/SV_a2UplqKqiQXYWEe) in participating in upcoming data periods
+:::
+
 # Latest Releases
 
 ```{=html}
