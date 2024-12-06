@@ -5,6 +5,7 @@ format:
   dashboard:
     sidebar:
       collapse: true
+    email-obfuscation: javascript
 scrolling: true
 include-in-header:
   text: |
@@ -557,7 +558,9 @@ The Plant Protein Combined Surveys data dashboard displays aggregated data from 
 
 For more information about the framework, visit [research.bridge2food.com/surveys](https://research.bridge2food.com/surveys/).
 
-For questions, comments, or to express interest in participating in upcoming data periods, email research@bridge2food.com.
+[Register interest](https://qualtricsxmgtnmmghg4.qualtrics.com/jfe/form/SV_a2UplqKqiQXYWEe) in participating in upcoming data periods.
+
+For all other questions and comments, [send us an email](mailto:research@bridge2food.com).
 
 :::
 
