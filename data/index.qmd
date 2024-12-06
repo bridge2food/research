@@ -7,8 +7,12 @@ format:
 title-block-banner: true
 ---
 
+::: fs-1
+Open-access data tools and resources
+:::
+
 ::: fs-4
-{{< iconify bi:lightbulb >}} [Register interest](https://qualtricsxmgtnmmghg4.qualtrics.com/jfe/form/SV_a2UplqKqiQXYWEe) in participating in upcoming data periods
+Participating firms gain pre-release access to aggregated industry data and special reports, among other exclusive benefits. [{{< iconify bi:check2-square >}} Register interest](https://qualtricsxmgtnmmghg4.qualtrics.com/jfe/form/SV_a2UplqKqiQXYWEe) to participate in upcoming data periods.
 :::
 
 # Latest Releases
@@ -36,9 +40,9 @@ title-block-banner: true
 
 | Industry Segment                                                | Frequency | Next Release |
 |--------                                                         | -------   | -------      |
-| [Plant Protein Upstream Supplier (PPUS) Survey](/surveys/ppus.qmd)       | Quarterly | Q2 2025      |
-| [Plant Meat Producer (PMP) Survey](/surveys/pmp.qmd)                     | Quarterly | Q2 2025      |
-| [Plant Dairy Producer (PDP) Survey](/surveys/pdp.qmd)                    | Quarterly | Q2 2025      |
+| [Plant Protein Upstream Supplier (PPUS) Survey](/surveys/ppus.qmd)       | Quarterly | 2025 Q2      |
+| [Plant Meat Producer (PMP) Survey](/surveys/pmp.qmd)                     | Quarterly | 2025 Q2      |
+| [Plant Dairy Producer (PDP) Survey](/surveys/pdp.qmd)                    | Quarterly | 2025 Q2      |
 | [Mycoprotein Producer (MPP) Survey](/surveys/mpp.qmd)                    | Quarterly | 2025      |
 | [Cell-Cultured Food Producer (CCFP) Survey](/surveys/ccfp.qmd)           | Quarterly | 2025      |
 | [Microbial & Recombinant Food Producer (MRFP) Survey](/surveys/mrfp.qmd) | Quarterly | 2025      |
