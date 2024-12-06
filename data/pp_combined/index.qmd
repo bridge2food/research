@@ -62,40 +62,7 @@ source("bcs.R")
 
 :::
 
-
 ## Row
-
-### Column {.tabset}
-
-```{r}
-#| title: "Capacity Utilisation"
-prod_lvl_box
-```
-::: {.card title="Time Series"}
-<div class="mt-5 text-center">
-Available in 2025-Q2...
-</div>
-:::
-
-### Column {.tabset}
-
-```{r}
-#| title: "Current Order Books"
-orders_curr_pie
-```
-```{r, results='asis'}
-#| title: "Net Balance"
-cat(orders_curr_nb_html)
-```
-
-::: {.card title="Time Series"}
-<div class="mt-5 text-center">
-Available in 2025-Q2...
-</div>
-:::
-
-## Row
-
 
 ### Column {.tabset}
 ```{r}
