@@ -18,7 +18,7 @@ title-block-banner: true
     <div class="col-md-8">
       <div class="card-body">
         <a href="pp_combined/" class="card-title card-link fs-3 text-decoration-none">Plant Protein Combined Surveys Data Dashboard</a>
-        <p class="card-text">Aggregated data from the PPUS, PMP, and PDP industry surveys.</p>
+        <p class="card-text">Explore aggregated data from the PPUS, PMP, and PDP industry surveys</p>
         <a target="_blank" href="pp_combined/downloads/2024Q4_Plant_Protein_Combined_Summary.pdf" class="card-text card-link text-decoration-none"><small class="text-body-secondary"><i class="bi bi-filetype-pdf"></i> Download the release summary</small></a>
         <p class="card-text"><small class="text-body-secondary">December 9, 2024</small></p>
       </div>

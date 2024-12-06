@@ -592,9 +592,9 @@ Net balance values range from -100 to 100, offering a standardized scale to gaug
       <i class="bi bi-filetype-pdf text-danger display-4" role="img" aria-label="PDF File Icon"></i>
     </div>
     <div class="card-body">
-      <h5 class="card-title">Plant Protein Combined Surveys Q4 2024 Release Summary</h5>
+      <h5 class="card-title fs-4">Plant Protein Combined Surveys: 2024-Q4 Release Summary</h5>
       <p class="card-text">
-        Summary of aggregated data from the PPUS, PMP, and PDP industry surveys.
+        Press release detailing aggregated data insights from the PPUS, PMP, and PDP industry surveys
       </p>
       <p class="card-text"><small class="text-body-secondary">December 9, 2024</small></p>
       <a href="downloads/2024Q4_Plant_Protein_Combined_Summary.pdf" class="stretched-link" aria-label="Download PDF Document" target="_blank"></a>
