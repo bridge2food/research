@@ -1,0 +1,27 @@
+.quarto-dashboard .navbar-logo {
+    max-height: 32px !important;
+  }
+
+.quarto-dashboard .nav-link {
+  text-align: center;
+}
+
+.valuebox {
+  position: relative;
+}
+.valuebox .info-icon {
+  position: absolute;
+  bottom: 10px;      /* Adjust as needed */
+  right: 10px;    /* Adjust as needed */
+  color: #6c757d; /* Bootstrap secondary color */
+  cursor: pointer;
+  font-size: 1.2em; /* Adjust size as needed */
+}
+.valuebox .info-icon:hover {
+  color: #495057; /* Darker shade on hover */
+}
+
+.card-header {
+  background-color: #eee;
+}
+

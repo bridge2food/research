@@ -13,13 +13,16 @@ website:
     type: implied
     style: simple
   navbar:
-    right: 
+    right:
       - href: projects.qmd
         text: Research Projects
         icon: lightbulb
       - href: intelligence.qmd
         text: Industry Intelligence
         icon: graph-up-arrow
+      - href: data/index.qmd
+        text: Data Portal
+        icon: database
       - href: about.qmd
         text: About
     logo: /assets/images/logos/b2flogo.png

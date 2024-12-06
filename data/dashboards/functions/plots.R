@@ -95,6 +95,10 @@ pie_chart <- function(df, column_name, order = "descending") {
   summary_df <- summary_df %>%
     mutate(label = factor(label, levels = summary_df$label))
   
+  # **Insert line breaks before '(' in labels for legend wrapping**
+  #summary_df <- summary_df %>%
+  #  mutate(label = gsub("\\s*\\(", "\n(", label))
+  
   # **Add a 'text' column to conditionally display percentages**
   summary_df <- summary_df %>%
     mutate(

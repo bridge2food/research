@@ -1,19 +1,45 @@
 ---
 title: Industry Data Portal
+image: /assets/images/db_small.jpg
 format: 
   html:
     page-layout: full
 title-block-banner: true
 ---
 
+# Latest Releases
+
+```{=html}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <a class="col-md-4" href="pp_combined/">
+      <img src="/assets/images/db_small.jpg" class="img-fluid rounded-start" alt="plant protein combined dashboards">
+    </a>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="pp_combined/" class="card-title card-link fs-3 text-decoration-none">Plant Protein Combined Surveys Data Dashboard</a>
+        <p class="card-text">Aggregated data from the PPUS, PMP, and PDP industry surveys.</p>
+        <a target="_blank" href="pp_combined/downloads/2024Q4_Plant_Protein_Combined_Summary.pdf" class="card-text card-link text-decoration-none"><small class="text-body-secondary"><i class="bi bi-filetype-pdf"></i> Download the release summary</small></a>
+        <p class="card-text"><small class="text-body-secondary">December 9, 2024</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+```
+
 # Calendar
 
-
-| Survey          | Frequency       | Next Release    |
-|--------         |--------         | --------        |
-| [PPUS](/surveys/ppus.qmd)  | Quarterly       | December 9, 2024 |
-| [PMP](/surveys/pmp.qmd)  | Quarterly        | December 9, 2024 |
-| [PDP](/surveys/pdp.qmd)  | Quarterly          | December 9, 2024 |
+| Industry Segment                                                | Frequency | Next Release |
+|--------                                                         | -------   | -------      |
+| [Plant Protein Upstream Supplier (PPUS) Survey](/surveys/ppus.qmd)       | Quarterly | Q2 2025      |
+| [Plant Meat Producer (PMP) Survey](/surveys/pmp.qmd)                     | Quarterly | Q2 2025      |
+| [Plant Dairy Producer (PDP) Survey](/surveys/pdp.qmd)                    | Quarterly | Q2 2025      |
+| [Mycoprotein Producer (MPP) Survey](/surveys/mpp.qmd)                    | Quarterly | 2025      |
+| [Cell-Cultured Food Producer (CCFP) Survey](/surveys/ccfp.qmd)           | Quarterly | 2025      |
+| [Microbial & Recombinant Food Producer (MRFP) Survey](/surveys/mrfp.qmd) | Quarterly | 2025      |
+| [Protein Technology Investor (PTI) Survey](/surveys/pti.qmd)             | Quarterly | 2025      |
+| [Industry Analyst (IA) Survey](/surveys/ia.qmd)                          | Quarterly | 2025      |
 
 : {.striped .hover}
 
