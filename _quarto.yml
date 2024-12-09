@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "_headers"
+    - "_redirects"
 
 website:
   image: /assets/images/logos/b2flogopad.png
