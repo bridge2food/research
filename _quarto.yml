@@ -3,6 +3,7 @@ project:
   resources:
     - "_headers"
     - "_redirects"
+    - "netlify.toml"
 
 website:
   image: /assets/images/logos/b2flogopad.png
