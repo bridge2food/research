@@ -10,7 +10,7 @@ library(tools)
 source(paste0(here(),"/data", "/dashboards", "/functions", "/functions.R"))
 
 # Toggle to include pre-release data
-include_pre_release <- T  # Set to TRUE to include pre-release data
+include_pre_release <- F  # Set to TRUE to include pre-release data
 
 # Set path for survey files
 base_dir <- paste0(here(), "/data_raw/qualtrics/")
