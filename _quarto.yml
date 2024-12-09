@@ -6,7 +6,6 @@ project:
     - "netlify.toml"
 
 website:
-  title: "B2F Research"
   site-url: "https://research.bridge2food.com/"
   image: /assets/images/logos/b2flogopad.png
   twitter-card:
